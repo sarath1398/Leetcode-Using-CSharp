@@ -32,13 +32,16 @@ class TwoSum
 {
     static void Main(string[] args)
     {
+        // Testcase Wrapper
         var sol = new Solution();
         // var data = sol.TwoSum(nums: [2, 7, 11, 15], 9);
         // foreach (var d in data)
         // {
         //     Console.Write(d + " ");
         // }
-        var data = new ContainsDuplicates();
-        Console.WriteLine(data.ContainsDuplicate([1,2,3,4]));
+        // var data = new ContainsDuplicates();
+        // Console.WriteLine(data.ContainsDuplicate([1,2,3,4]));
+        var data = new ValidAnagrams();
+        Console.WriteLine(data.IsAnagram("cock", "crane"));
     }
 }
