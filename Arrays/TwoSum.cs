@@ -41,7 +41,17 @@ class TwoSum
         // }
         // var data = new ContainsDuplicates();
         // Console.WriteLine(data.ContainsDuplicate([1,2,3,4]));
-        var data = new ValidAnagrams();
-        Console.WriteLine(data.IsAnagram("cock", "crane"));
+        // var data = new ValidAnagrams();
+        // Console.WriteLine(data.IsAnagram("cock", "crane"));
+        var data = new GroupAnagrams();
+        var lists = data.GroupAnagramsFn(["act","pots","tops","cat","stop","hat"]);
+        foreach(var list in lists)
+        {
+            foreach (var l in list)
+            {
+                Console.Write(l+ " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
