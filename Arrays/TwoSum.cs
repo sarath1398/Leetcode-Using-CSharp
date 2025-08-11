@@ -53,11 +53,18 @@ class TwoSum
         //     }
         //     Console.WriteLine();
         // }
-        var data = new TopKFrequentElements();
-        var array = data.TopKFrequent([1,1,1,2,2,3],2);
-        foreach (var num in array)
+        // var data = new TopKFrequentElements();
+        // var array = data.TopKFrequent([1,1,1,2,2,3],2);
+        // foreach (var num in array)
+        // {
+        //     Console.Write(num + " ");
+        // }
+        var data = new EncodeAndDecode();
+        Console.WriteLine(data.Encode(["we","say",":","yes","!@#$%^&*()"]));
+        var decode = data.Decode("4#neet4#code4#love3#you");
+        foreach (var w in decode)
         {
-            Console.Write(num + " ");
+            Console.Write(w + " ");
         }
     }
 }
