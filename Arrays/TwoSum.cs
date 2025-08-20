@@ -59,12 +59,14 @@ class TwoSum
         // {
         //     Console.Write(num + " ");
         // }
-        var data = new EncodeAndDecode();
-        Console.WriteLine(data.Encode(["we","say",":","yes","!@#$%^&*()"]));
-        var decode = data.Decode("4#neet4#code4#love3#you");
-        foreach (var w in decode)
-        {
-            Console.Write(w + " ");
-        }
+        // var data = new EncodeAndDecode();
+        // Console.WriteLine(data.Encode(["we","say",":","yes","!@#$%^&*()"]));
+        // var decode = data.Decode("4#neet4#code4#love3#you");
+        // foreach (var w in decode)
+        // {
+        //     Console.Write(w + " ");
+        // }
+        // var data = new ProductOfArraysExceptSelf(); // TODO : Work on this sometime later
+        // data.ProductExceptSelf([1, 2, 4, 6]);
     }
 }
