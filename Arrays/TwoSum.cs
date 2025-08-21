@@ -68,5 +68,10 @@ class TwoSum
         // }
         // var data = new ProductOfArraysExceptSelf(); // TODO : Work on this sometime later
         // data.ProductExceptSelf([1, 2, 4, 6]);
+        var data = new BuildArrayFromPermutation();
+        foreach (var d in data.BuildArray([0,2,1,5,3,4]))
+        {
+            Console.Write(d + " ");
+        }
     }
 }
