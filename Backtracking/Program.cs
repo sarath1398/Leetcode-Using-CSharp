@@ -20,8 +20,14 @@ class Program
         // {
         //     Console.Write(r + " ");
         // }
-        var data = new CombinationSum2();
-        var result = data.CombinationSum2Fn([10, 1, 2, 7, 6, 1, 5], 8);
+        // var data = new CombinationSum2();
+        // var result = data.CombinationSum2Fn([10, 1, 2, 7, 6, 1, 5], 8);
+        // foreach (var r in result)
+        // {
+        //     Console.WriteLine(string.Join(",", r));
+        // }
+        var data = new CombinationSum3();
+        var result = data.CombinationSum3Fn(3, 8);
         foreach (var r in result)
         {
             Console.WriteLine(string.Join(",", r));
