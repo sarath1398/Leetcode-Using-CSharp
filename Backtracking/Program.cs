@@ -14,11 +14,17 @@ class Program
         //     }
         //     Console.WriteLine();
         // }
-        var data = new BinaryWatch();
-        var result = data.ReadBinaryWatch(1);
+        // var data = new BinaryWatch();
+        // var result = data.ReadBinaryWatch(1);
+        // foreach (var r in result)
+        // {
+        //     Console.Write(r + " ");
+        // }
+        var data = new CombinationSum2();
+        var result = data.CombinationSum2Fn([10, 1, 2, 7, 6, 1, 5], 8);
         foreach (var r in result)
         {
-            Console.Write(r + " ");
+            Console.WriteLine(string.Join(",", r));
         }
     }
 }
