@@ -26,11 +26,17 @@ class Program
         // {
         //     Console.WriteLine(string.Join(",", r));
         // }
-        var data = new CombinationSum3();
-        var result = data.CombinationSum3Fn(3, 8);
-        foreach (var r in result)
+        // var data = new CombinationSum3();
+        // var result = data.CombinationSum3Fn(3, 8);
+        // foreach (var r in result)
+        // {
+        //     Console.WriteLine(string.Join(",", r));
+        // }
+        var data = new Combinations();
+        var results = data.Combine(4, 2);
+        foreach (var result in results)
         {
-            Console.WriteLine(string.Join(",", r));
+            Console.WriteLine(string.Join(',',result));
         }
     }
 }
