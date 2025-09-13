@@ -44,11 +44,13 @@ class Program
         // {
         //     Console.WriteLine(string.Join(',',result));
         // }
-        var data = new Subsets2();
-        var results = data.SubsetsWithDup([1,2,2]);
-        foreach (var result in results)
-        {
-            Console.WriteLine(string.Join(',',result));
-        }
+        // var data = new Subsets2();
+        // var results = data.SubsetsWithDup([1,2,2]);
+        // foreach (var result in results)
+        // {
+        //     Console.WriteLine(string.Join(',',result));
+        // }
+        var data = new TargetSum();
+        Console.WriteLine(data.FindTargetSumWays([1, 1, 1, 1, 1], 3));
     }
 }
