@@ -1,0 +1,15 @@
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\bin\Debug\net8.0\Backtracking.exe
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\bin\Debug\net8.0\Backtracking.deps.json
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\bin\Debug\net8.0\Backtracking.runtimeconfig.json
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\bin\Debug\net8.0\Backtracking.dll
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\bin\Debug\net8.0\Backtracking.pdb
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.AssemblyInfoInputs.cache
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.AssemblyInfo.cs
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.csproj.CoreCompileInputs.cache
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.sourcelink.json
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.dll
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\refint\Backtracking.dll
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.pdb
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\Backtracking.genruntimeconfig.cache
+C:\Users\sarat\OneDrive\Desktop\Coding\Leetcode-Using-CSharp\Backtracking\obj\Debug\net8.0\ref\Backtracking.dll
