@@ -81,7 +81,10 @@ class TwoSum
         //     Console.Write(d + " ");
         // }
         
-        var data = new DestinationCity();
-        Console.WriteLine(data.DestCity([["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]));
+        //var data = new DestinationCity();
+        //Console.WriteLine(data.DestCity([["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]));
+
+        var data = new RemoveDuplicatesFromSortedArray();
+        Console.WriteLine(data.RemoveDuplicates([1,1,2,2,3,4,4,5]));
     }
 }
