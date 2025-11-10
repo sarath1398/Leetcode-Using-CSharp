@@ -33,20 +33,20 @@ class TwoSum
     static void Main(string[] args)
     {
         // Testcase Wrapper
-        
+
         //var sol = new Solution();
         // var data = sol.TwoSum(nums: [2, 7, 11, 15], 9);
         // foreach (var d in data)
         // {
         //     Console.Write(d + " ");
         // }
-        
+
         // var data = new ContainsDuplicates();
         // Console.WriteLine(data.ContainsDuplicate([1,2,3,4]));
-        
+
         // var data = new ValidAnagrams();
         // Console.WriteLine(data.IsAnagram("cock", "crane"));
-        
+
         // var data = new GroupAnagrams();
         // var lists = data.GroupAnagramsFn(["act","pots","tops","cat","stop","hat"]);
         // foreach(var list in lists)
@@ -57,14 +57,14 @@ class TwoSum
         //     }
         //     Console.WriteLine();
         // }
-        
+
         // var data = new TopKFrequentElements();
         // var array = data.TopKFrequent([1,1,1,2,2,3],2);
         // foreach (var num in array)
         // {
         //     Console.Write(num + " ");
         // }
-        
+
         // var data = new EncodeAndDecode();
         // Console.WriteLine(data.Encode(["we","say",":","yes","!@#$%^&*()"]));
         // var decode = data.Decode("4#neet4#code4#love3#you");
@@ -72,7 +72,7 @@ class TwoSum
         // {
         //     Console.Write(w + " ");
         // }
-        
+
         // var data = new ProductOfArraysExceptSelf(); // TODO : Work on this sometime later
         // data.ProductExceptSelf([1, 2, 4, 6]);
         // var data = new BuildArrayFromPermutation();
@@ -80,11 +80,14 @@ class TwoSum
         // {
         //     Console.Write(d + " ");
         // }
-        
+
         //var data = new DestinationCity();
         //Console.WriteLine(data.DestCity([["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]));
 
-        var data = new RemoveDuplicatesFromSortedArray();
-        Console.WriteLine(data.RemoveDuplicates([1,1,2,2,3,4,4,5]));
+        //var data = new RemoveDuplicatesFromSortedArray();
+        //Console.WriteLine(data.RemoveDuplicates([1,1,2,2,3,4,4,5]));
+
+        var data = new BestTimeToBuyAndSellStocksII();
+        Console.WriteLine(data.MaxProfit([7,1,5,3,6,4]));
     }
 }
