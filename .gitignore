@@ -1,0 +1,74 @@
+# Recommended .gitignore for .NET / Visual Studio projects
+
+# Build folders
+**/bin/
+**/obj/
+
+# Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+project.lock.json
+project.assets.json
+package-lock.json
+packages.config
+
+# Dotnet build outputs
+*.dll
+*.exe
+*.pdb
+
+# Publish / deployment
+artifacts/
+publish/
+dist/
+
+# Visual Studio Code workspace settings
+.vscode/
+
+# User-specific files
+*.vspscc
+*.vssscc
+
+# Rider caches
+/.idea/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+Desktop.ini
+ehthumbs.db
+
+# Log files
+*.log
+
+# Backup & temp
+*~
+~$*
+
+# Secrets and local settings (ignore if you store secrets outside source control)
+secrets.json
+appsettings.*.json
+
+# JetBrains Rider
+/.idea/
+
+# Test result files
+TestResults/
+
+# Backup of NuGet packages folder for some projects
+*.nupkg
+
