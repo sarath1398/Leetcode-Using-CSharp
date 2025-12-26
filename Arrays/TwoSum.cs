@@ -89,5 +89,6 @@ class TwoSum
 
         var data = new BestTimeToBuyAndSellStocksII();
         Console.WriteLine(data.MaxProfit([7,1,5,3,6,4]));
+        Console.ReadKey();
     }
 }
