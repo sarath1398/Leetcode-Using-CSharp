@@ -3,7 +3,7 @@ namespace Arrays
 {
     public class BestTimeToBuyAndSellStocksII
     {
-        public int MaxProfit(int[] prices)
+        public static int MaxProfit(int[] prices)
         {
             int p = 0;
             for (int i = 1; i < prices.Length; i++)

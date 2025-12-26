@@ -1,19 +1,20 @@
-namespace Arrays;
-
-public class ContainsDuplicates : Solution
+namespace Arrays
 {
-    public bool ContainsDuplicate(int[] nums)
+    public class ContainsDuplicates
     {
-        Dictionary<int, int> map = new();
-        foreach (int num in nums)
+        public static bool ContainsDuplicate(int[] nums)
         {
-            if (map.ContainsKey(num))
+            Dictionary<int, int> map = new();
+            foreach (int num in nums)
             {
-                return true;
+                if (map.ContainsKey(num))
+                {
+                    return true;
+                }
+                map.Add(num, 0);
             }
-            map.Add(num,0);
-        }
 
-        return false;
+            return false;
+        }
     }
 }

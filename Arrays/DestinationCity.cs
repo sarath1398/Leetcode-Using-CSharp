@@ -1,25 +1,27 @@
-namespace Arrays;
-
-public class DestinationCity : Solution
+namespace Arrays
 {
-    public string DestCity(IList<IList<string>> paths) {
-        // Add all source and destination paths in a dictionary
-        Dictionary<string,string> pathMap = new();
-        foreach (var path in paths)
+    public class DestinationCity
+    {
+        public static string DestCity(IList<IList<string>> paths)
         {
-            pathMap.Add(path[0], path[1]);
-        }
-        // Try to check if one destination is the source for any other path.
-        // If not, then that's the final destination
-        foreach(var path in paths)
-        {
-            string dest = pathMap[path[0]];
-            bool isAvailable = pathMap.TryGetValue(dest, out string new_dest);
-            if(!isAvailable)
+            // Add all source and destination paths in a dictionary
+            Dictionary<string, string> pathMap = new();
+            foreach (var path in paths)
             {
-                return dest;
+                pathMap.Add(path[0], path[1]);
             }
+            // Try to check if one destination is the source for any other path.
+            // If not, then that's the final destination
+            foreach (var path in paths)
+            {
+                string dest = pathMap[path[0]];
+                bool isAvailable = pathMap.TryGetValue(dest, out string new_dest);
+                if (!isAvailable)
+                {
+                    return dest;
+                }
+            }
+            return String.Empty;
         }
-        return String.Empty;
     }
 }

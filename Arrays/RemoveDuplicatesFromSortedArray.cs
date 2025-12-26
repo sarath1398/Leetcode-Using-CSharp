@@ -2,7 +2,7 @@
 {
     public class RemoveDuplicatesFromSortedArray
     {
-        public int RemoveDuplicates(int[] nums)
+        public static int RemoveDuplicates(int[] nums)
         {
             int fast = 1;
             int slow = 0;

@@ -1,16 +1,17 @@
-namespace Arrays;
-
-public class BuildArrayFromPermutation
+namespace Arrays
 {
-    // TODO: Come up with an O(1) space complexity solution
-    public int[] BuildArray(int[] nums)
+    public class BuildArrayFromPermutation
     {
-        int[] solArray = new int[nums.Length];
-        int i=0;
-        foreach(var num in nums)
+        // TODO: Come up with an O(1) space complexity solution
+        public static int[] BuildArray(int[] nums)
         {
-            solArray[i++]=nums[num];
+            int[] solArray = new int[nums.Length];
+            int i = 0;
+            foreach (var num in nums)
+            {
+                solArray[i++] = nums[num];
+            }
+            return solArray;
         }
-        return solArray;
     }
 }

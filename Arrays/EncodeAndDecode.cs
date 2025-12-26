@@ -1,41 +1,42 @@
-namespace Arrays;
-
-public class EncodeAndDecode : Solution
+namespace Arrays
 {
-    public string Encode(IList<string> strs)
+    public class EncodeAndDecode
     {
-        var finalStr = "";
-        foreach (var str in strs)
+        public static string Encode(IList<string> strs)
         {
-            finalStr += str.Length + "#" + str;
-        }
-
-        return finalStr;
-    }
-
-    public List<string> Decode(string s)
-    {
-        int i = 0;
-        List<string> finalList = new();
-        for (; i < s.Length; i++)
-        {
-            string count = "";
-            while (s[i] != '#')
+            var finalStr = "";
+            foreach (var str in strs)
             {
-                count += s[i++];
+                finalStr += str.Length + "#" + str;
             }
 
-            int wordLength = 0;
-            var eachStr = "";
-            int integerCount = int.Parse(count);
-            while (wordLength < integerCount)
-            {
-                i++;
-                eachStr += s[i];
-                wordLength++;
-            }
-            finalList.Add(eachStr);
+            return finalStr;
         }
-        return finalList;
+
+        public static List<string> Decode(string s)
+        {
+            int i = 0;
+            List<string> finalList = new();
+            for (; i < s.Length; i++)
+            {
+                string count = "";
+                while (s[i] != '#')
+                {
+                    count += s[i++];
+                }
+
+                int wordLength = 0;
+                var eachStr = "";
+                int integerCount = int.Parse(count);
+                while (wordLength < integerCount)
+                {
+                    i++;
+                    eachStr += s[i];
+                    wordLength++;
+                }
+                finalList.Add(eachStr);
+            }
+            return finalList;
+        }
     }
 }

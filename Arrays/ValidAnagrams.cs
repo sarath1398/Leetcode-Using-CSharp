@@ -1,42 +1,44 @@
-namespace Arrays;
-
-public class ValidAnagrams : Solution
+namespace Arrays
 {
-    public bool IsAnagram(string s, string t) {
-        if (s.Length != t.Length)
+    public class ValidAnagrams
+    {
+        public static bool IsAnagram(string s, string t)
         {
-            return false;
-        }
-        else
-        {
-            Dictionary<char, int> frequencyMapFirst = new();
-            Dictionary<char, int> frequencyMapSecond = new();
-            for (int i = 0; i < s.Length; i++)
+            if (s.Length != t.Length)
             {
-                bool isAddedFirstString = frequencyMapFirst.TryAdd(s[i], 1);
-                bool isAddedSecondString = frequencyMapSecond.TryAdd(t[i],1);
-                if (!isAddedFirstString)
+                return false;
+            }
+            else
+            {
+                Dictionary<char, int> frequencyMapFirst = new();
+                Dictionary<char, int> frequencyMapSecond = new();
+                for (int i = 0; i < s.Length; i++)
                 {
-                    frequencyMapFirst[s[i]]++;
+                    bool isAddedFirstString = frequencyMapFirst.TryAdd(s[i], 1);
+                    bool isAddedSecondString = frequencyMapSecond.TryAdd(t[i], 1);
+                    if (!isAddedFirstString)
+                    {
+                        frequencyMapFirst[s[i]]++;
+                    }
+
+                    if (!isAddedSecondString)
+                    {
+                        frequencyMapSecond[t[i]]++;
+                    }
                 }
 
-                if (!isAddedSecondString)
+                for (int i = 0; i < s.Length; i++)
                 {
-                    frequencyMapSecond[t[i]]++;
+                    frequencyMapFirst.TryGetValue(s[i], out int count1);
+                    frequencyMapSecond.TryGetValue(s[i], out int count2);
+                    if (count1 != count2)
+                    {
+                        return false;
+                    }
                 }
             }
 
-            for (int i = 0; i < s.Length; i++)
-            {
-                frequencyMapFirst.TryGetValue(s[i],out int count1);
-                frequencyMapSecond.TryGetValue(s[i], out int count2);
-                if (count1 != count2)
-                {
-                    return false;
-                }
-            }
+            return true;
         }
-
-        return true;
     }
 }
