@@ -17,6 +17,13 @@ namespace Strings
 
         public class IsSubSequenceLC392
         {
+            // Approach : Two Pointers
+            // Time Complexity : O(n)
+            // Space Complexity : O(1)
+            // TODO : Handle this followup - Suppose there are lots of incoming s, say s1, s2, ..., sk
+            // where k >= 10^9 and you want to check one by one to see if t has its subsequence.
+            // In this scenario, how would you change your code?
+
             public static bool IsSubsequence(string s, string t)
             {
                 int shortPtr = 0;
