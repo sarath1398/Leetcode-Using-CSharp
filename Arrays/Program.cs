@@ -53,8 +53,11 @@
 
             //Console.WriteLine(BestTimeToBuyAndSellStocksII.MaxProfit([7, 1, 5, 3, 6, 4]));
 
-            Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 3, 2, 1])));
-            Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 2, 1])));
+            //Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 3, 2, 1])));
+            //Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 2, 1])));
+
+            Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([17, 18, 5, 4, 6, 1])));
+            Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([400])));
             
             Console.ReadKey();
         }
