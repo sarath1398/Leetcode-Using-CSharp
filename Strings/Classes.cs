@@ -14,5 +14,23 @@ namespace Strings
                 return abs;
             }
         }
+
+        public class IsSubSequenceLC392
+        {
+            public static bool IsSubsequence(string s, string t)
+            {
+                int shortPtr = 0;
+                for (int i = 0; i < t.Length; i++)
+                {
+                    if (shortPtr > s.Length - 1)
+                        break;
+                    else if (s[shortPtr] == t[i])
+                    {
+                        shortPtr++;
+                    }
+                }
+                return shortPtr == s.Length;
+            }
+        }
     }
 }
