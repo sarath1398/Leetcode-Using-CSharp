@@ -20,6 +20,7 @@ namespace Strings
             // Approach : Two Pointers
             // Time Complexity : O(n)
             // Space Complexity : O(1)
+            // Type : Easy
             // TODO : Handle this followup - Suppose there are lots of incoming s, say s1, s2, ..., sk
             // where k >= 10^9 and you want to check one by one to see if t has its subsequence.
             // In this scenario, how would you change your code?
@@ -37,6 +38,53 @@ namespace Strings
                     }
                 }
                 return shortPtr == s.Length;
+            }
+        }
+
+        public class AppendCharactersToStringLC2486
+        {
+            // Approach : Two Pointers
+            // Time Complexity : O(n)
+            // Space Complexity : O(1)
+            // Type : Medium
+            public static int AppendCharacters(string s, string t)
+            {
+                int shortPtr = 0;
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (shortPtr < t.Length && s[i] == t[shortPtr])
+                    {
+                        shortPtr++;
+                    }
+                }
+                return t.Length - shortPtr;
+            }
+        }
+
+        public class LengthOfLastWordLC58
+        {
+            // Approach : Two Pointers
+            // Time Complexity : O(n)
+            // Space Complexity : O(1)
+            // Type: Easy
+            public static int LengthOfLastWord(string s)
+            {
+                int revPtr = s.Length - 1;
+                int count = 0;
+                while (s[revPtr] == ' ')
+                    revPtr--;
+                for (int i = revPtr; i >= 0; i--)
+                {
+                    if (s[i] == ' ')
+                    {
+                        return count;
+                    }
+                    if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
+                    {
+                        count++;
+                    }
+                }
+                return count;
             }
         }
     }
