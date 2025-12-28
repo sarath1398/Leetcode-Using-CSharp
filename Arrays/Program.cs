@@ -56,10 +56,14 @@
             //Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 3, 2, 1])));
             //Console.WriteLine(String.Join(',',ConcatenationOfArray.GetConcatenation([1, 2, 1])));
 
-            Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([17, 18, 5, 4, 6, 1])));
-            Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([400])));
-            
-            Console.ReadKey();
+            //Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([17, 18, 5, 4, 6, 1])));
+            //Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([400])));
+
+            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd","bnrt","crmy","dtye"]));
+            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd", "bnrt", "crm", "dt"]));
+            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["ball","area","read","lady"]));
+
+            Console.ReadKey(); 
         }
     }
 }
