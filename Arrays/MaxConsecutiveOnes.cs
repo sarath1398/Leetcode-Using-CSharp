@@ -1,5 +1,9 @@
 ﻿namespace Arrays
 {
+    // Approach : Brute Force
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class MaxConsecutiveOnes
     {
         public static int FindMaxConsecutiveOnes(int[] nums)
