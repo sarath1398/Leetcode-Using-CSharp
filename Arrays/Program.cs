@@ -59,9 +59,12 @@
             //Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([17, 18, 5, 4, 6, 1])));
             //Console.WriteLine(String.Join(',', ReplaceElement_LC1299.ReplaceElements([400])));
 
-            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd","bnrt","crmy","dtye"]));
-            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd", "bnrt", "crm", "dt"]));
-            Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["ball","area","read","lady"]));
+            //Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd","bnrt","crmy","dtye"]));
+            //Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["abcd", "bnrt", "crm", "dt"]));
+            //Console.WriteLine(ValidWordSquareLC422.ValidWordSquare(["ball","area","read","lady"]));
+
+            Console.WriteLine(NumberOfSeniorCitizens.CountSeniors(["7868190130M7522", "5303914400F9211", "9273338290F4010"]));
+            Console.WriteLine(NumberOfSeniorCitizens.CountSeniors(["1313579440F2036", "2921522980M5644"]));
 
             Console.ReadKey(); 
         }
