@@ -90,6 +90,11 @@ namespace Strings
 
         public class LongestCommonPrefix
         {
+            // Approach : Brute Force
+            // Time Complexity : O(n^2)
+            // Space Complexity : O(1)
+            // Type: Easy
+            // TODO : Use Trie to find LCP of all strings
             public static string LongestCommonPrefixFn(string[] strs)
             {
                 string smallestString = "";
@@ -123,6 +128,62 @@ namespace Strings
                     }
                 }
                 return maxPrefixString;
+            }
+        }
+
+        public class StringMatchingInAnArray
+        {
+            // Approach : Brute Force
+            // Time Complexity : O(n^2)
+            // Space Complexity : O(n)
+            // Type: Easy
+
+            // Check whether s is a substring of t
+            // TODO : Use KMP algorithm for checking substring condition
+            public static bool IsSubstring(string s, string t)
+            {
+                for (int i = 0; i <= t.Length - s.Length; i++)
+                {
+                    int j = 0;
+                    while (j < s.Length && t[i + j] == s[j])
+                    {
+                        j++;
+                    }
+                    if (j == s.Length)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            public static IList<string> StringMatching(string[] words)
+            {
+                List<string> match = [];
+                for (int i = 0; i < words.Length; i++)
+                {
+                    for (int j = i + 1; j < words.Length; j++)
+                    {
+                        bool isSubstring = false;
+                        if (words[i].Length < words[j].Length)
+                        {
+                            isSubstring = IsSubstring(words[i], words[j]);
+                            if (isSubstring)
+                            {
+                                match.Add(words[i]);
+                            }
+                        }
+                        else if (words[j].Length < words[i].Length)
+                        {
+                            isSubstring = IsSubstring(words[j], words[i]);
+                            if (isSubstring)
+                            {
+                                match.Add(words[j]);
+                            }
+                        }
+                    }
+                }
+                HashSet<string> set = [.. match];
+                return [.. set];
             }
         }
     }

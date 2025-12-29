@@ -25,8 +25,13 @@ namespace Strings
             //Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("luffy is still joyboy"));
 
             // Longest Common Prefix
-            Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["flower", "flow", "flight"]));
-            Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["dog", "racecar", "car"]));
+            //Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["flower", "flow", "flight"]));
+            //Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["dog", "racecar", "car"]));
+
+            // String Matching in an Array
+            Console.WriteLine(String.Join(',',StringMatchingInAnArray.StringMatching(["mass", "as", "hero", "superhero"])));
+            Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["leetcode", "et", "code"])));
+            Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["blue", "green", "bu"])));
         }
     }
 }
