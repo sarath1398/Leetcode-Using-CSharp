@@ -87,5 +87,43 @@ namespace Strings
                 return count;
             }
         }
+
+        public class LongestCommonPrefix
+        {
+            public static string LongestCommonPrefixFn(string[] strs)
+            {
+                string smallestString = "";
+                string maxPrefixString = "";
+                int minLength = 201;
+                foreach (string str in strs)
+                {
+                    if (str.Length < minLength)
+                    {
+                        smallestString = str;
+                        minLength = str.Length;
+                    }
+                }
+                for (int i = 0; i < smallestString.Length; i++)
+                {
+                    int count = 0;
+                    for (int j = 0; j < strs.Length; j++)
+                    {
+                        if (smallestString[i] == strs[j][i])
+                        {
+                            count++;
+                        }
+                    }
+                    if (count == strs.Length)
+                    {
+                        maxPrefixString += smallestString[i];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                return maxPrefixString;
+            }
+        }
     }
 }

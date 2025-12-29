@@ -20,9 +20,13 @@ namespace Strings
             //Console.WriteLine(AppendCharactersToStringLC2486.AppendCharacters("z","abcde"));
 
             // Length of Last Word
-            Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("Hello World"));
-            Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("   fly me   to   the moon  "));
-            Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("luffy is still joyboy"));
+            //Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("Hello World"));
+            //Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("   fly me   to   the moon  "));
+            //Console.WriteLine(LengthOfLastWordLC58.LengthOfLastWord("luffy is still joyboy"));
+
+            // Longest Common Prefix
+            Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["flower", "flow", "flight"]));
+            Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["dog", "racecar", "car"]));
         }
     }
 }
