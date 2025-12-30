@@ -66,8 +66,11 @@
             //Console.WriteLine(NumberOfSeniorCitizens.CountSeniors(["7868190130M7522", "5303914400F9211", "9273338290F4010"]));
             //Console.WriteLine(NumberOfSeniorCitizens.CountSeniors(["1313579440F2036", "2921522980M5644"]));
 
-            Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
-            Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 0, 1, 1, 0, 1]));
+            //Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
+            //Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 0, 1, 1, 0, 1]));
+
+            Console.WriteLine(RemoveElement.RemoveElementFn([3, 2, 2, 3], 3));
+            Console.WriteLine(RemoveElement.RemoveElementFn([0, 1, 2, 2, 3, 0, 4, 2],2));
 
             Console.ReadKey(); 
         }
