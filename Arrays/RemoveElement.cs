@@ -2,6 +2,10 @@
 {
     public class RemoveElement
     {
+        // Approach : Two Pointers
+        // Time Complexity : O(n)
+        // Space Complexity : O(1) -> in-place
+        // Type: Easy
         public static int RemoveElementFn(int[] nums, int val)
         {
             int leftPtr = 0;
@@ -12,9 +16,7 @@
             {
                 if (nums[leftPtr] == val)
                 {
-                    int temp = nums[leftPtr];
-                    nums[leftPtr] = nums[rightPtr];
-                    nums[rightPtr] = temp;
+                    (nums[rightPtr], nums[leftPtr]) = (nums[leftPtr], nums[rightPtr]);
                     rightPtr--;
                 }
                 else

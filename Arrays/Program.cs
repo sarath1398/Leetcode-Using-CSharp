@@ -69,8 +69,11 @@
             //Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]));
             //Console.WriteLine(MaxConsecutiveOnes.FindMaxConsecutiveOnes([1, 0, 1, 1, 0, 1]));
 
-            Console.WriteLine(RemoveElement.RemoveElementFn([3, 2, 2, 3], 3));
-            Console.WriteLine(RemoveElement.RemoveElementFn([0, 1, 2, 2, 3, 0, 4, 2],2));
+            //Console.WriteLine(RemoveElement.RemoveElementFn([3, 2, 2, 3], 3));
+            //Console.WriteLine(RemoveElement.RemoveElementFn([0, 1, 2, 2, 3, 0, 4, 2],2));
+
+            Console.WriteLine(MajorityElement.MajorityElementFn([3, 2, 3]));
+            Console.WriteLine(MajorityElement.MajorityElementFn([2, 2, 1, 1, 1, 2, 2]));
 
             Console.ReadKey(); 
         }
