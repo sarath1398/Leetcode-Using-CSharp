@@ -72,8 +72,11 @@
             //Console.WriteLine(RemoveElement.RemoveElementFn([3, 2, 2, 3], 3));
             //Console.WriteLine(RemoveElement.RemoveElementFn([0, 1, 2, 2, 3, 0, 4, 2],2));
 
-            Console.WriteLine(MajorityElement.MajorityElementFn([3, 2, 3]));
-            Console.WriteLine(MajorityElement.MajorityElementFn([2, 2, 1, 1, 1, 2, 2]));
+            //Console.WriteLine(MajorityElement.MajorityElementFn([3, 2, 3]));
+            //Console.WriteLine(MajorityElement.MajorityElementFn([2, 2, 1, 1, 1, 2, 2]));
+
+            Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 1, 1],2));
+            Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 2, 3],3));
 
             Console.ReadKey(); 
         }
