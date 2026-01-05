@@ -75,8 +75,20 @@
             //Console.WriteLine(MajorityElement.MajorityElementFn([3, 2, 3]));
             //Console.WriteLine(MajorityElement.MajorityElementFn([2, 2, 1, 1, 1, 2, 2]));
 
-            Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 1, 1],2));
-            Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 2, 3],3));
+            //Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 1, 1],2));
+            //Console.WriteLine(SubarraySumEqualsK.SubarraySum([1, 2, 3],3));
+
+            NumMatrix matrix = new([
+                                    [3, 0, 1, 4, 2],
+                                    [5, 6, 3, 2, 1],
+                                    [1, 2, 0, 1, 5],
+                                    [4, 1, 0, 1, 7],
+                                    [1, 0, 3, 0, 5]
+                                  ]);
+
+            Console.WriteLine(matrix.SumRegion(2, 1, 4, 3));
+            Console.WriteLine(matrix.SumRegion(1, 1, 2, 2));
+            Console.WriteLine(matrix.SumRegion(1, 2, 2, 4));
 
             Console.ReadKey(); 
         }
