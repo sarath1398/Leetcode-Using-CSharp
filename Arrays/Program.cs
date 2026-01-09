@@ -102,9 +102,13 @@
             //                            ['.', '.', '.', '.', '8', '.', '.', '7', '9']
             //                         ]));
 
-            Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([100, 4, 200, 1, 3, 2]));
-            Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
-            Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([1, 0, 1, 2]));
+            //Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([100, 4, 200, 1, 3, 2]));
+            //Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
+            //Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([1, 0, 1, 2]));
+
+            Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([3, 2, 3])));
+            Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([1])));
+            Console.WriteLine(String.Join(',', MajorityElementII.MajorityElement([1, 2])));
 
             Console.ReadKey(); 
         }
