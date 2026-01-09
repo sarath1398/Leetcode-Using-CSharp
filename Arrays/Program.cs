@@ -106,9 +106,13 @@
             //Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]));
             //Console.WriteLine(LongestConsecutiveSubsequence.LongestConsecutive([1, 0, 1, 2]));
 
-            Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([3, 2, 3])));
-            Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([1])));
-            Console.WriteLine(String.Join(',', MajorityElementII.MajorityElement([1, 2])));
+            //Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([3, 2, 3])));
+            //Console.WriteLine(String.Join(',',MajorityElementII.MajorityElement([1])));
+            //Console.WriteLine(String.Join(',', MajorityElementII.MajorityElement([1, 2])));
+
+            Console.WriteLine(FirstMissingPositive.FirstMissingPositiveFn([1, 2, 0]));
+            Console.WriteLine(FirstMissingPositive.FirstMissingPositiveFn([3, 4, -1, 1]));
+            Console.WriteLine(FirstMissingPositive.FirstMissingPositiveFn([7, 8, 9, 11, 12]));
 
             Console.ReadKey(); 
         }
