@@ -120,6 +120,10 @@ namespace TwoPointers
         }
     }
 
+    // Approach : Two Pointers
+    // Time Complexity : O(m + n)
+    // Space Complexity : O(m + n)
+    // Type: Easy
     public class MergeStringsAlternatively
     {
         public static string MergeAlternately(string word1, string word2)
