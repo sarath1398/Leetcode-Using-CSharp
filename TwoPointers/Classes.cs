@@ -147,6 +147,10 @@ namespace TwoPointers
         }
     }
 
+    // Approach : Two Pointers
+    // Time Complexity : O(m + n)
+    // Space Complexity : O(m + n)
+    // Type: Easy
     public class MergeSortedArray
     {
         public static void Merge(int[] nums1, int m, int[] nums2, int n)
@@ -180,6 +184,36 @@ namespace TwoPointers
             }
 
             Console.WriteLine(String.Join(',',nums1));
+        }
+    }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
+    public class RemoveDuplicatesFromSorted
+    {
+        public static int RemoveDuplicates(int[] nums)
+        {
+            int fast = 1;
+            int slow = 0; // Index points to the unique elements in the sorted array
+            if (nums.Length == 1)
+                return 1;
+            else
+            {
+                while (fast < nums.Length)
+                {
+                    // If the first match of a unique element is found then
+                    // swap the slow + 1 pointer with the fast pointer
+                    if (nums[fast] != nums[slow])
+                    {
+                        slow++;
+                        (nums[fast], nums[slow]) = (nums[slow], nums[fast]);
+                    }
+                    fast++;
+                }
+            }
+            return slow + 1;
         }
     }
 }
