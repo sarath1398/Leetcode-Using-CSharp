@@ -1,4 +1,6 @@
-﻿namespace TwoPointers
+﻿using System.Text;
+
+namespace TwoPointers
 {
     public class TwoSum2
     {
@@ -115,6 +117,29 @@
                 rptr--;
             }
             return true;
+        }
+    }
+
+    public class MergeStringsAlternatively
+    {
+        public static string MergeAlternately(string word1, string word2)
+        {
+            StringBuilder sb = new();
+            int lptr1 = 0, lptr2 = 0;
+            while (lptr1 < word1.Length && lptr2 < word2.Length)
+            {
+                sb.Append(word1[lptr1++]);
+                sb.Append(word2[lptr2++]);
+            }
+            while (lptr1 < word1.Length)
+            {
+                sb.Append(word1[lptr1++]);
+            }
+            while (lptr2 < word2.Length)
+            {
+                sb.Append(word2[lptr2++]);
+            }
+            return sb.ToString();
         }
     }
 }

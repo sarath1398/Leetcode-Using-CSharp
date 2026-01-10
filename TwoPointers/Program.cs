@@ -17,8 +17,12 @@ class Program
         //Console.WriteLine(ValidPalindrome.IsPalindrome("race a car"));
         //Console.WriteLine(ValidPalindrome.IsPalindrome(" "));
 
-        Console.WriteLine(ValidPalindromeII.ValidPalindrome("aba"));
-        Console.WriteLine(ValidPalindromeII.ValidPalindrome("abca"));
-        Console.WriteLine(ValidPalindromeII.ValidPalindrome("abc"));
+        //Console.WriteLine(ValidPalindromeII.ValidPalindrome("aba"));
+        //Console.WriteLine(ValidPalindromeII.ValidPalindrome("abca"));
+        //Console.WriteLine(ValidPalindromeII.ValidPalindrome("abc"));
+
+        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abc", "pqr"));
+        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("ab","pqrs"));
+        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abcd","pq"));
     }
 }
