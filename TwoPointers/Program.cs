@@ -13,8 +13,12 @@ class Program
         //ReverseStringLC344.ReverseString(['h', 'e', 'l', 'l', 'o']);
         //ReverseStringLC344.ReverseString(['H', 'a', 'n', 'n', 'a', 'h']);
 
-        Console.WriteLine(ValidPalindrome.IsPalindrome("A man, a plan, a canal: Panama"));
-        Console.WriteLine(ValidPalindrome.IsPalindrome("race a car"));
-        Console.WriteLine(ValidPalindrome.IsPalindrome(" "));
+        //Console.WriteLine(ValidPalindrome.IsPalindrome("A man, a plan, a canal: Panama"));
+        //Console.WriteLine(ValidPalindrome.IsPalindrome("race a car"));
+        //Console.WriteLine(ValidPalindrome.IsPalindrome(" "));
+
+        Console.WriteLine(ValidPalindromeII.ValidPalindrome("aba"));
+        Console.WriteLine(ValidPalindromeII.ValidPalindrome("abca"));
+        Console.WriteLine(ValidPalindromeII.ValidPalindrome("abc"));
     }
 }

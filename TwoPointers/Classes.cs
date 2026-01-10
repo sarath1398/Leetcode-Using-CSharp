@@ -84,4 +84,37 @@
             return true;
         }
     }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class ValidPalindromeII
+    {
+        public static bool ValidPalindrome(string s)
+        {
+            bool IsPalindrome(int l, int r)
+            {
+                while (l < r)
+                {
+                    if (s[l] != s[r]) return false;
+                    l++;
+                    r--;
+                }
+                return true;
+            }
+
+            int lptr = 0, rptr = s.Length - 1;
+            while (lptr < rptr)
+            {
+                if (s[lptr] != s[rptr])
+                {
+                    return IsPalindrome(lptr + 1, rptr) || IsPalindrome(lptr, rptr - 1);
+                }
+                lptr++;
+                rptr--;
+            }
+            return true;
+        }
+    }
 }
