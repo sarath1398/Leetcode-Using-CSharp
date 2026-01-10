@@ -47,4 +47,41 @@
             Console.WriteLine("[" + string.Join(',',s) + "]");
         }
     }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class ValidPalindrome
+    {
+        public static bool IsPalindrome(string s)
+        {
+            int lptr = 0, rptr = s.Length - 1;
+            while (lptr < rptr)
+            {
+                if (!((s[lptr] >= 'A' && s[lptr] <= 'Z') || (s[lptr] >= 'a' && s[lptr] <= 'z')
+                || (s[lptr] >= '0' && s[lptr] <= '9')))
+                {
+                    lptr++;
+                }
+                if (!((s[rptr] >= 'A' && s[rptr] <= 'Z') || (s[rptr] >= 'a' && s[rptr] <= 'z')
+                || (s[rptr] >= '0' && s[rptr] <= '9')))
+                {
+                    rptr--;
+                }
+                if (((s[lptr] >= 'A' && s[lptr] <= 'Z') || (s[lptr] >= 'a' && s[lptr] <= 'z')
+                || (s[lptr] >= '0' && s[lptr] <= '9')) && ((s[rptr] >= 'A' && s[rptr] <= 'Z')
+                || (s[rptr] >= 'a' && s[rptr] <= 'z') || (s[rptr] >= '0' && s[rptr] <= '9')))
+                {
+                    if (Char.ToLowerInvariant(s[lptr]) != Char.ToLowerInvariant(s[rptr]))
+                    {
+                        return false;
+                    }
+                    lptr++;
+                    rptr--;
+                }
+            }
+            return true;
+        }
+    }
 }

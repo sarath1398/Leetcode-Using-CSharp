@@ -10,7 +10,11 @@ class Program
         //    Console.Write(index + " ");            
         //}
 
-        ReverseStringLC344.ReverseString(['h', 'e', 'l', 'l', 'o']);
-        ReverseStringLC344.ReverseString(['H', 'a', 'n', 'n', 'a', 'h']);
+        //ReverseStringLC344.ReverseString(['h', 'e', 'l', 'l', 'o']);
+        //ReverseStringLC344.ReverseString(['H', 'a', 'n', 'n', 'a', 'h']);
+
+        Console.WriteLine(ValidPalindrome.IsPalindrome("A man, a plan, a canal: Panama"));
+        Console.WriteLine(ValidPalindrome.IsPalindrome("race a car"));
+        Console.WriteLine(ValidPalindrome.IsPalindrome(" "));
     }
 }
