@@ -21,8 +21,12 @@ class Program
         //Console.WriteLine(ValidPalindromeII.ValidPalindrome("abca"));
         //Console.WriteLine(ValidPalindromeII.ValidPalindrome("abc"));
 
-        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abc", "pqr"));
-        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("ab","pqrs"));
-        Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abcd","pq"));
+        //Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abc", "pqr"));
+        //Console.WriteLine(MergeStringsAlternatively.MergeAlternately("ab","pqrs"));
+        //Console.WriteLine(MergeStringsAlternatively.MergeAlternately("abcd","pq"));
+
+        MergeSortedArray.Merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+        MergeSortedArray.Merge([1], 1, [], 0);
+        MergeSortedArray.Merge([0], 0, [1], 1);
     }
 }

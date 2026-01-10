@@ -146,4 +146,40 @@ namespace TwoPointers
             return sb.ToString();
         }
     }
+
+    public class MergeSortedArray
+    {
+        public static void Merge(int[] nums1, int m, int[] nums2, int n)
+        {
+
+            // nums1 value lies between nums1[0...m-1]
+            // nums2 value lies between nums2[0...n-1]
+            // zeroes lie between nums1[m...m+n-1]
+
+            int zeroEndPtr = m + n - 1;
+            int maxNum1Ptr = m - 1;
+            int maxNum2Ptr = n - 1;
+
+            // Fill the max value from the end
+            while (maxNum1Ptr >= 0 && maxNum2Ptr >= 0)
+            {
+                if (nums1[maxNum1Ptr] > nums2[maxNum2Ptr])
+                {
+                    nums1[zeroEndPtr--] = nums1[maxNum1Ptr--];
+                }
+                else
+                {
+                    nums1[zeroEndPtr--] = nums2[maxNum2Ptr--];
+                }
+            }
+
+            // Fill the leftover values of nums2 as per sorted order in nums1
+            for (int i = 0; i <= maxNum2Ptr; i++)
+            {
+                nums1[i] = nums2[i];
+            }
+
+            Console.WriteLine(String.Join(',',nums1));
+        }
+    }
 }
