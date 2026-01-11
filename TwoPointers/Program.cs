@@ -29,7 +29,21 @@ class Program
         //MergeSortedArray.Merge([1], 1, [], 0);
         //MergeSortedArray.Merge([0], 0, [1], 1);
 
-        Console.WriteLine(RemoveDuplicatesFromSorted.RemoveDuplicates([1, 1, 2]));
-        Console.WriteLine(RemoveDuplicatesFromSorted.RemoveDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+        //Console.WriteLine(RemoveDuplicatesFromSorted.RemoveDuplicates([1, 1, 2]));
+        //Console.WriteLine(RemoveDuplicatesFromSorted.RemoveDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+
+        foreach (var result in ThreeSum.ThreeSumFn([-1, 0, 1, 2, -1, -4]))
+        {
+            Console.WriteLine(string.Join(',', result));
+
+        }
+        foreach (var result in ThreeSum.ThreeSumFn([0, 1, 1]))
+        {
+            Console.WriteLine(string.Join(',', result));
+        }
+        foreach (var result in ThreeSum.ThreeSumFn([0, 0, 0]))
+        {
+            Console.WriteLine(string.Join(',', result));
+        }
     }
 }

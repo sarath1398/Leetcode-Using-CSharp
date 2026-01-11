@@ -216,4 +216,63 @@ namespace TwoPointers
             return slow + 1;
         }
     }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
+    public class ThreeSum
+    {
+        // Two sum implementation
+        public static List<List<int>> TwoSum(int[] nums, int left, int right, int target)
+        {
+            List<List<int>> result = [];
+            while (left < right)
+            {
+                if (nums[left] + nums[right] > target)
+                {
+                    right--;
+                }
+                else if (nums[left] + nums[right] < target)
+                {
+                    left++;
+                }
+                else
+                {
+                    result.Add([nums[left], nums[right]]);
+                    // Handle duplicates in both left and right elements
+                    while (left < right && nums[right] == nums[right - 1])
+                        right--;
+                    while (left < right && nums[left] == nums[left + 1])
+                        left++;
+                    left++;
+                    right--;
+                }
+            }
+            return result;
+        }
+        public static IList<IList<int>> ThreeSumFn(int[] nums)
+        {
+            List<IList<int>> result = [];
+            Array.Sort(nums);
+            for (int i = 0; i < nums.Length - 2; i++)
+            {
+                // If chosen element is greater than 0, then the next set of elements in triplet
+                // are also positive numbers which means a+b+c can never be 0
+                if (nums[i] > 0) break;
+                // Handle duplicates before choosing an element as target - chosenElement
+                if (i > 0 && nums[i] == nums[i - 1])
+                    continue;
+                int chosenElement = nums[i];
+                // Since target is 0 , then the two sum target should be 0 - chosenElement
+                // which is equal to -chosenElement
+                var twoSum = TwoSum(nums, i + 1, nums.Length - 1, -chosenElement);
+                foreach (var pair in twoSum)
+                {
+                    result.Add([chosenElement, pair[0], pair[1]]);
+                }
+            }
+            return result;
+        }
+    }
 }
