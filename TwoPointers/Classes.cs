@@ -218,9 +218,9 @@ namespace TwoPointers
     }
 
     // Approach : Two Pointers
-    // Time Complexity : O(n)
+    // Time Complexity : O(n^2)
     // Space Complexity : O(n)
-    // Type: Easy
+    // Type: Medium
     public class ThreeSum
     {
         // Two sum implementation
@@ -270,6 +270,61 @@ namespace TwoPointers
                 foreach (var pair in twoSum)
                 {
                     result.Add([chosenElement, pair[0], pair[1]]);
+                }
+            }
+            return result;
+        }
+    }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n^3)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class FourSum
+    {
+        public static IList<IList<int>> FourSumFn(int[] nums, int target)
+        {
+            // 4 sum is like 3 sum but with one extra loop for choosing second candidate
+            // and an actual target value instead of 0
+            List<IList<int>> result = [];
+            int n = nums.Length;
+            Array.Sort(nums);
+            for (int i = 0; i < n - 3; i++)
+            {
+                // handle duplicates
+                if (i > 0 && nums[i] == nums[i - 1])
+                    continue;
+                for (int j = i + 1; j < n - 2; j++)
+                {
+                    // handle duplicates
+                    if (j > i + 1 && nums[j] == nums[j - 1])
+                        continue;
+                    // two sum here
+                    int left = j + 1, right = n - 1;
+                    while (left < right)
+                    {
+                        long sum = (long)nums[i] + (long)nums[j] + (long)nums[left] + (long)nums[right];
+                        if (sum < (long)target)
+                        {
+                            left++;
+                        }
+                        else if (sum > (long)target)
+                        {
+                            right--;
+                        }
+                        else
+                        {
+                            result.Add([nums[i], nums[j], nums[left], nums[right]]);
+                            // handle duplicates
+                            while (left < right && nums[left] == nums[left + 1])
+                                left++;
+                            // handle duplicates
+                            while (left < right && nums[right] == nums[right - 1])
+                                right--;
+                            left++;
+                            right--;
+                        }
+                    }
                 }
             }
             return result;
