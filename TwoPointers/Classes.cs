@@ -340,6 +340,7 @@ namespace TwoPointers
         public static void Rotate(int[] nums, int k)
         {
             int n = nums.Length;
+            // Since rotation is cyclic in nature, mod it by length of the array
             k %= n;
             Reverse(nums, 0, n - 1);
             Reverse(nums, 0, k - 1);
@@ -358,20 +359,29 @@ namespace TwoPointers
         }
     }
 
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
     public class ContainerWithMostWater
     {
         public static int MaxArea(int[] height)
         {
             int n = height.Length;
+            // l is the left pointer from the start
             int l = 0;
+            // r is the right pointer from the end
             int r = n - 1;
+            // set initial area as -1 as area cannot be negative
             int area = -1;
             while (l < r)
             {
                 int heightFromRight = height[r];
                 int heightFromLeft = height[l];
                 int width = r - l;
+                // take the minimum of the heights for calculating area
                 area = Math.Max(area, Math.Min(heightFromRight, heightFromLeft) * width);
+                // Move pointer to the next increasing height
                 if (height[l] < height[r])
                 {
                     l++;
