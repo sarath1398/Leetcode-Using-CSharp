@@ -357,4 +357,31 @@ namespace TwoPointers
             }
         }
     }
+
+    public class ContainerWithMostWater
+    {
+        public static int MaxArea(int[] height)
+        {
+            int n = height.Length;
+            int l = 0;
+            int r = n - 1;
+            int area = -1;
+            while (l < r)
+            {
+                int heightFromRight = height[r];
+                int heightFromLeft = height[l];
+                int width = r - l;
+                area = Math.Max(area, Math.Min(heightFromRight, heightFromLeft) * width);
+                if (height[l] < height[r])
+                {
+                    l++;
+                }
+                else
+                {
+                    r--;
+                }
+            }
+            return area;
+        }
+    }
 }
