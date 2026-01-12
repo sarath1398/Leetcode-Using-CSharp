@@ -46,14 +46,17 @@ class Program
         //    Console.WriteLine(string.Join(',', result));
         //}
 
-        foreach (var result in FourSum.FourSumFn([1, 0, -1, 0, -2, 2],0))
-        {
-            Console.WriteLine(string.Join(',', result));
+        //foreach (var result in FourSum.FourSumFn([1, 0, -1, 0, -2, 2],0))
+        //{
+        //    Console.WriteLine(string.Join(',', result));
 
-        }
-        foreach (var result in FourSum.FourSumFn([2, 2, 2, 2, 2],8))
-        {
-            Console.WriteLine(string.Join(',', result));
-        }
+        //}
+        //foreach (var result in FourSum.FourSumFn([2, 2, 2, 2, 2],8))
+        //{
+        //    Console.WriteLine(string.Join(',', result));
+        //}
+
+        RotateArray.Rotate([1, 2, 3, 4, 5, 6, 7],3);
+        RotateArray.Rotate([-1, -100, 3, 99], 2);   
     }
 }
