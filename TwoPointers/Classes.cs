@@ -394,4 +394,39 @@ namespace TwoPointers
             return area;
         }
     }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(nlogn)
+    // Space Complexity : O(1)
+    // Type: Medium
+
+    // TODO : Work on counting sort + two pointers algorithm for O(n) time complexity
+    public class BoatsToSavePeople
+    {
+        public static int NumRescueBoats(int[] people, int limit)
+        {
+            Array.Sort(people);
+            int n = people.Length;
+            int l = 0, r = n - 1;
+            int count = 0;
+            while (l <= r)
+            {
+                // Check if two people can be accomodated in the boat
+                int maxMinSum = people[l] + people[r];
+                if (maxMinSum <= limit)
+                {
+                    l++;
+                    r--;
+                }
+                // if not, then it's given that only one person can be accomodated.
+                // So choose the person with maximum weight
+                else
+                {
+                    r--;
+                }
+                count += 1;
+            }
+            return count;
+        }
+    }
 }

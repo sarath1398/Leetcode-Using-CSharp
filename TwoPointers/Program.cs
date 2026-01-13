@@ -59,7 +59,11 @@ class Program
         //RotateArray.Rotate([1, 2, 3, 4, 5, 6, 7],3);
         //RotateArray.Rotate([-1, -100, 3, 99], 2);   
 
-        Console.WriteLine(ContainerWithMostWater.MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
-        Console.WriteLine(ContainerWithMostWater.MaxArea([1, 1]));
+        //Console.WriteLine(ContainerWithMostWater.MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+        //Console.WriteLine(ContainerWithMostWater.MaxArea([1, 1]));
+
+        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([1, 2], 3));
+        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 2, 2, 1], 3));
+        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 5, 3, 4], 5));
     }
 }
