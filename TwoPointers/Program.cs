@@ -62,8 +62,11 @@ class Program
         //Console.WriteLine(ContainerWithMostWater.MaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
         //Console.WriteLine(ContainerWithMostWater.MaxArea([1, 1]));
 
-        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([1, 2], 3));
-        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 2, 2, 1], 3));
-        Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 5, 3, 4], 5));
+        //Console.WriteLine(BoatsToSavePeople.NumRescueBoats([1, 2], 3));
+        //Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 2, 2, 1], 3));
+        //Console.WriteLine(BoatsToSavePeople.NumRescueBoats([3, 5, 3, 4], 5));
+
+        Console.WriteLine(TrappingRainWater.Trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+        Console.WriteLine(TrappingRainWater.Trap([4, 2, 0, 3, 2, 5]));
     }
 }

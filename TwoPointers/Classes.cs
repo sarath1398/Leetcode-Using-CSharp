@@ -429,4 +429,43 @@ namespace TwoPointers
             return count;
         }
     }
+
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(2n)
+    // Type: Hard
+
+    // TODO : Work on a O(1) space complexity solution
+    public class TrappingRainWater
+    {
+        public static int Trap(int[] height)
+        {
+            int n = height.Length;
+            int[] maxLeft = new int[n];
+            int[] maxRight = new int[n];
+            maxLeft[0] = height[0];
+
+            // For every i'th index store the maximum value of the element to the left
+            for (int i = 1; i < n; i++)
+            {
+                maxLeft[i] = Math.Max(maxLeft[i - 1], height[i]);
+            }
+
+            // For every i'th index, store the maximum value of the element to the right
+            maxRight[n - 1] = height[n - 1];
+            for (int i = n - 2; i >= 0; i--)
+            {
+                maxRight[i] = Math.Max(maxRight[i + 1], height[i]);
+            }
+
+            // Calculate the minimum between the left max and right max and subtract it with height
+            // That is the rain water trapped for that i'th index
+            int count = 0;            
+            for (int i = 0; i < n; i++)
+            {
+                count += Math.Min(maxRight[i], maxLeft[i]) - height[i];
+            }
+            return count;
+        }
+    }
 }
