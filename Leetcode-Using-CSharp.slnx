@@ -1,3 +1,9 @@
 <Solution>
+  <Project Path="Arrays/Arrays.csproj" />
+  <Project Path="Backtracking/Backtracking.csproj" />
+  <Project Path="Dynamic Programming/DynamicProgramming/DynamicProgramming.csproj" />
+  <Project Path="SlidingWindow/Sliding Window.csproj" />
   <Project Path="Stack/Stack.csproj" />
+  <Project Path="Strings/Strings.csproj" />
+  <Project Path="TwoPointers/TwoPointers.csproj" />
 </Solution>
