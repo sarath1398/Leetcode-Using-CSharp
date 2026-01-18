@@ -71,5 +71,45 @@
                 return stack.Count == 0;
             }
         }
-   }
+
+        public class ImplementStackUsingTwoQueues
+        {
+            //TODO : Come up with a single queue solution
+            public class MyStack
+            {
+                Queue<int> q1, q2;
+
+                public MyStack()
+                {
+                    q1 = new();
+                    q2 = new();
+                }
+
+                public void Push(int x)
+                {
+                    q2.Enqueue(x);
+                    while (q1.Count > 0)
+                    {
+                        q2.Enqueue(q1.Dequeue());
+                    }
+                    (q1, q2) = (q2, q1);
+                }
+
+                public int Pop()
+                {
+                    return q1.Dequeue();
+                }
+
+                public int Top()
+                {
+                    return q1.Peek();
+                }
+
+                public bool Empty()
+                {
+                    return q1.Count == 0;
+                }
+            }
+        }
+    }
 }
