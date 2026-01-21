@@ -219,5 +219,34 @@
                 return s2.Peek();
             }
         }
+
+        public class EvaluateReversePolishNotation
+        {
+            public static int EvalRPN(string[] tokens)
+            {
+                Stack<int> evaluator = new();
+
+                foreach (string token in tokens)
+                {
+                    if (token == "+" || token == "-" || token == "*" || token == "/")
+                    {
+                        int op2 = evaluator.Pop();
+                        int op1 = evaluator.Pop();
+                        if (token == "+")
+                            evaluator.Push(op1 + op2);
+                        else if (token == "-")
+                            evaluator.Push(op1 - op2);
+                        else if (token == "*")
+                            evaluator.Push(op1 * op2);
+                        else
+                            evaluator.Push(op1 / op2);
+                    }
+                    else
+                        evaluator.Push(int.Parse(token));
+                }
+
+                return evaluator.Pop();
+            }
+        }
     }
 }
