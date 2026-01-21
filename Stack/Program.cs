@@ -16,9 +16,14 @@ namespace Stack
             //Console.WriteLine(ValidParantheses.IsValid("([])"));
             //Console.WriteLine(ValidParantheses.IsValid("([)]"));
 
-            Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["2", "1", "+", "3", "*"]));
-            Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["4", "13", "5", "/", "+"]));
-            Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]));
+            //Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["2", "1", "+", "3", "*"]));
+            //Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["4", "13", "5", "/", "+"]));
+            //Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]));
+
+            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([5, 10, -5])) + "]");
+            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([8, -8])) + "]");
+            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([10, 2, -5])) + "]");
+            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([3, 5, -6, 2, -1, 4])) + "]");
         }
     }
 }

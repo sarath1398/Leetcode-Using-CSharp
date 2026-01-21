@@ -2,6 +2,11 @@
 {
    public class Classes
    {
+        // Leetcode : 682 - Baseball Game
+        // Approach : Simulation using Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
         public class BaseBallGame
         {
             public static int CalPoints(string[] operations)
@@ -44,6 +49,11 @@
             }
         }
 
+        // Leetcode : 20 - Valid Parentheses
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
         public class ValidParantheses
         {
             public static bool IsValid(string s)
@@ -72,6 +82,11 @@
             }
         }
 
+        // Leetcode : 225 - Implement Stack using Queues
+        // Approach : Two Queues
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
         public class ImplementStackUsingTwoQueues
         {
             //TODO : Come up with a single queue solution
@@ -112,6 +127,11 @@
             }
         }
 
+        // Leetcode : 232 - Implement Queue using Stacks
+        // Approach : Two Stacks
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy   
         public class ImplementQueueUsingTwoStacks
         {
             public class MyQueue
@@ -179,6 +199,11 @@
 
 
         // TODO: Come up with a single stack solution
+        // Leetcode : 155 - Min Stack
+        // Approach : Two Stacks
+        // Time Complexity : O(1)
+        // Space Complexity : O(n)
+        // Type: Medium 
         public class MinStack
         {
             private readonly Stack<int> s1;
@@ -220,6 +245,11 @@
             }
         }
 
+        // Leetcode : 150 - Evaluate Reverse Polish Notation
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
         public class EvaluateReversePolishNotation
         {
             public static int EvalRPN(string[] tokens)
@@ -246,6 +276,41 @@
                 }
 
                 return evaluator.Pop();
+            }
+        }
+
+        // Leetcode : 735 - Asteroid Collision
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class AsteroidCollisionProblem
+        {
+            public static int[] AsteroidCollision(int[] asteroids) {
+            Stack<int> asteroidStack = new();
+            foreach(int asteroid in asteroids)
+            {
+                int current = asteroid;
+                while (asteroidStack.Count > 0 && current < 0 && asteroidStack.Peek() > 0)
+                {
+                    if(-asteroid > asteroidStack.Peek())
+                    {
+                        asteroidStack.Pop();
+                    }
+                    else if (asteroidStack.Peek() == -asteroid)
+                    {
+                        asteroidStack.Pop();
+                        current = 0;
+                    }
+                    else
+                    {
+                        current = 0;
+                    }
+                }
+                if(current != 0 )
+                    asteroidStack.Push(asteroid);
+                }
+                return asteroidStack.Reverse().ToArray();
             }
         }
     }
