@@ -176,5 +176,48 @@
              * bool param_4 = obj.Empty();
              */
         }
+
+
+        // TODO: Come up with a single stack solution
+        public class MinStack
+        {
+            private readonly Stack<int> s1;
+            private readonly Stack<int> s2;
+
+            public MinStack()
+            {
+                s1 = new();
+                s2 = new();
+            }
+
+            public void Push(int val)
+            {
+                s1.Push(val);
+                if (s2.Count == 0)
+                {
+                    s2.Push(val);
+                }
+                else
+                {
+                    s2.Push(Math.Min(val, s2.Peek()));
+                }
+            }
+
+            public void Pop()
+            {
+                s1.Pop();
+                s2.Pop();
+            }
+
+            public int Top()
+            {
+                return s1.Peek();
+            }
+
+            public int GetMin()
+            {
+                return s2.Peek();
+            }
+        }
     }
 }

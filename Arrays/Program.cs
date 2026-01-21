@@ -115,7 +115,7 @@
             //Console.WriteLine(FirstMissingPositive.FirstMissingPositiveFn([7, 8, 9, 11, 12]));
 
             Console.WriteLine(MaximumSideLengthOfASquare.MaxSideLength([[1, 1, 3, 2, 4, 3, 2], [1, 1, 3, 2, 4, 3, 2], [1, 1, 3, 2, 4, 3, 2]], 4));
-            Console.WriteLine(MaximumSideLengthOfASquare.MaxSideLength([[2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2]],2));
+            Console.WriteLine(MaximumSideLengthOfASquare.MaxSideLength([[2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2]],1));
             
 
             Console.ReadKey(); 
