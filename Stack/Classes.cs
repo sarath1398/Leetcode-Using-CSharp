@@ -342,5 +342,35 @@
                 return result;
             }
         }
+
+        // Leetcode : 901 - Online Stock Span
+        // Approach : Monotonic Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class StockSpanner
+        {
+            private readonly Stack<(int price,int span)> _stack;
+
+            public StockSpanner() {
+                _stack = new();
+            }
+
+            public int Next(int price) {
+                int day = 1; // consider current day for span
+                // maintain strictly decreasing order
+                while(_stack.Count > 0 && _stack.Peek().price <= price)
+                {
+                    day += _stack.Pop().span;
+                }
+                _stack.Push((price,day));
+                return _stack.Peek().span;
+            }
+            /**
+            * Your StockSpanner object will be instantiated and called as such:
+            * StockSpanner obj = new StockSpanner();
+            * int param_1 = obj.Next(price);
+            */
+        }
     }
 }
