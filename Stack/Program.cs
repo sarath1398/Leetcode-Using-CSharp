@@ -20,10 +20,14 @@ namespace Stack
             //Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["4", "13", "5", "/", "+"]));
             //Console.WriteLine(EvaluateReversePolishNotation.EvalRPN(["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]));
 
-            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([5, 10, -5])) + "]");
-            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([8, -8])) + "]");
-            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([10, 2, -5])) + "]");
-            Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([3, 5, -6, 2, -1, 4])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([5, 10, -5])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([8, -8])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([10, 2, -5])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([3, 5, -6, 2, -1, 4])) + "]");
+
+            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([73, 74, 75, 71, 69, 72, 76, 73])) + "]");
+            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 40, 50, 60])) + "]");
+            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 60, 90])) + "]");
         }
     }
 }

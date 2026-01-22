@@ -313,5 +313,34 @@
                 return asteroidStack.Reverse().ToArray();
             }
         }
+
+        // Leetcode : 739 - Daily Temperatures
+        // Approach : Monotonic Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class DailyTemperatures {
+            public static int[] DailyTemperaturesFn(int[] temperatures) {
+                int n = temperatures.Length;
+                int[] result = new int[n];
+                Stack<(int,int)> monoStack = new(n);
+                for(int i = n - 1; i >= 0; i--)
+                {
+                    while(monoStack.Count > 0 && temperatures[i] >= monoStack.Peek().Item1)
+                    {
+                        monoStack.Pop();
+                    }
+                    
+                    if(monoStack.Count != 0)
+                    {
+                        (int maxTemp, int index) = monoStack.Peek();
+                        result[i] = index - i;
+                    }
+
+                    monoStack.Push((temperatures[i],i));
+                }
+                return result;
+            }
+        }
     }
 }
