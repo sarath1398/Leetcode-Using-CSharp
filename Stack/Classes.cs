@@ -333,7 +333,7 @@
                     
                     if(monoStack.Count != 0)
                     {
-                        (int maxTemp, int index) = monoStack.Peek();
+                        (_, int index) = monoStack.Peek();
                         result[i] = index - i;
                     }
 
