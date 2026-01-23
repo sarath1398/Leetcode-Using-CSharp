@@ -381,16 +381,22 @@
         public class CarFleet {
             public static int CarFleetFn(int target, int[] position, int[] speed) {
                 List<(int pos ,int speed)> pairs = [];
+                // create a list of pairs of position and speed
                 for(int i = 0; i < position.Length; i++)
                 {
                     pairs.Add((position[i],speed[i]));
                 }
+                // sort the pairs by position in descending order
                 pairs.Sort((a,b) => b.pos.CompareTo(a.pos));
                 Stack<double> stack = new();
+                // for each pair calculate the time to reach the target
                 foreach(var pair in pairs)
                 {
                     (int p,int s) = pair;
                     double time = (double)(target - p) / s;
+                    // stack keeps track of number of fleets
+                    // if the time taken by new pair is lesser than that of the previous pair then 
+                    // it will merge into the previous fleet
                     if (stack.Count == 0 || time > stack.Peek()) {
                         stack.Push(time);
                     }
@@ -408,29 +414,40 @@
             public static string SimplifyPathFn(string path) {
                 Stack<string> directories = new();
                 path += "/";
+
+                // keep track of the directory from root
                 string directory = "";
                 foreach(char p in path)
                 {
+                    // if the character is / then we have reached the end of the directory
                     if(p == '/')
                     {
+                        // check if the directory is .. and if yes then go back to previous directory
                         if(directory == "..")
                         {
+                            // ... if exists
                             if(directories.Count > 0)
                             {
                                 directories.Pop();
                             }
                         }
+                        // check if the directory is not empty and not current directory then add it to the stack
                         else if(directory != "" && directory != ".")
                         {
                             directories.Push(directory);
                         }
+
+                        // reset the directory
                         directory = "";
                     }
                     else
                     {
+                        // add the character to the directory
                         directory += p;
                     }
                 }
+
+                // return the path
                 return "/" + string.Join("/", directories.Reverse());
             }
         }
