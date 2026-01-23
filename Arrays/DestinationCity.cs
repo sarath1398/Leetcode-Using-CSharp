@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 1436 - Destination City
+    // Approach : HashSet / HashMap
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
     public class DestinationCity
     {
         public static string DestCity(IList<IList<string>> paths)

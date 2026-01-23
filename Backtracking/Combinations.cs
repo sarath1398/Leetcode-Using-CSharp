@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class Combinations
+    // Leetcode : 77 - Combinations
+    // Approach : Backtracking
+    // Time Complexity : O(k * C(n, k))
+    // Space Complexity : O(k)
+    // Type: Medium
+    public class Combinations
 {
     public void Backtrack(int n,int count, int start, List<int> tempList, List<IList<int>> results)
     {

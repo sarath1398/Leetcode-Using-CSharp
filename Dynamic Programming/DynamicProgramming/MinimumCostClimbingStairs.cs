@@ -1,6 +1,11 @@
 namespace DynamicProgramming;
 
-public class MinimumCostClimbingStairs : Program
+    // Leetcode : 746 - Min Cost Climbing Stairs
+    // Approach : Dynamic Programming
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class MinimumCostClimbingStairs : Program
 {
     public int MinCostClimbingStairs(int[] cost) {
         int step1 = cost[0];

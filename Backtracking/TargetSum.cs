@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class TargetSum
+    // Leetcode : 494 - Target Sum
+    // Approach : Backtracking
+    // Time Complexity : O(2^n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class TargetSum
 {
     int count = 0;
     public int FindTargetSumWays(int[] nums, int target)

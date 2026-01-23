@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class CombinationSum3
+    // Leetcode : 216 - Combination Sum III
+    // Approach : Backtracking
+    // Time Complexity : O(9! * k)
+    // Space Complexity : O(k)
+    // Type: Medium
+    public class CombinationSum3
 {
     public void BacktrackFn(int[] arr,List<int> tempList,int index,int maxLength,int target,List<IList<int>> result)
     {

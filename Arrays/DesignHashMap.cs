@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 706 - Design HashMap
+    // Approach : Array / LinkedList (Chaining)
+    // Time Complexity : O(1) avg
+    // Space Complexity : O(n)
+    // Type: Easy
     public class DesignHashMap
     {
         public class Node(int key, int value)

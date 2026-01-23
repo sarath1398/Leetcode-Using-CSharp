@@ -1,6 +1,11 @@
 namespace DynamicProgramming;
 
-public class CoinChange : Program
+    // Leetcode : 322 - Coin Change
+    // Approach : Dynamic Programming (Bottom Up)
+    // Time Complexity : O(n * amount)
+    // Space Complexity : O(amount)
+    // Type: Medium
+    public class CoinChange : Program
 {
     public int CoinChangeFn(int[] coins, int amount) {
         int[] cacheArray = new int[amount+1];

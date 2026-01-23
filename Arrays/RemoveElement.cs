@@ -1,11 +1,13 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 27 - Remove Element
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class RemoveElement
     {
-        // Approach : Two Pointers
-        // Time Complexity : O(n)
-        // Space Complexity : O(1) -> in-place
-        // Type: Easy
+
         public static int RemoveElementFn(int[] nums, int val)
         {
             int leftPtr = 0;

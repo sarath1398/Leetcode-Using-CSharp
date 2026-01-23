@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 229 - Majority Element II
+    // Approach : Boyer-Moore Voting Algorithm (Extended)
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
     internal class MajorityElementII
     {
         public static IList<int> MajorityElement(int[] nums)

@@ -1,6 +1,7 @@
 ﻿namespace Arrays
 {
-    // Approach : Brute Force
+    // Leetcode : 2678 - Number of Senior Citizens
+    // Approach : String Parsing
     // Time Complexity : O(n)
     // Space Complexity : O(1)
     // Type: Easy

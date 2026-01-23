@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 271 - Encode and Decode Strings
+    // Approach : Length Encoding
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
     public class EncodeAndDecode
     {
         public static string Encode(IList<string> strs)

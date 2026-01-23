@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class BinaryWatch
+    // Leetcode : 401 - Binary Watch
+    // Approach : Backtracking
+    // Time Complexity : O(1)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class BinaryWatch
 {
     public List<string> allValues = new();
     public void Backtrack(int idx, char[] binaryStr, int turns)

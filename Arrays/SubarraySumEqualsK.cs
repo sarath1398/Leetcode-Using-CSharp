@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 560 - Subarray Sum Equals K
+    // Approach : Prefix Sum Array + HashMap
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
     public class SubarraySumEqualsK
     {
         public static int SubarraySum(int[] nums, int k)

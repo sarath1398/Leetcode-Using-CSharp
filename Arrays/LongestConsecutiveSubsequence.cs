@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 128 - Longest Consecutive Sequence
+    // Approach : HashSet
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
     internal class LongestConsecutiveSubsequence
     {
         public static int LongestConsecutive(int[] nums)

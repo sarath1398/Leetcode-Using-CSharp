@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class CombinationSum2
+    // Leetcode : 40 - Combination Sum II
+    // Approach : Backtracking
+    // Time Complexity : O(2^n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class CombinationSum2
 {
     // TODO : Understand how the iterative version of CombinationSum2 program works.
     public void BackTrackFn(int[] arr,int n, int target,List<int> aux,int index,List<IList<int>> result)

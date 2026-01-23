@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 238 - Product of Array Except Self
+    // Approach : Prefix and Suffix Products
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
     public class ProductOfArraysExceptSelf
     {
         public static int[] ProductExceptSelf(int[] nums)

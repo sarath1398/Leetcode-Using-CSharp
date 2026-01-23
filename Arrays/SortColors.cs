@@ -1,11 +1,13 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 75 - Sort Colors
+    // Approach : Two Pointers (Dutch National Flag)
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
     public class SortColors
     {
-        // Approach : Two Pointers
-        // Time Complexity : O(n)
-        // Space Complexity : O(1)
-        // Type: Medium
+
         public static void SortColorsFn(int[] nums)
         {
             int lPtr = 0, rPtr = nums.Length - 1;

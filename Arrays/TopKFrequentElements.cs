@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 347 - Top K Frequent Elements
+    // Approach : HashMap + Sorting / Heap
+    // Time Complexity : O(nlogk) or O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
     public class TopKFrequentElements
     {
         public static int[] TopKFrequent(int[] nums, int k)

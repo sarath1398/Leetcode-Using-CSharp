@@ -2,6 +2,11 @@
 
 namespace Arrays
 {
+    // Leetcode : 705 - Design HashSet
+    // Approach : Array / LinkedList
+    // Time Complexity : O(1) avg
+    // Space Complexity : O(n)
+    // Type: Easy
     public class DesignHashSet
     {
         public class MyHashSet

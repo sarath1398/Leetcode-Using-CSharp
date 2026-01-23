@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class Subsets2
+    // Leetcode : 90 - Subsets II
+    // Approach : Backtracking
+    // Time Complexity : O(n * 2^n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class Subsets2
 {
     public void Backtrack(int[] nums,int start,List<int> tempList,List<IList<int>> results)
     {

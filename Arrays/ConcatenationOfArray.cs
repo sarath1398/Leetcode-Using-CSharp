@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 1929 - Concatenation of Array
+    // Approach : Simulation
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
     public class ConcatenationOfArray
     {
         public static int[] GetConcatenation(int[] nums)

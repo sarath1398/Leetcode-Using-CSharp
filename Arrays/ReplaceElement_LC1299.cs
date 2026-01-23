@@ -1,8 +1,13 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 1299 - Replace Elements with Greatest Element on Right Side
+    // Approach : Reverse Iteration
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class ReplaceElement_LC1299
     {
-        // Problem Type : Easy
+
         public static int[] ReplaceElements(int[] arr)
         {
             // Initial solution - Takes O(n) space complexity

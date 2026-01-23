@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 242 - Valid Anagram
+    // Approach : HashMap / Array Count
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class ValidAnagrams
     {
         public static bool IsAnagram(string s, string t)

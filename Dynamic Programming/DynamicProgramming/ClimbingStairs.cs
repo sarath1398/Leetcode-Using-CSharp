@@ -1,6 +1,11 @@
 namespace DynamicProgramming;
 
-public class ClimbingStairs : Program
+    // Leetcode : 70 - Climbing Stairs
+    // Approach : Dynamic Programming
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class ClimbingStairs : Program
 {
     public int ClimbStairs(int n) {
         if(n==0 || n == 1)

@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 304 - Range Sum Query 2D - Immutable
+    // Approach : 2D Prefix Sum
+    // Time Complexity : O(1) per query
+    // Space Complexity : O(n*m)
+    // Type: Medium
     public class NumMatrix
     {
 

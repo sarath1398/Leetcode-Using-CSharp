@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 49 - Group Anagrams
+    // Approach : HashMap with Sorted String Key / Character Count
+    // Time Complexity : O(n * k)
+    // Space Complexity : O(n * k)
+    // Type: Medium
     public class GroupAnagrams
     {
         public static IList<IList<string>> GroupAnagramsFn(string[] strs)

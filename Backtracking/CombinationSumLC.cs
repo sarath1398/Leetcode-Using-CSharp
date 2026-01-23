@@ -1,6 +1,11 @@
 namespace Backtracking;
 
-public class CombinationSumLC
+    // Leetcode : 39 - Combination Sum
+    // Approach : Backtracking
+    // Time Complexity : O(2^n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class CombinationSumLC
 {
         public void findAllCombinations(int[] arr, int n, int target, List<int> auxArray,int index,ref List<IList<int>> allSolutions)
         {

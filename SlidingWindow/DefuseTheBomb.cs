@@ -1,6 +1,11 @@
 namespace Sliding_Window;
 
-public class DefuseTheBomb
+    // Leetcode : 1652 - Defuse the Bomb
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
+    public class DefuseTheBomb
 {
     public int[] Decrypt(int[] code, int k) {
         int n = code.Length;

@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 36 - Valid Sudoku
+    // Approach : HashSet
+    // Time Complexity : O(9^2) -> O(1)
+    // Space Complexity : O(9^2) -> O(1)
+    // Type: Medium
     internal class ValidSudoku
     {
         public static bool IsValidSudoku(char[][] board)

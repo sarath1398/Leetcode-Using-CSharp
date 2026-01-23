@@ -2,6 +2,11 @@
 
 namespace TwoPointers
 {
+    // Leetcode : 167 - Two Sum II - Input Array Is Sorted
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
     public class TwoSum2
     {
         public int[] TwoSum(int[] numbers, int target)
@@ -31,6 +36,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 344 - Reverse String
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(1)
@@ -50,6 +56,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 125 - Valid Palindrome
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(1)
@@ -87,6 +94,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 680 - Valid Palindrome II
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(1)
@@ -120,6 +128,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 1768 - Merge Strings Alternately
     // Approach : Two Pointers
     // Time Complexity : O(m + n)
     // Space Complexity : O(m + n)
@@ -147,6 +156,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 88 - Merge Sorted Array
     // Approach : Two Pointers
     // Time Complexity : O(m + n)
     // Space Complexity : O(m + n)
@@ -187,6 +197,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 26 - Remove Duplicates from Sorted Array
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(n)
@@ -217,6 +228,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 15 - 3Sum
     // Approach : Two Pointers
     // Time Complexity : O(n^2)
     // Space Complexity : O(n)
@@ -276,6 +288,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 18 - 4Sum
     // Approach : Two Pointers
     // Time Complexity : O(n^3)
     // Space Complexity : O(n)
@@ -331,6 +344,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 189 - Rotate Array
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(1)
@@ -359,6 +373,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 11 - Container With Most Water
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(1)
@@ -395,11 +410,12 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 881 - Boats to Save People
     // Approach : Two Pointers
     // Time Complexity : O(nlogn)
     // Space Complexity : O(1)
     // Type: Medium
-
+    
     // TODO : Work on counting sort + two pointers algorithm for O(n) time complexity
     public class BoatsToSavePeople
     {
@@ -430,6 +446,7 @@ namespace TwoPointers
         }
     }
 
+    // Leetcode : 42 - Trapping Rain Water
     // Approach : Two Pointers
     // Time Complexity : O(n)
     // Space Complexity : O(2n)

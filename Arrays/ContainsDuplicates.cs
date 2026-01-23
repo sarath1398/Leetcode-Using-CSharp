@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 217 - Contains Duplicate
+    // Approach : HashSet
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
     public class ContainsDuplicates
     {
         public static bool ContainsDuplicate(int[] nums)

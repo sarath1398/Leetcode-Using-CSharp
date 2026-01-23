@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 26 - Remove Duplicates from Sorted Array
+    // Approach : Two Pointers
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class RemoveDuplicatesFromSortedArray
     {
         public static int RemoveDuplicates(int[] nums)

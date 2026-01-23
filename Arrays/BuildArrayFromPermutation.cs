@@ -1,5 +1,10 @@
 namespace Arrays
 {
+    // Leetcode : 1920 - Build Array from Permutation
+    // Approach : Simulation
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class BuildArrayFromPermutation
     {
         // TODO: Come up with an O(1) space complexity solution

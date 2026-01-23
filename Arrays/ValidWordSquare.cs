@@ -1,11 +1,13 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 422 - Valid Word Square
+    // Approach : Brute Force
+    // Time Complexity : O(n^2)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class ValidWordSquareLC422
     {
-        // Approach : Brute Force
-        // Time Complexity : O(n^2)
-        // Space Complexity : O(1)
-        // Type: Easy
+
         public static bool ValidWordSquare(List<string> words)
         {
             for (int i = 0; i < words.Count; i++)

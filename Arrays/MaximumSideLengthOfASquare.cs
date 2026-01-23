@@ -1,10 +1,12 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 1292 - Maximum Side Length of a Square with Sum Less than or Equal to Threshold
+    // Approach : Prefix Sum
+    // Time Complexity : O(n*m*Min(m,n))
+    // Space Complexity : O(n*m)
+    // Type: Medium
     internal class MaximumSideLengthOfASquare
     {
-        // Approach : Prefix Sum
-        // Time Complexity : O(n*m*Min(m,n))
-        // Space Complexity : O(n*m)
         // TODO : Work on Binary search variants and Optimal Sliding Window technique for this problem
 
         public static int MaxSideLength(int[][] mat, int threshold)

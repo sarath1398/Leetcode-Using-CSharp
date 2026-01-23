@@ -1,5 +1,10 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 41 - First Missing Positive
+    // Approach : Cyclic Sort / In-place Hashing
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Hard
     public class FirstMissingPositive
     {
         public static int FirstMissingPositiveFn(int[] nums)

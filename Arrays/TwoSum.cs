@@ -1,6 +1,11 @@
 ﻿namespace Arrays
 {
 
+    // Leetcode : 1 - Two Sum
+    // Approach : HashMap
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
     public class TwoSum
     {
         public static int[] TwoSumFn(int[] nums, int target)

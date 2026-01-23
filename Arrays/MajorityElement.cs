@@ -1,11 +1,13 @@
 ﻿namespace Arrays
 {
+    // Leetcode : 169 - Majority Element
+    // Approach : Greedy (Boyer Moore voting algorithm)
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
     public class MajorityElement
     {
-        // Approach : Greedy (Boyer Moore voting algorithm)
-        // Time Complexity : O(n)
-        // Space Complexity : O(1)
-        // Type: Easy
+
         public static int MajorityElementFn(int[] nums)
         {
             int initialMajority = nums[0];
