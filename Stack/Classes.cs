@@ -372,5 +372,31 @@
             * int param_1 = obj.Next(price);
             */
         }
+
+        // Leetcode : 853 - Car Fleet
+        // Approach : Stack
+        // Time Complexity : O(nlogn)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class CarFleet {
+            public static int CarFleetFn(int target, int[] position, int[] speed) {
+                List<(int pos ,int speed)> pairs = [];
+                for(int i = 0; i < position.Length; i++)
+                {
+                    pairs.Add((position[i],speed[i]));
+                }
+                pairs.Sort((a,b) => b.pos.CompareTo(a.pos));
+                Stack<double> stack = new();
+                foreach(var pair in pairs)
+                {
+                    (int p,int s) = pair;
+                    double time = (double)(target - p) / s;
+                    if (stack.Count == 0 || time > stack.Peek()) {
+                        stack.Push(time);
+                    }
+                }
+                return stack.Count;
+            }
+        }
     }
 }

@@ -25,9 +25,13 @@ namespace Stack
             // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([10, 2, -5])) + "]");
             // Console.WriteLine("[" + string.Join(", ", AsteroidCollisionProblem.AsteroidCollision([3, 5, -6, 2, -1, 4])) + "]");
 
-            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([73, 74, 75, 71, 69, 72, 76, 73])) + "]");
-            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 40, 50, 60])) + "]");
-            Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 60, 90])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([73, 74, 75, 71, 69, 72, 76, 73])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 40, 50, 60])) + "]");
+            // Console.WriteLine("[" + string.Join(", ", DailyTemperatures.DailyTemperaturesFn([30, 60, 90])) + "]");
+
+            Console.WriteLine(CarFleet.CarFleetFn(12, [10,8,0,5,3], [2,4,1,1,3]));
+            Console.WriteLine(CarFleet.CarFleetFn(10, [3], [3]));
+            Console.WriteLine(CarFleet.CarFleetFn(100, [0,2,4], [4,2,1]));
         }
     }
 }
