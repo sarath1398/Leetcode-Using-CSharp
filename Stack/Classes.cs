@@ -398,5 +398,41 @@
                 return stack.Count;
             }
         }
+
+        // Leetcode : 71 - Simplify Path
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class SimplifyPath {
+            public static string SimplifyPathFn(string path) {
+                Stack<string> directories = new();
+                path += "/";
+                string directory = "";
+                foreach(char p in path)
+                {
+                    if(p == '/')
+                    {
+                        if(directory == "..")
+                        {
+                            if(directories.Count > 0)
+                            {
+                                directories.Pop();
+                            }
+                        }
+                        else if(directory != "" && directory != ".")
+                        {
+                            directories.Push(directory);
+                        }
+                        directory = "";
+                    }
+                    else
+                    {
+                        directory += p;
+                    }
+                }
+                return "/" + string.Join("/", directories.Reverse());
+            }
+        }
     }
 }
