@@ -388,15 +388,16 @@
                 }
                 // sort the pairs by position in descending order
                 pairs.Sort((a,b) => b.pos.CompareTo(a.pos));
+                // stack keeps track of number of fleets
                 Stack<double> stack = new();
                 // for each pair calculate the time to reach the target
                 foreach(var pair in pairs)
                 {
                     (int p,int s) = pair;
                     double time = (double)(target - p) / s;
-                    // stack keeps track of number of fleets
                     // if the time taken by new pair is lesser than that of the previous pair then 
                     // it will merge into the previous fleet
+                    // else push into the stack to indicate that the new element will form the new fleet
                     if (stack.Count == 0 || time > stack.Peek()) {
                         stack.Push(time);
                     }
