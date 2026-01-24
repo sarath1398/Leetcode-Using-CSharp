@@ -452,5 +452,54 @@
                 return "/" + string.Join("/", directories.Reverse());
             }
         }
+
+        // Leetcode : 394 - Decode String
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(2n)
+        // Type: Medium
+        public class DecodeString {
+            public static string DecodeStringFn(string s) {
+                Stack<string> strings = new();
+                Stack<int> nums = new();
+                string cur = "";
+                int k = 0;
+
+                foreach(char c in s)
+                {
+                    if(c>='0' && c<='9')
+                    {
+                        k = k * 10 + (c - '0');
+                    }
+
+                    // construct the k
+                    else if(c == '[')
+                    {
+                        strings.Push(cur);
+                        nums.Push(k);
+                        cur = "";
+                        k = 0;
+                    }
+
+                    // construct the k[string]
+                    else if(c == ']')
+                    {
+                        string temp = cur;
+                        cur = strings.Pop();
+                        int count = nums.Pop();
+                        for (int i = 0; i < count; i++) {
+                            cur += temp;
+                        }
+                    }
+
+                    else
+                    {
+                        cur+=c;
+                    }
+                }
+
+                return cur;
+            }
+        }
     }
 }

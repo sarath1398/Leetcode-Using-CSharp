@@ -33,11 +33,15 @@ namespace Stack
             // Console.WriteLine(CarFleet.CarFleetFn(10, [3], [3]));
             // Console.WriteLine(CarFleet.CarFleetFn(100, [0,2,4], [4,2,1]));
 
-            Console.WriteLine(SimplifyPath.SimplifyPathFn("/home/"));
-            Console.WriteLine(SimplifyPath.SimplifyPathFn("/home//foo/"));
-            Console.WriteLine(SimplifyPath.SimplifyPathFn("/home/user/Documents/../Pictures"));
-            Console.WriteLine(SimplifyPath.SimplifyPathFn("/../"));
-            Console.WriteLine(SimplifyPath.SimplifyPathFn("/.../a/../b/c/../d/./"));
+            // Console.WriteLine(SimplifyPath.SimplifyPathFn("/home/"));
+            // Console.WriteLine(SimplifyPath.SimplifyPathFn("/home//foo/"));
+            // Console.WriteLine(SimplifyPath.SimplifyPathFn("/home/user/Documents/../Pictures"));
+            // Console.WriteLine(SimplifyPath.SimplifyPathFn("/../"));
+            // Console.WriteLine(SimplifyPath.SimplifyPathFn("/.../a/../b/c/../d/./"));
+
+            Console.WriteLine(DecodeString.DecodeStringFn("3[a]2[bc]"));
+            Console.WriteLine(DecodeString.DecodeStringFn("3[a2[c]]"));
+            Console.WriteLine(DecodeString.DecodeStringFn("2[abc]3[cd]ef"));
         }
     }
 }
