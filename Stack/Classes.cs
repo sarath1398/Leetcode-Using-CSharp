@@ -501,5 +501,60 @@
                 return cur;
             }
         }
+        
+        // Leetcode : 895 - Maximum Frequency Stack
+        // Approach : Stack
+        // Time Complexity : Amortized O(1)
+        // Space Complexity : Amortized O(1)
+        // Type: Hard
+        public class FreqStack {
+
+            // counter to count frequency of each element
+            Dictionary<int,int> freqMap;
+
+            // have a {freq : Stack of elements} mapping
+            Dictionary<int,Stack<int>> freqStackMap;
+            int maxCount;
+
+            public FreqStack() {
+                freqMap = new();
+                freqStackMap = new();
+                maxCount = 0;
+            }
+            
+            public void Push(int val) {
+                
+                // update counter
+                freqMap[val] = freqMap.ContainsKey(val) ? 
+                                    freqMap[val] + 1 
+                                    : 1;
+                
+                // update the stack of frequency-stack mapper if exists or create new one
+                int count = freqMap[val];
+                if (!freqStackMap.ContainsKey(count)) {
+                    freqStackMap[count] = new Stack<int>();
+                }
+                
+                freqStackMap[count].Push(val);
+
+                // keep max count handy
+                maxCount = Math.Max(maxCount, count);
+            }
+            
+            public int Pop() {
+                int val = freqStackMap[maxCount].Pop();
+                // update counter
+                freqMap[val]--;
+
+                // check if there is no elements with maxCount after pop.
+                // If not, then decrement maxcount
+                if(freqStackMap[maxCount].Count==0)
+                {
+                    maxCount--;
+                }
+
+                return val;
+            }
+        }
     }
 }
