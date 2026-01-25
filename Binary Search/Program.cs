@@ -9,9 +9,9 @@ namespace Binary_Search
             // Console.WriteLine(BinarySearch.Search([-1, 0, 3, 5, 9, 12], 9));
             // Console.WriteLine(BinarySearch.Search([-1, 0, 3, 5, 9, 12], 2));
 
-            Console.WriteLine(SearchInsertPosition.SearchInsert(new int[] { 1, 3, 5, 6 }, 5));
-            Console.WriteLine(SearchInsertPosition.SearchInsert(new int[] { 1, 3, 5, 6 }, 2));
-            Console.WriteLine(SearchInsertPosition.SearchInsert(new int[] { 1, 3, 5, 6 }, 7));
+            Console.WriteLine(SearchInsertPosition.SearchInsert([1, 3, 5, 6], 5));
+            Console.WriteLine(SearchInsertPosition.SearchInsert([1, 3, 5, 6], 2));
+            Console.WriteLine(SearchInsertPosition.SearchInsert([1, 3, 5, 6], 7));
         }
     }
 }
