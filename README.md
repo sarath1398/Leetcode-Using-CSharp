@@ -68,6 +68,9 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[895 - Maximum Frequency Stack](Stack/Classes.cs#L504)**
 * **[84 - Largest Rectangle in Histogram](Stack/Classes.cs#L564)**
 
+### Binary Search
+* **[704 - Binary Search](Binary%20Search/Classes.cs#L5)**
+
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**
 * **[58 - Length of Last Word](Strings/Classes.cs#L67)**
@@ -90,4 +93,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[680 - Valid Palindrome II](TwoPointers/Classes.cs#L97)**
 * **[881 - Boats to Save People](TwoPointers/Classes.cs#L413)**
 * **[1768 - Merge Strings Alternately](TwoPointers/Classes.cs#L131)**
+
 
