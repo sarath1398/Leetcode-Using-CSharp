@@ -66,6 +66,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[901 - Online Stock Span](Stack/Classes.cs#L346)**
 * **[394 - Decode String](Stack/Classes.cs#L453)**
 * **[895 - Maximum Frequency Stack](Stack/Classes.cs#L504)**
+* **[84 - Largest Rectangle in Histogram](Stack/Classes.cs#L564)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**

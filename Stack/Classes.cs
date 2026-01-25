@@ -556,5 +556,36 @@
                 return val;
             }
         }
+
+        // Leetcode : 84 - Largest Rectangle in Histogram
+        // Approach : Stack
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Hard
+        public class LargestRectangleInHistogram {
+            public static int LargestRectangleInHistogramFn(int[] heights) {
+                Stack<(int height, int index)> rectangleSpan = new();
+                int n = heights.Length;
+                int maxArea = 0; 
+                for(int i=0;i<n;i++)
+                {
+                    int leftBoundary = i;
+                    // maintain a strictly increasing monotonic stack
+                    while(rectangleSpan.Count > 0 && rectangleSpan.Peek().height > heights[i])
+                    {
+                        (int height,int index) = rectangleSpan.Pop();
+                        maxArea = Math.Max(maxArea,height * (i - index));
+                        leftBoundary = Math.Min(leftBoundary,index);
+                    }
+                    rectangleSpan.Push((heights[i],leftBoundary));
+                } 
+                while(rectangleSpan.Count > 0)
+                {
+                    (int height, int index) = rectangleSpan.Pop();
+                    maxArea = Math.Max(maxArea,height * (n - index));
+                }
+                return maxArea;
+            }
+        }
     }
 }

@@ -39,9 +39,12 @@ namespace Stack
             // Console.WriteLine(SimplifyPath.SimplifyPathFn("/../"));
             // Console.WriteLine(SimplifyPath.SimplifyPathFn("/.../a/../b/c/../d/./"));
 
-            Console.WriteLine(DecodeString.DecodeStringFn("3[a]2[bc]"));
-            Console.WriteLine(DecodeString.DecodeStringFn("3[a2[c]]"));
-            Console.WriteLine(DecodeString.DecodeStringFn("2[abc]3[cd]ef"));
+            // Console.WriteLine(DecodeString.DecodeStringFn("3[a]2[bc]"));
+            // Console.WriteLine(DecodeString.DecodeStringFn("3[a2[c]]"));
+            // Console.WriteLine(DecodeString.DecodeStringFn("2[abc]3[cd]ef"));
+
+            Console.WriteLine(LargestRectangleInHistogram.LargestRectangleInHistogramFn([2,1,5,6,2,3]));
+            Console.WriteLine(LargestRectangleInHistogram.LargestRectangleInHistogramFn([2,4]));
         }
     }
 }
