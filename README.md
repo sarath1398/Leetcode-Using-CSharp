@@ -70,7 +70,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 
 ### Binary Search
 * **[704 - Binary Search](Binary%20Search/Classes.cs#L5)**
-* **[35 - Search Insert Position](Binary%20Search/Classes.cs#L35)**
+* **[35 - Search Insert Position](Binary%20Search/Classes.cs#L43)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**
