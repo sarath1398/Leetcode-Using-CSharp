@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="Arrays/Arrays.csproj" />
   <Project Path="Backtracking/Backtracking.csproj" />
+  <Project Path="Binary Search/Binary Search.csproj" Id="999d07da-108c-410d-930c-939f86f839ee" />
   <Project Path="Dynamic Programming/DynamicProgramming/DynamicProgramming.csproj" />
   <Project Path="SlidingWindow/Sliding Window.csproj" />
   <Project Path="Stack/Stack.csproj" />

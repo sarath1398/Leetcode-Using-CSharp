@@ -9,7 +9,7 @@
         // Type: Easy
         public class BinarySearch
         {
-            public int Search(int[] nums, int target)
+            public static int Search(int[] nums, int target)
             {
                 int start = 0;
                 int end = nums.Length - 1;

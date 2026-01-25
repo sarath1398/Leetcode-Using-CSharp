@@ -2,7 +2,7 @@ namespace Strings
 {
     public class Classes
     {
-    // Leetcode : 3110 - Score of a String
+        // Leetcode : 3110 - Score of a String
         // Approach : String Iteration
         // Time Complexity : O(n)
         // Space Complexity : O(1)
@@ -25,10 +25,13 @@ namespace Strings
         // Time Complexity : O(n)
         // Space Complexity : O(1)
         // Type : Easy
-            // TODO : Handle this followup - Suppose there are lots of incoming s, say s1, s2, ..., sk
-            // where k >= 10^9 and you want to check one by one to see if t has its subsequence.
-            // In this scenario, how would you change your code?
 
+        // TODO : Handle this followup - Suppose there are lots of incoming s, say s1, s2, ..., sk
+        // where k >= 10^9 and you want to check one by one to see if t has its subsequence.
+        // In this scenario, how would you change your code?
+
+        public class IsSubSequenceLC392
+        {
             public static bool IsSubsequence(string s, string t)
             {
                 int shortPtr = 0;
@@ -45,11 +48,16 @@ namespace Strings
             }
         }
 
+
+
         // Leetcode : 2486 - Append Characters to String to Make Subsequence
         // Approach : Two Pointers
         // Time Complexity : O(n)
         // Space Complexity : O(1)
         // Type : Medium
+
+        public class AppendCharactersToStringLC2486
+        {
             public static int AppendCharacters(string s, string t)
             {
                 int shortPtr = 0;
@@ -64,11 +72,15 @@ namespace Strings
             }
         }
 
+
         // Leetcode : 58 - Length of Last Word
         // Approach : Two Pointers
         // Time Complexity : O(n)
         // Space Complexity : O(1)
         // Type: Easy
+
+        public class LengthOfLastWordLC58
+        {
             public static int LengthOfLastWord(string s)
             {
                 int revPtr = s.Length - 1;
@@ -90,12 +102,16 @@ namespace Strings
             }
         }
 
+
         // Leetcode : 14 - Longest Common Prefix
         // Approach : Brute Force
         // Time Complexity : O(n^2)
         // Space Complexity : O(1)
         // Type: Easy
-            // TODO : Use Trie to find LCP of all strings
+        // TODO : Use Trie to find LCP of all strings
+
+        public class LongestCommonPrefix
+        {
             public static string LongestCommonPrefixFn(string[] strs)
             {
                 string smallestString = "";
@@ -138,8 +154,11 @@ namespace Strings
         // Space Complexity : O(n)
         // Type: Easy
 
-            // Check whether s is a substring of t
-            // TODO : Use KMP algorithm for checking substring condition
+        // Check whether s is a substring of t
+        // TODO : Use KMP algorithm for checking substring condition
+
+        public class StringMatchingInAnArray
+        {
             public static bool IsSubstring(string s, string t)
             {
                 for (int i = 0; i <= t.Length - s.Length; i++)
