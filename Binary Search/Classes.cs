@@ -80,5 +80,51 @@
                 return -1;
             }
         }
+
+        // Leetcode : 374 - Guess Number Higher or Lower
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Easy
+
+        // Optional implementation of Guess method for better clarity
+        public class GuessGame {
+            public static int PICK = 0;
+            public static int guess(int num) {
+                if (num < PICK) return 1;
+                else if (num > PICK) return -1;
+                else return 0;
+
+            }
+        }
+
+        // Leetcode solution starts here
+        public class GuessNumber : GuessGame {
+            public static int GuessNumberFn(int n) {
+                int start = 1;
+                int end = n;
+
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    int val = guess(mid);
+                    if (val == 0)
+                    {
+                        return mid;
+                    }
+                    else if (val == 1)
+                    {
+                        start = mid + 1;
+                    }
+                    else
+                    {
+                        end = mid - 1;
+                    }
+                }
+                
+                // code never reaches here
+                return -1;
+            }
+        }
     }
 }
