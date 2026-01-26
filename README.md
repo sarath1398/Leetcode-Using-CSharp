@@ -74,6 +74,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[374 - Guess Number Higher or Lower](Binary%20Search/Classes.cs#L101)**
 * **[69 - Sqrt(x)](Binary%20Search/Classes.cs#L130)**
 * **[74 - Search a 2D Matrix](Binary%20Search/Classes.cs#L167)**
+* **[875 - Koko Eating Bananas](Binary%20Search/Classes.cs#L221)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**

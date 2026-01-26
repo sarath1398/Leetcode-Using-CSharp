@@ -217,5 +217,52 @@
                 return false;
             }
         }
+
+        // Leetcode : 875 - Koko Eating Bananas
+        // Approach : Binary Search
+        // Time Complexity : O(nlogn)
+        // Space Complexity : O(1)
+        // Type: Easy
+        public class KokoEatingBananas {
+            // Helper function to check if koko can eat all piles within h hours at k bananas per hour speed
+            public static bool IsPileEatable(int[] piles,int h,int k)
+            {
+                foreach (int pile in piles)
+                {
+                    h -= (int)Math.Ceiling((double)pile / k);
+                    if (h < 0) return false;
+                }
+                
+                return true;
+            }
+            public static int MinEatingSpeed(int[] piles, int h) {
+                int maxPile = -1;
+                foreach(int pile in piles)
+                {
+                    maxPile = Math.Max(maxPile,pile);
+                }
+                // search space - [1,...,maxPile]
+                int start = 1;
+                int end = maxPile;
+                int k = maxPile;
+                while(start <= end)
+                {
+                    int mid = start + (end-start) / 2;
+                    bool isEatable = IsPileEatable(piles,h,mid);
+                    if(isEatable == true)
+                    {
+                        // assign smaller value to k till the start and end cross each other
+                        end = mid - 1;
+                        k = Math.Min(k,mid);
+                    }
+                    else
+                    {
+                        // if not eatable, then increase the speed
+                        start = mid + 1;
+                    }
+                }
+                return k;
+            }
+        }
     }
 }
