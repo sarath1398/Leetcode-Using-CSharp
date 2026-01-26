@@ -264,5 +264,57 @@
                 return k;
             }
         }
+
+        // Leetcode : 1011 - Capacity To Ship Packages In N Days
+        // Approach : Binary Search
+        // Time Complexity : O(nlogn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class ShipWithinDays {
+            public static bool IsShippable(int[] weights, int days, int capacity)
+            {
+                int usedDays = 1;
+                int currentLoad = 0;
+
+                foreach (int w in weights)
+                {
+                    if (currentLoad + w > capacity)
+                    {
+                        usedDays++;
+                        currentLoad = 0;
+                    }
+                    currentLoad += w;
+                }
+                return usedDays <= days;
+            }
+
+            public static int ShipWithinDaysFn(int[] weights, int days) {
+                int start = 0;
+                int sum = 0;
+                int n = weights.Length;
+                foreach(int weight in weights)
+                {
+                    start = Math.Max(start,weight);
+                    sum+=weight;
+                }
+                int end = sum;
+                int leastWeight = sum;
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    bool isShippable = IsShippable(weights,days,mid);
+                    if(isShippable)
+                    {
+                        leastWeight = Math.Min(leastWeight,mid);
+                        end = mid - 1;
+                    }
+                    else
+                    {
+                        start = mid + 1;
+                    }
+                }
+                return leastWeight;
+            }
+        }
     }
 }
