@@ -13,11 +13,14 @@ namespace Binary_Search
             //Console.WriteLine(SearchInsertPosition.SearchInsert([1, 3, 5, 6], 2));
             //Console.WriteLine(SearchInsertPosition.SearchInsert([1, 3, 5, 6], 7));
 
-            GuessNumber.PICK = 6;
-            Console.WriteLine(GuessNumber.GuessNumberFn(10));
-            GuessNumber.PICK = 1;
-            Console.WriteLine(GuessNumber.GuessNumberFn(1));
-            Console.WriteLine(GuessNumber.GuessNumberFn(2));
+            // GuessNumber.PICK = 6;
+            // Console.WriteLine(GuessNumber.GuessNumberFn(10));
+            // GuessNumber.PICK = 1;
+            // Console.WriteLine(GuessNumber.GuessNumberFn(1));
+            // Console.WriteLine(GuessNumber.GuessNumberFn(2));
+
+            Console.WriteLine(Sqrt.MySqrt(4));
+            Console.WriteLine(Sqrt.MySqrt(8));
         }
     }
 }

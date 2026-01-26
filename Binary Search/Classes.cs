@@ -126,5 +126,42 @@
                 return -1;
             }
         }
+
+        // Leetcode : 69 - Sqrt(x)
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Easy
+        public class Sqrt
+        {
+            public static int MySqrt(int x)
+            {
+                int start = 0;
+                int end = x;
+                int res = 0;
+                while (start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    // Reminder : Store multiplications in long data type
+                    // if you think the value might overflow
+                    long guess = (long)mid * mid;
+                    if (guess > x)
+                    {
+                        end = mid - 1;
+                    }
+                    else if (guess < x)
+                    {
+                        start = mid + 1;
+                        // store approximation value here
+                        res = mid;
+                    }
+                    else
+                    {
+                        return mid;
+                    }
+                }
+                return res;
+            }
+        }
     }
 }
