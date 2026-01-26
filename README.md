@@ -73,6 +73,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[35 - Search Insert Position](Binary%20Search/Classes.cs#L43)**
 * **[374 - Guess Number Higher or Lower](Binary%20Search/Classes.cs#L101)**
 * **[69 - Sqrt(x)](Binary%20Search/Classes.cs#L130)**
+* **[74 - Search a 2D Matrix](Binary%20Search/Classes.cs#L167)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**

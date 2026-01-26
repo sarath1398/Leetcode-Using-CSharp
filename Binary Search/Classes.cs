@@ -163,5 +163,59 @@
                 return res;
             }
         }
+
+        // Leetcode : 74 - Search a 2D Matrix
+        // Approach : Binary Search - Find the row where the target lies between start and end.
+        // Then search the row for target
+        // Time Complexity : O(log(m*n))
+        // Space Complexity : O(1)
+        // Type: Easy
+        public class Search2DMatrix {
+            public static bool SearchMatrix(int[][] matrix, int target) {
+                int n = matrix.Length;
+                int m = matrix[0].Length;
+
+                // start and end for row
+                int s1 = 0, e1 = n - 1;
+                int row = 0;
+                while(s1 <= e1)
+                {
+                    int mid1 = s1 + (e1 - s1) / 2;
+                    // check if the mid1 is the row having the target in the matrix
+                    if(matrix[mid1][0] <= target && matrix[mid1][m-1] >= target)
+                    {
+                        row = mid1;
+                        break;
+                    }
+                    else if(matrix[mid1][0] > target)
+                    {
+                        e1 = mid1 - 1;
+                    }
+                    else
+                    {
+                        s1 = mid1 + 1;
+                    }
+                }
+                // search within the row for target
+                int start = 0, end = m - 1;
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    if(matrix[row][mid] == target)
+                    {
+                        return true;
+                    }
+                    else if(matrix[row][mid] > target)
+                    {
+                        end = mid - 1;
+                    }
+                    else
+                    {
+                        start = mid + 1;
+                    }
+                }
+                return false;
+            }
+        }
     }
 }
