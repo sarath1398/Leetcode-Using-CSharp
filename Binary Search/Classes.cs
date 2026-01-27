@@ -352,5 +352,117 @@
                 return result;
             }
         }
+
+        // Leetcode : 33 - Search in Rotated Sorted Array
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class SearchRotatedSortedArray {
+            public static int Search(int[] nums, int target) {
+                int start = 0;
+                int n = nums.Length;
+                int end = n - 1;
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    if(nums[mid] == target)
+                    {
+                        return mid;
+                    }
+                    // left subarray is sorted
+                    if(nums[mid] >= nums[start])
+                    {   
+                        // check if target is within the sorted array
+                        if(target >= nums[start] && target <= nums[mid])
+                        {   
+                            end = mid - 1;
+                            continue;
+                        }
+                        else
+                        {
+                            start = mid + 1;
+                            continue;
+                        }
+                    }
+                    // right subarray is sorted
+                    else
+                    {
+                        // check if target is within the sorted array
+                        if(target >= nums[mid] && target <= nums[end])
+                        {   
+                            start = mid + 1;
+                            continue;
+                        }
+                        else
+                        {
+                            end = mid - 1;
+                            continue;
+                        }
+                    }
+                }
+                return -1;
+            }
+        }
+
+
+        // Leetcode : 81 - Search in Rotated Sorted Array II
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class SearchRotatedSortedArrayII {
+            public static bool Search(int[] nums, int target) {
+                int start = 0;
+                int n = nums.Length;
+                int end = n - 1;
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    if(nums[mid] == target)
+                    {
+                        return true;
+                    }
+                    // reduce the search space from both the ends if the
+                    // value has overflowed from the end to start and target is not start 
+                    else if(nums[start] == nums[end] && target != nums[start])
+                    {
+                        start++;
+                        end--;
+                    }
+                    // left subarray is sorted
+                    else if(nums[mid] >= nums[start])
+                    {   
+                        // check if target is within the sorted array
+                        if(target >= nums[start] && target <= nums[mid])
+                        {   
+                            end = mid - 1;
+                            continue;
+                        }
+                        else
+                        {
+                            start = mid + 1;
+                            continue;
+                        }
+                    }
+                    // right subarray is sorted
+                    else
+                    {
+                        // check if target is within the sorted array
+                        if(target >= nums[mid] && target <= nums[end])
+                        {   
+                            start = mid + 1;
+                            continue;
+                        }
+                        else
+                        {
+                            end = mid - 1;
+                            continue;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
     }
 }

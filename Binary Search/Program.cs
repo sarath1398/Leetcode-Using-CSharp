@@ -33,9 +33,16 @@ namespace Binary_Search
             // Console.WriteLine(ShipWithinDays.ShipWithinDaysFn([3,2,2,4,1,4],3));
             // Console.WriteLine(ShipWithinDays.ShipWithinDaysFn([1,2,3,1,1],4));
 
-            Console.WriteLine(FindMinRotatedSortedArray.FindMin([3,4,5,1,2]));
-            Console.WriteLine(FindMinRotatedSortedArray.FindMin([4,5,6,7,0,1,2]));
-            Console.WriteLine(FindMinRotatedSortedArray.FindMin([11,13,15,17]));
+            // Console.WriteLine(FindMinRotatedSortedArray.FindMin([3,4,5,1,2]));
+            // Console.WriteLine(FindMinRotatedSortedArray.FindMin([4,5,6,7,0,1,2]));
+            // Console.WriteLine(FindMinRotatedSortedArray.FindMin([11,13,15,17]));
+
+            Console.WriteLine(SearchRotatedSortedArray.Search([4,5,6,7,0,1,2],0));
+            Console.WriteLine(SearchRotatedSortedArray.Search([4,5,6,7,0,1,2],3));
+            Console.WriteLine(SearchRotatedSortedArray.Search([1],0));
+
+            Console.WriteLine(SearchRotatedSortedArrayII.Search([2,5,6,0,0,1,2],0));
+            Console.WriteLine(SearchRotatedSortedArrayII.Search([2,5,6,0,0,1,2],3));            
         }
     }
 }

@@ -77,6 +77,8 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[875 - Koko Eating Bananas](Binary%20Search/Classes.cs#L221)**
 * **[1011 - Capacity To Ship Packages In N Days](Binary%20Search/Classes.cs#L273)**
 * **[153 - Find Minimum in Rotated Sorted Array](Binary%20Search/Classes.cs#L325)**
+* **[33 - Search in Rotated Sorted Array](Binary%20Search/Classes.cs#L377)**
+* **[81 - Search in Rotated Sorted Array II](Binary%20Search/Classes.cs#L429)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**
