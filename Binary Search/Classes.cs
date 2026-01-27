@@ -316,5 +316,41 @@
                 return leastWeight;
             }
         }
+
+        // Leetcode : 153 - Find Minimum in Rotated Sorted Array
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class FindMinRotatedSortedArray
+        {
+            public static int FindMin(int[] nums)
+            {
+                // search space - [0,...,n-1]
+                int start = 0;
+                int n = nums.Length;
+                int end = n - 1;
+                int result = int.MaxValue;
+                while (start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    // if left subarray [start...mid] is sorted then move to right subarray
+                    if (nums[start] <= nums[mid])
+                    {
+                        // store the smaller value
+                        result = Math.Min(result, nums[start]);
+                        start = mid + 1;
+                    }
+                    // if right subarray [mid...end] is sorted then move to left subarray with smaller value
+                    else
+                    {
+                        // store the smaller value
+                        result = Math.Min(result, nums[mid]);
+                        end = mid - 1;
+                    }
+                }
+                return result;
+            }
+        }
     }
 }
