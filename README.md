@@ -4,6 +4,15 @@ This repository contains my solutions to various LeetCode problems implemented i
 
 ## Solutions
 
+* [Arrays](#arrays)
+* [Backtracking](#backtracking)
+* [Dynamic Programming](#dynamic-programming)
+* [Sliding Window](#sliding-window)
+* [Stack](#stack)
+* [Binary Search](#binary-search)
+* [Strings](#strings)
+* [Two Pointers](#two-pointers)
+
 ### Arrays
 * **[1 - Two Sum](Arrays/TwoSum.cs)**
 * **[26 - Remove Duplicates from Sorted Array](Arrays/RemoveDuplicatesFromSortedArray.cs)**
