@@ -515,5 +515,65 @@
                 return result;
             }
         }
+
+        // Leetcode : 410 - Split Array Largest Sum
+        // Approach : Binary Search
+        // Time Complexity : O(nlogn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class SplitArrayLargestSum
+        {
+            public static bool CanSplit(int[] arr, int splits, int capacity)
+            {
+                int c = 0;
+                int index = 0;
+                while (index < arr.Length)
+                {
+                    // add a number to current sum and check if it is greater than capacity
+                    c += arr[index];
+                    if (c > capacity)
+                    {
+                        // if it is greater than capacity, decrement the number of splits
+                        // and reset the current sum to current number
+                        splits--;
+                        c = arr[index];
+                    }
+                    index++;
+                }
+                // If the final split is within capacity then the number of splits will be atleast 1.
+                // Hence the strictly greater than 0 condition
+                return splits > 0;
+            }
+            public static int SplitArray(int[] nums, int k)
+            {
+                // The search space will be [minValue, sum] since the minimum possible subarray is a single element with maximum value
+                // and the maximum possible subarray is the entire array. Hence the sum of all elements.
+                int start = int.MinValue;
+                int end = 0;
+                foreach (int num in nums)
+                {
+                    end += num;
+                    start = Math.Max(start, num);
+                }
+                int result = int.MaxValue;
+                while (start <= end)
+                {
+                    int max = start + (end - start) / 2;
+                    // Check if the current capacity can be split into k subarrays
+                    if (CanSplit(nums, k, max))
+                    {
+                        // If it can be split, update the result and try to find a smaller capacity
+                        result = Math.Min(result, max);
+                        end = max - 1;
+                    }
+                    else
+                    {
+                        // If it cannot be split, try to find a larger capacity from our assumption
+                        start = max + 1;
+                    }
+                }
+                return result;
+            }
+        }
     }
 }

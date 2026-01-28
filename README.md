@@ -89,6 +89,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[33 - Search in Rotated Sorted Array](Binary%20Search/Classes.cs#L377)**
 * **[81 - Search in Rotated Sorted Array II](Binary%20Search/Classes.cs#L429)**
 * **[981 - Time Based Key-Value Store](Binary%20Search/Classes.cs#L473)**
+* **[410 - Split Array Largest Sum](Binary%20Search/Classes.cs#L524)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**
