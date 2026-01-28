@@ -88,6 +88,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[153 - Find Minimum in Rotated Sorted Array](Binary%20Search/Classes.cs#L325)**
 * **[33 - Search in Rotated Sorted Array](Binary%20Search/Classes.cs#L377)**
 * **[81 - Search in Rotated Sorted Array II](Binary%20Search/Classes.cs#L429)**
+* **[981 - Time Based Key-Value Store](Binary%20Search/Classes.cs#L473)**
 
 ### Strings
 * **[14 - Longest Common Prefix](Strings/Classes.cs#L93)**

@@ -464,5 +464,56 @@
                 return false;
             }
         }
+        
+        // Leetcode : 981 - Time Based Key-Value Store
+        // Approach : Binary Search
+        // Time Complexity : O(logn)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class TimeMap {
+            readonly Dictionary<string,List<(string value, int timestamp)>> timeMap;
+
+            public TimeMap() {
+                timeMap = [];
+            }
+
+            public void Set(string key, string value, int timestamp) {
+                if(!timeMap.TryGetValue(key, out List<(string value, int timestamp)>? value1))
+                {
+                    List<(string value, int timestamp)> list = [];
+                    value1 = list;
+                    timeMap.Add(key, value1);
+                }
+
+                value1.Add((value,timestamp));
+            }
+
+            public string Get(string key, int timestamp) {
+                
+                if (!timeMap.ContainsKey(key)) {
+                    return "";
+                }
+
+                var searchList = timeMap[key];
+                int start = 0;
+                int end = searchList.Count - 1;
+                string result = "";
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    var searchVal = searchList[mid];
+                    if(searchVal.timestamp <= timestamp)
+                    {
+                        result = searchVal.Item1;
+                        start = mid + 1;
+                    }
+                    else
+                    {
+                        end = mid - 1;
+                    }
+                }
+                return result;
+            }
+        }
     }
 }
