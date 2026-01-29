@@ -634,5 +634,102 @@
                 return -1;
             }
         }
+
+                /**
+        * // This is MountainArray's API interface.
+        * // You should not implement it, or speculate about its implementation
+        * class MountainArray {
+        *     public int Get(int index) {}
+        *     public int Length() {}
+        * }
+        */
+        // sample implementation of the MountainArray interface
+        public class MountainArray
+        {
+            public int Get(int index) => 0;
+            public int Length() => 0;
+        }
+
+        // Leetcode : 1095 - Find in Mountain Array
+        // Approach : Binary Search
+        // Time Complexity : O(log n)
+        // Space Complexity : O(1)
+        // Type: Hard
+        public class FindInMountainArrayLC1095
+        {
+            Dictionary<int,int> cache = new();
+
+            public int AddGetFromCache(MountainArray mountainArr,int key)
+            {
+                if(!cache.ContainsKey(key))
+                {
+                    int element = mountainArr.Get(key);
+                    cache.Add(key,element);
+                }
+                return cache[key];
+            }
+            
+            public int BinarySearch(int start, int end, int target, 
+            MountainArray mountainArr,bool isAscending = true)
+            {
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    int value = AddGetFromCache(mountainArr,mid);
+                    if(value == target)
+                    {
+                        return mid;
+                    }
+                    else if((isAscending == true && value < target) || (isAscending == false && value > target))
+                    {
+                        start = mid + 1;
+                    }
+                    else
+                    {
+                        end = mid - 1;
+                    }
+                }
+                return -1;
+            }
+            
+            public int FindInMountainArray(int target, MountainArray mountainArr) {
+                // search space is between [1...end-2] since we need to accomodate mid - 1 and mid + 1 values also
+                int start = 1;
+                int end = mountainArr.Length() - 2;
+                int pivot = 0;
+                while(start <= end)
+                {
+                    int mid = start + (end - start) / 2;
+                    int midVal = AddGetFromCache(mountainArr,mid);
+                    int leftVal = AddGetFromCache(mountainArr,mid - 1);
+                    int rightVal = AddGetFromCache(mountainArr,mid + 1);
+                    // check for a scenario like 4,5,3 -> 5 is the peak element here
+                    if( midVal > leftVal && midVal > rightVal)
+                    {
+                        pivot = mid;
+                        break;
+                    }
+                    // check if the order is ascending, if yes then move right
+                    else if(midVal > leftVal && midVal < rightVal)
+                    {
+                        start = mid + 1;
+                    }
+                    // move left otherwise 
+                    else
+                    {
+                        end = mid - 1;
+                    }
+                }
+                // early return if we find pivot on the target
+                if(cache[pivot] == target)
+                {
+                    return pivot;
+                }
+                // [start...pivot] -> ascending order sorted array
+                // [pivot...end] -> descending order sorted array
+                int res = BinarySearch(0,pivot,target,mountainArr); // perform binary search on the left array since we need the least possible index value
+                return res != -1 ? res : BinarySearch(pivot,mountainArr.Length() - 1,target,mountainArr,false); // perform binary search to the right for finding the least possible index 
+            }
+        }
     }
 }
