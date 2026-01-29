@@ -44,8 +44,11 @@ namespace Binary_Search
             // Console.WriteLine(SearchRotatedSortedArrayII.Search([2,5,6,0,0,1,2],0));
             // Console.WriteLine(SearchRotatedSortedArrayII.Search([2,5,6,0,0,1,2],3));
 
-            Console.WriteLine(SplitArrayLargestSum.SplitArray([7,2,5,10,8],2));
-            Console.WriteLine(SplitArrayLargestSum.SplitArray([1,2,3,4,5],2));
+            // Console.WriteLine(SplitArrayLargestSum.SplitArray([7,2,5,10,8],2));
+            // Console.WriteLine(SplitArrayLargestSum.SplitArray([1,2,3,4,5],2));
+
+            Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1,3], [2]));
+            Console.WriteLine(MedianOfTwoSortedArrays.FindMedianSortedArrays([1,2], [3,4]));
         }
     }
 }

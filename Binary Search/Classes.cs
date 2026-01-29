@@ -575,5 +575,64 @@
                 return result;
             }
         }
+
+        // Leetcode : 4 - Median of Two Sorted Arrays
+        // Approach : Binary Search
+        // Time Complexity : O(log(min(n1,n2)))
+        // Space Complexity : O(1)
+        // Type: Hard
+        public class MedianOfTwoSortedArrays
+        {
+            public static double FindMedianSortedArrays(int[] nums1, int[] nums2)
+            {
+                // Ensure nums1 is the smaller array to optimize the binary search range
+                if (nums1.Length > nums2.Length)
+                {
+                    (nums1, nums2) = (nums2, nums1);
+                }
+                int n1 = nums1.Length;
+                int n2 = nums2.Length;
+                int total = n1 + n2;
+                int half = (total + 1) / 2;
+                int start = 0;
+                int end = n1;
+
+                while (start <= end)
+                {
+                    // Find the middle of the first array
+                    int mid = start + (end - start) / 2;
+                    // Find the middle of the second array
+                    int sHalf = half - mid;
+                    // Get the left and right elements of the first array
+                    int left1 = mid > 0 ? nums1[mid - 1] : int.MinValue;
+                    int right1 = mid < n1 ? nums1[mid] : int.MaxValue;
+                    // Get the left and right elements of the second array
+                    int left2 = sHalf > 0 ? nums2[sHalf - 1] : int.MinValue;
+                    int right2 = sHalf < n2 ? nums2[sHalf] : int.MaxValue;
+                    // we compare the left1+left2 array with the right1+right2 array
+                    // check if the max element in the right is greater than the min element in the left
+                    // and if the min element in the left is greater than the max element in the right
+                    if (left1 <= right2 && left2 <= right1)
+                    {
+                        // if the total number of elements is even, the median is the average of the maximum of the left elements and the minimum of the right elements
+                        if (total % 2 == 0)
+                        {
+                            return (Math.Min(right2, right1) + Math.Max(left1, left2)) / 2.0;
+                        }
+                        // if the total number of elements is odd, the median is the maximum of the left elements
+                        return Math.Max(left1, left2);
+                    }
+                    else if (left1 > right2)
+                    {
+                        end = mid - 1;
+                    }
+                    else
+                    {
+                        start = mid + 1;
+                    }
+                }
+                return -1;
+            }
+        }
     }
 }
