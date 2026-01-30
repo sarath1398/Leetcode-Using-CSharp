@@ -95,4 +95,33 @@ public class Classes
             return false;
         }
     }
+
+    // Leetcode : 121 - Best Time to Buy and Sell Stock
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Easy
+    public class BestTimeToBuyAndSellStock {
+        public static int MaxProfit(int[] prices) {
+            int maxProfit = 0;
+            int l = 0, r = 1;
+            int n = prices.Length - 1;
+            while(r <= n)
+            {
+                // create a window till the buying price is lesser than the selling price
+                if(prices[l] < prices[r])
+                {
+                    int profit = prices[r] - prices[l];
+                    maxProfit = Math.Max(maxProfit,profit);
+                } 
+                // if the buying price is greater than selling price then start a new window
+                else
+                {
+                    l = r;
+                }
+                r++;
+            }
+            return maxProfit;
+        }
+    }
 }
