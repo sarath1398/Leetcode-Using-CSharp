@@ -17,8 +17,11 @@ class Program
         // Console.WriteLine(BestTimeToBuyAndSellStock.MaxProfit([7,1,5,3,6,4]));
         // Console.WriteLine(BestTimeToBuyAndSellStock.MaxProfit([7,6,4,3,1]));
 
-        Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcabcbb"));
-        Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("bbbbb"));
-        Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("pwwkew"));
+        // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("abcabcbb"));
+        // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("bbbbb"));
+        // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("pwwkew"));
+
+        Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("ABAB", 2));
+        Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1));
     }
 }

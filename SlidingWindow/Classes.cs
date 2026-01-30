@@ -153,4 +153,36 @@ public class Classes
             return maxCount;
         }
     }
+
+    // Leetcode : 424 - Longest Repeating Character Replacement
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class LongestRepeatingCharacterReplacement
+    {
+        public static int CharacterReplacement(string s, int k) {
+            int l = 0, r = 0;
+            int n = s.Length - 1;
+            Dictionary<char,int> counter = new();
+            int finalMax = 0;
+            int maxCount = 0;
+            while(r <= n)
+            {
+                if(!counter.ContainsKey(s[r]))
+                {
+                    counter[s[r]] = 0;
+                }
+                counter[s[r]]++;
+                maxCount = Math.Max(maxCount, counter[s[r]]);
+                while ((r - l + 1) - maxCount > k) {
+                    counter[s[l]]--;
+                    l++;
+                }
+                finalMax = Math.Max(finalMax, (r - l + 1));
+                r++;
+            }
+            return finalMax;
+        }
+    }
 }
