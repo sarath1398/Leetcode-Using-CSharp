@@ -59,7 +59,8 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[746 - Min Cost Climbing Stairs](Dynamic%20Programming/DynamicProgramming/MinimumCostClimbingStairs.cs)**
 
 ### Sliding Window
-* **[1652 - Defuse the Bomb](SlidingWindow/DefuseTheBomb.cs)**
+* **[1652 - Defuse the Bomb](SlidingWindow/Classes.cs#L10)**
+* **[219 - Contains Duplicate II](SlidingWindow/Classes.cs#L66)**
 
 ### Stack
 * **[20 - Valid Parentheses](Stack/Classes.cs#L52)**
