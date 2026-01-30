@@ -124,4 +124,33 @@ public class Classes
             return maxProfit;
         }
     }
+
+    // Leetcode : 3 - Longest Substring Without Repeating Characters
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class LongestSubstringWithoutRepeatingCharacters {
+        public static int LengthOfLongestSubstring(string s) {
+            HashSet<char> set = new HashSet<char>();
+            int l = 0, r = 0;
+            int maxCount = 0;
+            while(r < s.Length)
+            {
+                // check if the new element is present inside our current window
+                // if yes, then remove all elements till the previous elements from the set and the window
+                while(set.Contains(s[r]))
+                {
+                    set.Remove(s[l]);
+                    l++;
+                }
+                // add the new unique element to the set and keep track of maximum size of the set
+                set.Add(s[r]);
+                maxCount = Math.Max(maxCount, set.Count);
+                r++;
+            }
+            // return maxcount
+            return maxCount;
+        }
+    }
 }
