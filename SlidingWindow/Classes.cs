@@ -248,4 +248,35 @@ public class Classes
             return false;
         }
     }
+
+    // Leetcode : 209 - Minimum Size Subarray Sum
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Medium
+    public class MinimumSizeSubarraySum {
+        public static int MinSubArrayLen(int target, int[] nums) {
+            int l = 0;
+            int r = 0;
+            int minCount = int.MaxValue;
+            int sum = 0;
+            while(r < nums.Length)
+            {
+                // add the running sum of the window
+                int toAdd = nums[r];
+                sum += toAdd;
+                // check if the sum exceeds the target and shrink the window while the sum is greater than the target
+                while(sum >= target)
+                {
+                    // min count holds the least possible sliding window for each iteration
+                    minCount = Math.Min(minCount,r - l + 1);
+                    sum -= nums[l];
+                    l++;
+                }
+                r++;
+            }
+            // IMPORTANT - Do not forget to handle the edge case where there is no solution possible
+            return minCount == int.MaxValue ? 0 : minCount;
+        }
+    }
 }

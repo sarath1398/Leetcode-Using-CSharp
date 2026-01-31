@@ -24,7 +24,11 @@ class Program
         // Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("ABAB", 2));
         // Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1));
 
-        Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidbaooo"));
-        Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidboaoo"));
+        // Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidbaooo"));
+        // Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidboaoo"));
+
+        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(7, [2,3,1,2,4,3]));
+        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(4, [1,4,4]));
+        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(11, [1,1,1,1,1,1,1,1]));
     }
 }
