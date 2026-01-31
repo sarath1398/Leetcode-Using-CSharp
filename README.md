@@ -64,6 +64,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[121 - Best Time to Buy and Sell Stock](SlidingWindow/Classes.cs#L104)**
 * **[3 - Longest Substring Without Repeating Characters](SlidingWindow/Classes.cs#L133)**
 * **[424 - Longest Repeating Character Replacement](SlidingWindow/Classes.cs#L162)**
+* **[567 - Permutation in String](SlidingWindow/Classes.cs#L194)**
 
 ### Stack
 * **[20 - Valid Parentheses](Stack/Classes.cs#L52)**

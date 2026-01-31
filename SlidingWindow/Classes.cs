@@ -185,4 +185,68 @@ public class Classes
             return finalMax;
         }
     }
+
+    // Leetcode : 567 - Permutation in String
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Medium
+    public class PermutationInString {
+        public static bool CheckInclusion(string s1, string s2) {
+            Dictionary<char,int> map = new();
+            // early return logic
+            if(s1.Length > s2.Length)
+            {
+                return false;
+            }
+            // create a counter for the s1
+            foreach(char c in s1)
+            {
+                if(!map.ContainsKey(c))
+                {
+                    map.Add(c,0);
+                }
+                map[c]++;
+            }
+            int totalMatches = map.Count;
+            int currMatches = 0;
+
+            // create a sliding window
+            int l = 0;
+            int r = 0;
+            while(r < s2.Length)
+            {
+                // add characters into the window only if the character in s1 matches with s2
+                if(map.ContainsKey(s2[r]))
+                {
+                    map[s2[r]]--;
+                    if(map[s2[r]] == 0)
+                    {
+                        currMatches++;
+                    }
+                }
+                // if the window length exceeds the length of s1 then undo the changes
+                // done in adding characters to the window
+                while(r - l + 1 > s1.Length)
+                {
+                    if(map.ContainsKey(s2[l])) {
+                        if(map[s2[l]] == 0) {
+                            currMatches--;
+                        }
+                        map[s2[l]]++;
+                    }
+                    // move the window to next character
+                    l++;
+                }
+                // if the window matches with total number of matches required then return true
+                if(currMatches == totalMatches)
+                {
+                    return true;
+                }
+                r++;
+            }
+            // No solution found
+            return false;
+        }
+    }
 }

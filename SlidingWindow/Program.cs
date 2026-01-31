@@ -21,7 +21,10 @@ class Program
         // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("bbbbb"));
         // Console.WriteLine(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring("pwwkew"));
 
-        Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("ABAB", 2));
-        Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1));
+        // Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("ABAB", 2));
+        // Console.WriteLine(LongestRepeatingCharacterReplacement.CharacterReplacement("AABABBA", 1));
+
+        Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidbaooo"));
+        Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidboaoo"));
     }
 }
