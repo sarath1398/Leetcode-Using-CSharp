@@ -216,7 +216,6 @@ public class Classes
             int r = 0;
             while(r < s2.Length)
             {
-                // add characters into the window only if the character in s1 matches with s2
                 if(map.ContainsKey(s2[r]))
                 {
                     map[s2[r]]--;
