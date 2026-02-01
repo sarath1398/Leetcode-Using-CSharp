@@ -27,8 +27,11 @@ class Program
         // Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidbaooo"));
         // Console.WriteLine(PermutationInString.CheckInclusion("ab", "eidboaoo"));
 
-        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(7, [2,3,1,2,4,3]));
-        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(4, [1,4,4]));
-        Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(11, [1,1,1,1,1,1,1,1]));
+        // Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(7, [2,3,1,2,4,3]));
+        // Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(4, [1,4,4]));
+        // Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(11, [1,1,1,1,1,1,1,1]));
+
+        Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,2,3,4,5], 4, 3)));
+        Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,1,2,3,4,5], 4, -1)));
     }
 }

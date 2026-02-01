@@ -66,6 +66,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[424 - Longest Repeating Character Replacement](SlidingWindow/Classes.cs#L162)**
 * **[567 - Permutation in String](SlidingWindow/Classes.cs#L194)**
 * **[209 - Minimum Size Subarray Sum](SlidingWindow/Classes.cs#L257)**
+* **[658 - Find K Closest Elements](SlidingWindow/Classes.cs#L288)**
 
 ### Stack
 * **[20 - Valid Parentheses](Stack/Classes.cs#L52)**

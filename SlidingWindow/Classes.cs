@@ -279,4 +279,77 @@ public class Classes
             return minCount == int.MaxValue ? 0 : minCount;
         }
     }
+
+    // Leetcode : 658 - Find K Closest Elements
+    // Approach : Binary Search + Sliding Window
+    // Time Complexity : O(log n + k)
+    // Space Complexity : O(1)
+    // Type: Medium
+    public class FindKClosestElements {
+        public static List<int> FindClosestElements(int[] arr, int k, int x) {
+            int start = 0;
+            int end = arr.Length - 1;
+            int closestIndex = 0;
+            int minDiff = int.MaxValue;
+
+            // do a binary search to find the nearest element
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+                int currentDiff = Math.Abs(arr[mid] - x);
+
+                // Track the absolute closest index found so far
+                if (currentDiff < minDiff || (currentDiff == minDiff && mid < closestIndex)) {
+                    minDiff = currentDiff;
+                    closestIndex = mid;
+                }
+                // target element found. No more checks
+                if (arr[mid] == x)
+                {
+                    closestIndex = mid;
+                    break;
+                }
+                else if (arr[mid] < x)
+                {
+                    start = mid + 1;
+                }
+                else
+                {
+                    end = mid - 1;
+                }
+            }
+
+            // The Search Space lies between [closestIndex - k ... closestIndex + k]
+            // create a sliding window within this range
+            int l = Math.Max(0, closestIndex - k); 
+            int rBound = Math.Min(arr.Length - 1, closestIndex + k);
+
+            // Initialize fixed window of size 'k' at the very start of our safe zone
+            int windowStart = l;
+            int windowEnd = l + k - 1;
+
+            // Slide the window right as long as it fits in our bounds
+            while (windowEnd < rBound) {
+                // Compare the element Leaving (arr[windowStart]) vs Entering (arr[windowEnd + 1])
+                int leavingDiff = Math.Abs(arr[windowStart] - x);
+                int enteringDiff = Math.Abs(arr[windowEnd + 1] - x);
+
+                // If the entering element is better (strictly smaller distance), we SLIDE RIGHT.
+                // If distances are equal, we prefer Left (smaller value), so we DON'T slide.
+                if (enteringDiff < leavingDiff) {
+                    windowStart++;
+                    windowEnd++;
+                } else {
+                    // The moment moving right is NOT better, we stop. 
+                    // Because the array is sorted, moving further right will only get worse.
+                    break;
+                }
+            }
+
+            List<int> result = new List<int>();
+            for (int i = windowStart; i <= windowEnd; i++) {
+                result.Add(arr[i]);
+            }
+            return result;
+        }
+    }
 }
