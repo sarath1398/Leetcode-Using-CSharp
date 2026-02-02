@@ -31,7 +31,11 @@ class Program
         // Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(4, [1,4,4]));
         // Console.WriteLine(MinimumSizeSubarraySum.MinSubArrayLen(11, [1,1,1,1,1,1,1,1]));
 
-        Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,2,3,4,5], 4, 3)));
-        Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,1,2,3,4,5], 4, -1)));
+        // Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,2,3,4,5], 4, 3)));
+        // Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,1,2,3,4,5], 4, -1)));
+
+        Console.WriteLine(MinimumWindowSubstring.MinWindow("ADOBECODEBANC", "ABC"));
+        Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "aa"));
+        Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "a"));
     }
 }

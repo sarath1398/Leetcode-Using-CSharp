@@ -352,4 +352,69 @@ public class Classes
             return result;
         }
     }
+
+    // Leetcode : 76 - Minimum Window Substring
+    // Approach : Sliding Window
+    // Time Complexity : O(n)
+    // Space Complexity : O(1)
+    // Type: Hard
+    public class MinimumWindowSubstring {
+        public static string MinWindow(string s, string t) {
+            Dictionary<char,int> counter = new();
+            if(t.Length > s.Length)
+            {
+                return "";
+            }
+            // create a frequency map of string t for lookup
+            foreach(char c in t)
+            {
+                if(!counter.ContainsKey(c))
+                {
+                    counter.Add(c,0);
+                }
+                counter[c]++;
+            }
+            
+            int currentMatches = 0;
+            int totalMatches = counter.Count;
+            int startIndex = 0;
+            int minLength = int.MaxValue;
+            int l = 0;
+            
+            for(int r = 0; r < s.Length; r++)
+            {
+                char toAdd = s[r]; 
+                
+                // add to window if a match is present
+                if(counter.ContainsKey(toAdd))
+                {
+                    counter[toAdd]--;
+                    if(counter[toAdd] == 0)
+                        currentMatches++;
+                }
+
+                // check if all the characters in t matches with that of s           
+                while(l <= r && currentMatches == totalMatches)
+                {
+                    // update start index and minLength window
+                    if (r - l + 1 < minLength) 
+                    {
+                        minLength = r - l + 1;
+                        startIndex = l;
+                    }
+
+                    // Remove s[l] from window to try and make it smaller
+                    char leftChar = s[l];
+                    // If leftChar is in window then undo the adding step
+                    if (counter.ContainsKey(leftChar)) {
+                        counter[leftChar]++; 
+                        if (counter[leftChar] > 0) currentMatches--; 
+                    }
+                    l++;
+                }
+            }
+            
+            return minLength == int.MaxValue ? "" : s.Substring(startIndex, minLength);
+        }
+    }
 }
