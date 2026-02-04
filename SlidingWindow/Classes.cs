@@ -417,4 +417,40 @@ public class Classes
             return minLength == int.MaxValue ? "" : s.Substring(startIndex, minLength);
         }
     }
+
+    // Leetcode : 239 - Sliding Window Maximum
+    // Approach : Sliding Window + Monotonic Queue
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Hard
+    public class SlidingWindowMaximum {
+        public static int[] MaxSlidingWindow(int[] nums, int k) {
+            int l = 0;
+            int n = nums.Length;
+            int[] result = new int[n - k + 1];
+            LinkedList<int> deque = new();
+            for(int r = 0; r < n; r++)
+            {
+                // Maintain a monotonically decreasing queue
+                while(deque.Count > 0 && nums[deque.Last.Value] < nums[r])
+                {
+                    deque.RemoveLast();
+                }
+                // add element into the monotonic queue
+                deque.AddLast(r);
+                // remove stale elements from the window
+                if(l > deque.First.Value)
+                {
+                    deque.RemoveFirst();
+                }
+                // check for window size and add maximum value to the result array
+                if((r - l + 1) >= k)
+                {
+                    result[l] = nums[deque.First.Value];
+                    l++;
+                }
+            }
+            return result; 
+        }
+    }
 }

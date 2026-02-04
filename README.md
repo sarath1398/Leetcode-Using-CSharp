@@ -68,6 +68,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[209 - Minimum Size Subarray Sum](SlidingWindow/Classes.cs#L257)**
 * **[658 - Find K Closest Elements](SlidingWindow/Classes.cs#L288)**
 * **[76 - Minimum Window Substring](SlidingWindow/Classes.cs#L361)**
+* **[239 - Sliding Window Maximum](SlidingWindow/Classes.cs#L426)**
 
 ### Stack
 * **[20 - Valid Parentheses](Stack/Classes.cs#L52)**

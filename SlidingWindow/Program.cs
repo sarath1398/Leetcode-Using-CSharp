@@ -34,8 +34,11 @@ class Program
         // Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,2,3,4,5], 4, 3)));
         // Console.WriteLine(String.Join(", ", FindKClosestElements.FindClosestElements([1,1,2,3,4,5], 4, -1)));
 
-        Console.WriteLine(MinimumWindowSubstring.MinWindow("ADOBECODEBANC", "ABC"));
-        Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "aa"));
-        Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "a"));
+        // Console.WriteLine(MinimumWindowSubstring.MinWindow("ADOBECODEBANC", "ABC"));
+        // Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "aa"));
+        // Console.WriteLine(MinimumWindowSubstring.MinWindow("a", "a"));
+
+        Console.WriteLine(String.Join(", ", SlidingWindowMaximum.MaxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)));
+        Console.WriteLine(String.Join(", ", SlidingWindowMaximum.MaxSlidingWindow([1], 1)));
     }
 }
