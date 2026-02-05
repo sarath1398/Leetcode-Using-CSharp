@@ -3,6 +3,7 @@
   <Project Path="Backtracking/Backtracking.csproj" />
   <Project Path="Binary Search/Binary Search.csproj" Id="999d07da-108c-410d-930c-939f86f839ee" />
   <Project Path="Dynamic Programming/DynamicProgramming/DynamicProgramming.csproj" />
+  <Project Path="LinkedList/LinkedList.csproj" Id="28cdc9a8-89be-44c0-8983-d7bd700d07ce" />
   <Project Path="SlidingWindow/Sliding Window.csproj" />
   <Project Path="Stack/Stack.csproj" />
   <Project Path="Strings/Strings.csproj" />
