@@ -125,4 +125,9 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[881 - Boats to Save People](TwoPointers/Classes.cs#L413)**
 * **[1768 - Merge Strings Alternately](TwoPointers/Classes.cs#L131)**
 
+### Linked List
+* **[206 - Reverse Linked List](LinkedList/Classes.cs#L16)**
+* **[21 - Merge Two Sorted Lists](LinkedList/Classes.cs#L37)**
+
+
 
