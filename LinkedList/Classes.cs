@@ -195,6 +195,7 @@ namespace LinkedList
             {
                 Dictionary<Node, Node> map = [];
                 Node curr = head;
+                // Create a 1:1 mapping of new node to that of the original node
                 while (curr != null)
                 {
                     Node node = new(curr.val);
@@ -202,6 +203,7 @@ namespace LinkedList
                     curr = curr.next;
                 }
                 curr = head;
+                // Update the next and random pointers of the new nodes based on the mapping
                 while (curr != null)
                 {
                     Node nn = map[curr];
@@ -209,6 +211,7 @@ namespace LinkedList
                     nn.random = curr.random != null ? map[curr.random] : null;
                     curr = curr.next;
                 }
+                // Return the head of the new list
                 return head != null ? map[head] : null;
             }
         }
