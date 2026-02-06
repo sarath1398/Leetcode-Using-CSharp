@@ -1,4 +1,6 @@
-﻿namespace LinkedList
+﻿using System.Xml.Linq;
+
+namespace LinkedList
 {
     internal class Classes
     {
@@ -73,7 +75,7 @@
         // Space Complexity : O(1)
         // Type: Easy
         public class LinkedListCycle {
-            public bool HasCycle(ListNode head) {
+            public static bool HasCycle(ListNode head) {
                 ListNode slow = head;
                 ListNode fast = head;
 
@@ -142,8 +144,8 @@
         // Time Complexity : O(n)
         // Space Complexity : O(1)
         // Type: Medium
-        public ListNode RemoveNthFromEnd(ListNode head, int n) {
-            ListNode dummy = new ListNode(0, head);
+        public static ListNode RemoveNthFromEnd(ListNode head, int n) {
+            ListNode dummy = new(0, head);
             ListNode slow,fast;
             fast = head;
             // Move fast pointer n steps ahead
@@ -165,6 +167,50 @@
                 slow.next = slow.next.next;
             }
             return dummy.next;
+        }
+
+        // Leetcode : 138 - Copy List with Random Pointer
+        // Approach : Hashmap
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class CopyRandomList
+        {
+            // Definition for a Node.
+            public class Node
+            {
+                public int val;
+                public Node next;
+                public Node random;
+
+                public Node(int _val)
+                {
+                    val = _val;
+                    next = null;
+                    random = null;
+                }
+            }
+
+            public static Node CopyRandomListFn(Node head)
+            {
+                Dictionary<Node, Node> map = [];
+                Node curr = head;
+                while (curr != null)
+                {
+                    Node node = new(curr.val);
+                    map.Add(curr, node);
+                    curr = curr.next;
+                }
+                curr = head;
+                while (curr != null)
+                {
+                    Node nn = map[curr];
+                    nn.next = curr.next != null ? map[curr.next] : null;
+                    nn.random = curr.random != null ? map[curr.random] : null;
+                    curr = curr.next;
+                }
+                return head != null ? map[head] : null;
+            }
         }
     }
 }
