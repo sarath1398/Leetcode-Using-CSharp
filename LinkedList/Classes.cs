@@ -88,5 +88,53 @@
                 return false;
             }
         }
+
+        // Leetcode : 143 - Reorder List
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n) - Recursion Stack Space
+        // Type: Medium 
+
+        // NOTE : This can also be done using a fast and slow pointer approach
+        // where we can find the mid point and reverse the second half
+        // of the linked list and then merge the two halves with a space complexity of O(1)
+        // but I went with the recursive approach to understand recursion better
+        public class ReorderList {
+            // in-place reordering
+            public ListNode HelperFunction(ListNode cur, ListNode adv)
+            {
+                if(adv == null)
+                    return cur;
+                // Move till the end of the list such that
+                // adv points to the end of the list and cur
+                // points to the start of the list
+                cur = HelperFunction(cur,adv.next);
+
+                // early exit if the recursion stack crosses the mid point
+                if(cur == null)
+                    return null;
+                ListNode temp = null;
+                // check if we reached the mid point
+                // cur != adv is for odd length
+                // cur.next != adv is for even length
+                if(cur != adv && cur.next != adv)
+                {
+                    temp = cur.next;
+                    cur.next = adv;
+                    adv.next = temp;
+                }
+                // Update the last pointer as null to mark the end of linked list
+                else
+                {
+                    adv.next = null;
+                }
+                // update the root with next swappable value
+                return temp;
+            }
+
+            public void ReorderListFn(ListNode head) {
+                head = HelperFunction(head,head.next);
+            }
+        }
     }
 }
