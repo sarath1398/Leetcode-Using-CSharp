@@ -136,5 +136,35 @@
                 head = HelperFunction(head,head.next);
             }
         }
+
+        // Leetcode : 19 - Remove Nth Node From End of List
+        // Approach : Two Pointers
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public ListNode RemoveNthFromEnd(ListNode head, int n) {
+            ListNode dummy = new ListNode(0, head);
+            ListNode slow,fast;
+            fast = head;
+            // Move fast pointer n steps ahead
+            while(n > 0)
+            {
+                fast = fast.next;
+                n--;
+            }
+            slow = dummy;
+            // Move both pointers until fast reaches the end
+            while(fast!=null)
+            {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            // Skip the nth node
+            if(slow != null && slow.next != null)
+            {
+                slow.next = slow.next.next;
+            }
+            return dummy.next;
+        }
     }
 }
