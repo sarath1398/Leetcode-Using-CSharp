@@ -66,5 +66,27 @@
             // Return the merged list
             return temp.next;
         }
+
+        // Leetcode : 141 - Linked List Cycle
+        // Approach : Floyd's Tortoise and Hare Algorithm
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Easy
+        public class LinkedListCycle {
+            public bool HasCycle(ListNode head) {
+                ListNode slow = head;
+                ListNode fast = head;
+
+                while(fast != null && fast.next != null)
+                {
+                    fast = fast.next.next;
+                    slow = slow.next;
+                    if(slow == fast)
+                        return true;
+                }
+                
+                return false;
+            }
+        }
     }
 }
