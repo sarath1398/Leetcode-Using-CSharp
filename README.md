@@ -132,6 +132,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[143 - Reorder List](LinkedList/Classes.cs#L102)**
 * **[19 - Remove Nth Node From End of List](LinkedList/Classes.cs#L145)**
 * **[138 - Copy List with Random Pointer](LinkedList/Classes.cs#L177)**
+* **[2 - Add Two Numbers](LinkedList/Classes.cs#L224)**
 
 
 
