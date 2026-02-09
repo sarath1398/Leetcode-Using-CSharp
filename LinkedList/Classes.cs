@@ -245,5 +245,178 @@ namespace LinkedList
             l3.next = null;
             return dummy.next;
         }
+
+        // Leetcode : 287 - Find the Duplicate Number
+        // Approach : Floyd's Tortoise and Hare (Cycle Detection)
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class FindDuplicate {
+            public static int FindDuplicateFn(int[] nums) {
+                int slow = 0;
+                int fast = 0;
+                // Find the intersection point of the slow and fast pointers
+                while(true)
+                {
+                    slow = nums[slow];
+                    fast = nums[nums[fast]];
+                    if(slow == fast)
+                    {
+                        break;
+                    }
+                }
+                // Find the entrance to the cycle
+                int slow1 = 0;
+                while(true)
+                {
+                    slow1 = nums[slow1];
+                    slow = nums[slow];
+                    if(slow1 == slow)
+                        return slow;
+                }
+            }
+        }
+
+        // Leetcode : 92 - Reverse Linked List II
+        // Approach : Recursion
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class ReverseLinkedListII
+        {
+            private static ListNode? successor = null;
+            
+            // Reverse a linkedlist recursively for N nodes
+            // use successor node to point to the next node after N nodes instead of NULL
+            public static ListNode? ReverseList(ListNode? head, int n)
+            {
+                if (n == 1)
+                {
+                    successor = head?.next;
+                    return head;
+                }
+                ListNode? newHead = ReverseList(head?.next, n - 1);
+                ListNode? front = head?.next;
+                front?.next = head;
+                head?.next = successor;
+                return newHead;
+            }
+            public static ListNode? ReverseBetween(ListNode? head, int left, int right)
+            {
+                if (left == 1)
+                {
+                    return ReverseList(head, right);
+                }
+                head?.next = ReverseBetween(head.next, left - 1, right - 1);
+                return head;
+            }
+        }
+
+        // Leetcode : 622 - Design Circular Queue
+        // Approach : Doubly Linked List
+        // Time Complexity : O(1)
+        // Space Complexity : O(k)
+        // Type: Medium
+        public class QueueListNode
+        {
+            public int val;
+            public QueueListNode prev;
+            public QueueListNode next;
+
+            public QueueListNode(int val = -1, QueueListNode prev = null, QueueListNode next = null)
+            {
+                this.val = val;
+                this.prev = prev;
+                this.next = next;
+            }
+        }
+
+        /**
+        * Your MyCircularQueue object will be instantiated and called as such:
+        * MyCircularQueue obj = new MyCircularQueue(k);
+        * bool param_1 = obj.EnQueue(value);
+        * bool param_2 = obj.DeQueue();
+        * int param_3 = obj.Front();
+        * int param_4 = obj.Rear();
+        * bool param_5 = obj.IsEmpty();
+        * bool param_6 = obj.IsFull();
+        */
+        public class MyCircularQueue 
+        {
+            private QueueListNode front = null;
+            private QueueListNode rear = null;
+            private int cur = 0;
+            private int capacity;
+
+            public MyCircularQueue(int k)
+            {
+                this.capacity = k;
+            }
+            
+            public bool EnQueue(int value)
+            {
+                if (IsFull())
+                    return false;
+
+                QueueListNode node = new QueueListNode(value);
+                if (IsEmpty()) {
+                    front = node;
+                    rear = node;
+                    // Making it circular
+                    node.next = rear;
+                    node.prev = front;
+                } 
+                else
+                {
+                    rear.next = node;
+                    node.prev = rear;
+                    node.next = front; 
+                    front.prev = node; 
+                    rear = node;
+                }
+                cur++;
+                return true;
+            }
+            
+            public bool DeQueue()
+            {
+                if (IsEmpty())
+                    return false;
+
+                if (cur == 1)
+                {
+                    front = null;
+                    rear = null;
+                } 
+                else
+                {
+                    front = front.next;
+                    front.prev = rear;
+                    rear.next = front;
+                }
+                cur--;
+                return true;
+            }
+            
+            public int Front()
+            {
+                return cur == 0 ? -1 : front.val;
+            }
+            
+            public int Rear()
+            {
+                return cur == 0 ? -1 : rear.val;
+            }
+            
+            public bool IsEmpty()
+            {
+                return cur <= 0;
+            }
+            
+            public bool IsFull()
+            {
+                return cur >= capacity;
+            }
+        }
     }
 }
