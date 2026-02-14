@@ -418,5 +418,75 @@ namespace LinkedList
                 return cur >= capacity;
             }
         }
+
+        // Leetcode : 146 - LRU Cache
+        // Approach : Doubly Linked List + Hash Map
+        // Time Complexity : O(1)
+        // Space Complexity : O(k)
+        // Type: Medium
+        public class LRUCache {
+    
+            public int maxCapacity;
+            // has a 1:1 mapping between the key and the node containing the key value pair
+            public Dictionary<int,LinkedListNode<(int key, int value)>> map;
+            // Leftmost elements are least accessed and rightmost elements are most accessed 
+            // in this order linkedlist
+            public LinkedList<(int key, int value)> order;
+
+            // Initialize the LRU Cache with the given capacity
+            public LRUCache(int capacity) {
+                this.maxCapacity = capacity;
+                map = new();
+                order = new();
+            }
+            
+            public int Get(int key) {
+                if(!map.ContainsKey(key))
+                {
+                    return -1;
+                }
+                // Update ordering since the element is now accessed
+                var node = map[key];
+                order.Remove(node);
+                order.AddLast(node);
+                (int k, int v) = node.Value;
+                return v;
+            }
+            
+            public void Put(int key, int value) {
+                // check if key already exists in map
+                // if yes, then update ordering and value of the key
+                if(map.ContainsKey(key))
+                {
+                    var node = map[key];
+                    order.Remove(node);
+                    node.Value = (key, value);
+                    order.AddLast(node);
+                }
+                else
+                {
+                    // check if the new element is exceeding capacity of map
+                    // considering >= since the count starts from 
+                    // Remove from left of linkedlist to remove Least used value
+                    if(map.Count >= maxCapacity)
+                    {
+                        var front = order.First.Value;
+                        order.RemoveFirst();
+                        map.Remove(front.key);
+                    }
+                    // Add if the above two conditions are not applicable
+                    LinkedListNode<(int key, int value)> node = new((key,value));
+                    order.AddLast(node);
+                    map.Add(key,node);
+                }
+            }
+        }
+
+        /**
+        * Your LRUCache object will be instantiated and called as such:
+        * LRUCache obj = new LRUCache(capacity);
+        * int param_1 = obj.Get(key);
+        * obj.Put(key,value);
+        */
     }
 }

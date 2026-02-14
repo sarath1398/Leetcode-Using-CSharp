@@ -135,6 +135,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[2 - Add Two Numbers](LinkedList/Classes.cs#L224)**
 * **[92 - Reverse Linked List II](LinkedList/Classes.cs#L285)**
 * **[622 - Design Circular Queue](LinkedList/Classes.cs#L320)**
+* **[146 - LRU Cache](LinkedList/Classes.cs#L422)**
 
 
 
