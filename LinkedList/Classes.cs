@@ -424,6 +424,13 @@ namespace LinkedList
         // Time Complexity : O(1)
         // Space Complexity : O(k)
         // Type: Medium
+
+        /**
+        * Your LRUCache object will be instantiated and called as such:
+        * LRUCache obj = new LRUCache(capacity);
+        * int param_1 = obj.Get(key);
+        * obj.Put(key,value);
+        */
         public class LRUCache {
     
             public int maxCapacity;
@@ -482,11 +489,121 @@ namespace LinkedList
             }
         }
 
+        // Leetcode : 460 - LFU Cache
+        // Approach : Doubly Linked List + Hash Map
+        // Time Complexity : O(1)
+        // Space Complexity : O(k)
+        // Type: Hard
+
         /**
-        * Your LRUCache object will be instantiated and called as such:
-        * LRUCache obj = new LRUCache(capacity);
+        * Your LFUCache object will be instantiated and called as such:
+        * LFUCache obj = new LFUCache(capacity);
         * int param_1 = obj.Get(key);
         * obj.Put(key,value);
         */
+        public class LFUNode {
+            public int key;
+            public int value;
+            public int frequency;
+
+            public LFUNode(int key, int value) {
+                this.key = key;
+                this.value = value;
+                this.frequency = 1;
+            }
+        }
+
+        public class LFUCache {
+            // Maintains a LinkedList in LRU order for each frequency
+            Dictionary<int, LinkedList<LFUNode>> freqMap;
+            // Maintains a 1:1 map between each LinkedListNode and key
+            Dictionary<int, LinkedListNode<LFUNode>> nodeMap;
+            int capacity;
+            // Maintains the minFrequency in case of eviction
+            int minFreq;
+
+            public LFUCache(int capacity) {
+                this.capacity = capacity;
+                this.minFreq = 0;
+                freqMap = new Dictionary<int, LinkedList<LFUNode>>();
+                nodeMap = new Dictionary<int, LinkedListNode<LFUNode>>();
+            }
+
+            public int Get(int key) {
+                if (!nodeMap.ContainsKey(key))
+                {
+                    return -1;
+                } 
+                LinkedListNode<LFUNode> node = nodeMap[key];
+                UpdateFrequency(node);
+                return node.Value.value;
+            }
+
+            public void Put(int key, int value) {
+                if (capacity == 0)
+                {
+                    return;
+                } 
+
+                if (nodeMap.ContainsKey(key))
+                {
+                    LinkedListNode<LFUNode> node = nodeMap[key];
+                    node.Value.value = value;
+                    UpdateFrequency(node);
+                }
+                else
+                {
+                    // Eviction logic
+                    if (nodeMap.Count == capacity) {
+                        // Get the list of minimum frequency
+                        LinkedList<LFUNode> list = freqMap[minFreq];
+                        
+                        // Remove LRU
+                        LFUNode toRemove = list.First.Value; 
+                        list.RemoveFirst();
+                        // Remove the evicted lru node from the nodeMap
+                        nodeMap.Remove(toRemove.key); 
+                    }
+
+                    // Add new node
+                    LFUNode newNode = new LFUNode(key, value);
+                    // Create the linked list node
+                    LinkedListNode<LFUNode> llNode = new LinkedListNode<LFUNode>(newNode);
+                    
+                    nodeMap.Add(key, llNode);
+                    
+                    // New nodes always start at freq 1
+                    minFreq = 1; 
+                    if (!freqMap.ContainsKey(1))
+                    {
+                        freqMap[1] = new LinkedList<LFUNode>();
+                    } 
+                    freqMap[1].AddLast(llNode);
+                }
+            }
+
+            private void UpdateFrequency(LinkedListNode<LFUNode> llNode) {
+                int currFreq = llNode.Value.frequency;
+                
+                // Remove from current frequency list
+                freqMap[currFreq].Remove(llNode);
+
+                // Check if the list with minFreq is empty. 
+                // If yes, then the frequency has to be incremented to next minFrequency
+                if (currFreq == minFreq && freqMap[currFreq].Count == 0) {
+                    minFreq++;
+                }
+
+                // Increment frequency
+                llNode.Value.frequency++;
+                int newFreq = llNode.Value.frequency;
+
+                // Add to new frequency list
+                if (!freqMap.ContainsKey(newFreq)) {
+                    freqMap[newFreq] = new LinkedList<LFUNode>();
+                }
+                freqMap[newFreq].AddLast(llNode);
+            }
+        }
     }
 }
