@@ -667,5 +667,64 @@ namespace LinkedList
                 return Divide(lists,0,n - 1);
             }
         }
+
+        // Leetcode : 25 - Reverse Nodes in k-Group
+        // Approach : Iterative
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Hard
+        public class ReverseKGroupClass {
+            public ListNode ReverseNodes(ListNode head, ListNode successor) {
+                ListNode prev = null;
+                ListNode curr = head;
+                ListNode next = null;
+
+                while (curr != successor) {
+                    next = curr.next; 
+                    curr.next = prev; 
+                    prev = curr;
+                    curr = next;
+                }
+                // update the head of the reversed group to the successor node
+                head.next = successor; 
+                return prev; 
+            }
+
+            public ListNode ReverseKGroup(ListNode head, int k) {
+                int count = 0;
+                ListNode temp = head;
+                // Identify the total number of nodes in the linkedlist
+                while(temp != null)
+                {
+                    count++;
+                    temp = temp.next;
+                }
+
+                // Create a dummy node to handle edge cases
+                ListNode dummy = new(0,head);
+                // groupPrev is the node before the group of k nodes to be reversed
+                ListNode groupPrev = dummy;
+
+                while(count - k >= 0)
+                {
+                    // currGroupStart is the head of the group of k nodes to be reversed
+                    ListNode currGroupStart = groupPrev.next;
+                    // successor is the node after the group of k nodes to be reversed
+                    ListNode successor = currGroupStart;
+
+                    for(int i = 0; i < k; i++) {
+                        successor = successor.next;
+                    }
+                    // Perform reversal in batches
+                    ListNode newGroupHead = ReverseNodes(currGroupStart, successor);
+                    // add the missing link between the previously reversed nodes and the new group head
+                    groupPrev.next = newGroupHead;
+                    // move to the tail of the reversed linked list
+                    groupPrev = currGroupStart;
+                    count -= k;
+                }
+                return dummy.next;
+            }
+        }
     }
 }
