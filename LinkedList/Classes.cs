@@ -605,5 +605,67 @@ namespace LinkedList
                 freqMap[newFreq].AddLast(llNode);
             }
         }
+
+        // Leetcode : 23 - Merge k Sorted Lists
+        // Approach : Merge Sort
+        // Time Complexity : O(nlogk)
+        // Space Complexity : O(1)
+        // Type: Hard
+        public class MergeKListsClass {   
+            public ListNode Conquer(ListNode l1, ListNode l2)
+            {
+                ListNode dummy = new ListNode(0);
+                ListNode curr = dummy;
+
+                while(l1 != null && l2 != null)
+                {
+                    if(l1.val < l2.val)
+                    {
+                        curr.next = l1;
+                        l1 = l1.next; 
+                    }
+                    else
+                    {
+                        curr.next = l2;
+                        l2 = l2.next;
+                    }
+                    curr = curr.next;
+                }
+
+                if(l1 != null)
+                {
+                    curr.next = l1;
+                }
+
+                if(l2 != null)
+                {
+                    curr.next = l2;
+                }
+
+                return dummy.next;
+            } 
+
+            public ListNode Divide(ListNode[] lists, int l, int r)
+            {
+                if(l > r)
+                    return null;
+                if(l == r)
+                    return lists[l];
+                int mid = l + (r - l) / 2;
+                ListNode left = Divide(lists,l,mid);
+                ListNode right = Divide(lists,mid+1,r);
+                return Conquer(left,right);
+            }
+
+            public ListNode MergeKLists(ListNode[] lists)
+            {
+                if(lists == null || lists.Length == 0)
+                {
+                    return null;
+                }
+                int n = lists.Length;
+                return Divide(lists,0,n - 1);
+            }
+        }
     }
 }

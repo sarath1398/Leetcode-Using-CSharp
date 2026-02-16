@@ -137,6 +137,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[622 - Design Circular Queue](LinkedList/Classes.cs#L320)**
 * **[146 - LRU Cache](LinkedList/Classes.cs#L422)**
 * **[460 - LFU Cache](LinkedList/Classes.cs#L492)**
+* **[23 - Merge k Sorted Lists](LinkedList/Classes.cs#L609)**
 
 
 
