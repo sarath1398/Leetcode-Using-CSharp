@@ -7,5 +7,6 @@
   <Project Path="SlidingWindow/Sliding Window.csproj" />
   <Project Path="Stack/Stack.csproj" />
   <Project Path="Strings/Strings.csproj" />
+  <Project Path="Tree/Tree.csproj" Id="d34c6a83-ee92-44de-9159-57a5ca7ac846" />
   <Project Path="TwoPointers/TwoPointers.csproj" />
 </Solution>

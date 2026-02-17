@@ -140,6 +140,9 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[23 - Merge k Sorted Lists](LinkedList/Classes.cs#L609)**
 * **[25 - Reverse Nodes in k-Group](LinkedList/Classes.cs#L671)**
 
+### Tree
+* **[94 - Binary Tree Inorder Traversal](Tree/Classes.cs#L10)**
+
 
 
 
