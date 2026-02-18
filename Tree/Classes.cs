@@ -103,5 +103,74 @@
                 return result;
             }
         }
+
+        // Leetcode : 145 - Binary Tree Postorder Traversal
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class PostOrderClass {
+            List<int> result = new();
+
+            public void PostOrder(TreeNode root)
+            {   
+                if(root == null)
+                {
+                    return;
+                }
+                PostOrder(root.left);
+                PostOrder(root.right);
+                result.Add(root.val);
+            }
+
+            public IList<int> PostorderTraversal(TreeNode root) {
+                
+                // Initial Iterative approach - UnOptimized
+
+                // Dictionary<TreeNode,int> map = new();
+                // Stack<TreeNode> stack = new();
+                // List<int> result = new();
+                // TreeNode cur = root;
+                // if(root == null) 
+                //     return result;
+                // stack.Push(cur);
+                // while(stack.Count > 0)
+                // {
+                //     cur = stack.Peek();
+                //     // handle leaf nodes
+                //     if(cur != null && cur.right == null && cur.left == null)
+                //     {
+                //         cur = stack.Pop();
+                //         result.Add(cur.val);
+                //         map.Add(cur,1);
+                //     }
+                //     // handle parent nodes with visited children  
+                //     else if(cur != null && (cur.left != null && map.ContainsKey(cur.left)) ||
+                //      (cur.right != null && map.ContainsKey(cur.right)))
+                //     {
+                //         cur = stack.Pop();
+                //         result.Add(cur.val);
+                //         map.Add(cur,1);
+                //     }
+                //     // add right and left nodes to the stack
+                //     else
+                //     {
+                //         if(cur.right != null)
+                //         {
+                //             stack.Push(cur.right);
+                //         }
+                //         if(cur.left != null)
+                //         {
+                //             stack.Push(cur.left);
+                //         }
+                //     }
+                // }
+                // return result;
+
+                // Recursive Approach
+                PostOrder(root);
+                return result;
+            }
+        }
     }
 }
