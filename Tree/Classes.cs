@@ -221,5 +221,20 @@
                 return root;
             }
         }
+
+        // Leetcode : 104 - Maximum Depth of Binary Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class MaxDepthOfBinaryTree {
+            public int MaxDepth(TreeNode root) {
+                if(root == null)
+                {
+                    return 0;
+                }
+                return 1 + Math.Max(MaxDepth(root.left),MaxDepth(root.right));
+            }
+        }
     }
 }
