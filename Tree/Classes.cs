@@ -172,5 +172,54 @@
                 return result;
             }
         }
+
+        // Leetcode : 226 - Invert Binary Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class InvertTreeClass
+        {
+            public void InOrder(TreeNode root)
+            {
+                if(root == null)
+                    return;
+                // swap left and right elements
+                (root.left,root.right) = (root.right,root.left);
+                // swap for left subtree
+                InOrder(root.left);
+                // swap for right subtree
+                InOrder(root.right);
+
+            }
+
+            public TreeNode InvertTree(TreeNode root) {
+                // // iterative -> BFS
+
+                // if(root == null)
+                //     return root;
+
+                // Queue<TreeNode> queue = new();
+                // TreeNode cur = root;
+                // // Add root to the queue
+                // queue.Enqueue(cur);
+                // while(queue.Count > 0)
+                // {
+                //     cur = queue.Dequeue();
+                //     (cur.left,cur.right) = (cur.right,cur.left);
+                //     // Add the left and right elements of the current parent
+                //     // and continue the same process
+                //     if(cur.left != null) 
+                //         queue.Enqueue(cur.left);
+                //     if(cur.right != null)
+                //         queue.Enqueue(cur.right);
+                // }
+                // return root;
+
+                // Recursive -> DFS (InOrder traversal)
+                InOrder(root);
+                return root;
+            }
+        }
     }
 }

@@ -144,8 +144,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[94 - Binary Tree Inorder Traversal](Tree/Classes.cs#L10)**
 * **[144 - Binary Tree Preorder Traversal](Tree/Classes.cs#L62)**
 * **[145 - Binary Tree Postorder Traversal](Tree/Classes.cs#L112)**
-
-
+* **[226 - Invert Binary Tree](Tree/Classes.cs#L181)**
 
 
 
