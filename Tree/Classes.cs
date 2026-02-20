@@ -228,12 +228,46 @@
         // Space Complexity : O(n)
         // Type: Easy
         public class MaxDepthOfBinaryTree {
-            public int MaxDepth(TreeNode root) {
+            public int MaxDepth(TreeNode root)
+            {
+                // recursive
+                // if(root == null)
+                // {
+                //     return 0;
+                // }
+                // return 1 + Math.Max(MaxDepth(root.left),MaxDepth(root.right));  
+
+                // iterative BFS
+
+                // Base case
                 if(root == null)
-                {
                     return 0;
+
+                // Initialize queue
+                Queue<TreeNode> queue = new();
+                queue.Enqueue(root);
+                int depth = 0;
+                // Process queue level by level
+                while(queue.Count > 0)
+                {
+                    int size = queue.Count;
+                    while(size > 0)
+                    {
+                        TreeNode cur = queue.Dequeue();
+                        if(cur.left != null)
+                        {
+                            queue.Enqueue(cur.left);
+                        }
+                        if(cur.right != null)
+                        {
+                            queue.Enqueue(cur.right);
+                        }
+                        size--;
+                    }
+                    // Increment depth after processing each level
+                    depth++;
                 }
-                return 1 + Math.Max(MaxDepth(root.left),MaxDepth(root.right));
+                return depth;
             }
         }
     }
