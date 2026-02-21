@@ -270,5 +270,67 @@
                 return depth;
             }
         }
+
+        // Leetcode : 543 - Diameter of Binary Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class DiameterOfBinaryTreeLC543 {
+
+            public int result = 0;
+
+            public int PostOrderTraversal(TreeNode root)
+            {
+                if(root == null)
+                {
+                    return 0;
+                }
+
+                int lHeight = PostOrderTraversal(root.left);
+                int rHeight = PostOrderTraversal(root.right);                
+                result = Math.Max(result,lHeight + rHeight);
+                // parent's height
+                return 1 + Math.Max(lHeight , rHeight);
+            }
+
+            public int DiameterOfBinaryTree(TreeNode root) {
+                PostOrderTraversal(root);
+                return result;
+            }
+        }
+
+        // Leetcode : 110 - Balanced Binary Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class BalancedBinaryTreeLC110 {
+            public bool flag = true;
+
+            public int PostOrder(TreeNode root)
+            {
+                if(root == null)
+                    return 0;
+
+                int lHeight = PostOrder(root.left);
+                int rHeight = PostOrder(root.right);
+                // Check if the tree is height balanced
+                int diff = Math.Abs(lHeight - rHeight);
+                if(diff > 1)
+                {
+                    flag = false;
+                    return -1;
+                }
+                // Return height of the tree
+                return 1 + Math.Max(lHeight,rHeight);
+            }
+
+            public bool IsBalanced(TreeNode root) {
+                // Call the recursive function
+                PostOrder(root);
+                return flag;
+            }
+        }
     }
 }
