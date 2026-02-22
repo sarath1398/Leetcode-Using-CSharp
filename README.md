@@ -148,6 +148,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[104 - Maximum Depth of Binary Tree](Tree/Classes.cs#L230)**
 * **[543 - Diameter of Binary Tree](Tree/Classes.cs#L279)**
 * **[110 - Balanced Binary Tree](Tree/Classes.cs#L308)**
+* **[100 - Same Tree](Tree/Classes.cs#L341)**
 
 
 

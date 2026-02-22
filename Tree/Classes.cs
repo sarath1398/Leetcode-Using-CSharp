@@ -332,5 +332,28 @@
                 return flag;
             }
         }
+
+        // Leetcode : 100 - Same Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class SameTreeLC100 {
+            public bool IsSameTree(TreeNode p, TreeNode q) {
+                // Base case
+                if(p == null && q == null)
+                {
+                    return true;
+                }
+                // Check if the tree is same
+                if(p != null && q != null && p.val == q.val)
+                {
+                    // Check left and right subtrees
+                    return IsSameTree(p.left,q.left) && IsSameTree(p.right,q.right);
+                }
+                // Return false if the tree is not same
+                return false;
+            }
+        }
     }
 }
