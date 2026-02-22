@@ -149,6 +149,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[543 - Diameter of Binary Tree](Tree/Classes.cs#L279)**
 * **[110 - Balanced Binary Tree](Tree/Classes.cs#L308)**
 * **[100 - Same Tree](Tree/Classes.cs#L341)**
+* **[572 - Subtree of Another Tree](Tree/Classes.cs#L364)**
 
 
 

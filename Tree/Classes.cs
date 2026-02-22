@@ -355,5 +355,41 @@
                 return false;
             }
         }
+
+        // Leetcode : 572 - Subtree of Another Tree
+        // Approach : BFS and DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
+        public class SubtreeOfAnotherTreeLC572
+        {
+            public bool IsSubtree(TreeNode root, TreeNode subRoot)
+            {
+                Queue<TreeNode> queue = new();
+                // Lent the Same tree logic from Leetcode - 100 solution
+                SameTreeLC100 sameTree = new();
+                if (root == null && subRoot == null)
+                    return true;
+                if (root == null)
+                    return false;
+                queue.Enqueue(root);
+                while (queue.Count > 0)
+                {
+                    root = queue.Dequeue();
+                    // check if the current node can be the root of the subtree
+                    if (root.val == subRoot.val && sameTree.IsSameTree(root, subRoot))
+                    {
+                        return true;
+                    }
+                    // Add left and right children to the queue
+                    if (root.left != null)
+                        queue.Enqueue(root.left);
+                    if (root.right != null)
+                        queue.Enqueue(root.right);
+                }
+                // Return false if the subtree is not found
+                return false;
+            }
+        }
     }
 }
