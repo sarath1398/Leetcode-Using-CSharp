@@ -150,7 +150,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[110 - Balanced Binary Tree](Tree/Classes.cs#L308)**
 * **[100 - Same Tree](Tree/Classes.cs#L341)**
 * **[572 - Subtree of Another Tree](Tree/Classes.cs#L364)**
-* **[235 - Lowest Common Ancestor of a Binary Search Tree](Tree/Classes.cs#L392)**
+* **[235 - Lowest Common Ancestor of a Binary Search Tree](Tree/Classes.cs#L400)**
 
 
 
