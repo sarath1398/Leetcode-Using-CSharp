@@ -391,5 +391,39 @@
                 return false;
             }
         }
+
+        // Leetcode : 235 - Lowest Common Ancestor of a Binary Search Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(h)
+        // Type: Easy
+        public class LowestCommonAncestorOfABinarySearchTreeLC235 {
+            public TreeNode PreOrder(TreeNode root,TreeNode p, TreeNode q)
+            {
+                // Return root if it is either null or if it is our ancestor
+                if(root == null || (root != null && root.val >= p.val && root.val <= q.val))
+                    return root;
+                // If both p and q are greater than root, then LCA is in the right subtree
+                else if(root.val > q.val)
+                {
+                    return PreOrder(root.left,p,q);
+                }
+                // If both p and q are smaller than root, then LCA is in the left subtree
+                else
+                {
+                    return PreOrder(root.right,p,q);
+                }
+
+            }
+            public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+                // Swap p and q if p is greater than q
+                if(p.val > q.val)
+                {
+                    (p,q) = (q,p);
+                }
+                // Call the recursive function
+                return PreOrder(root,p,q);
+            }
+        }
     }
 }
