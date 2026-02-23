@@ -151,6 +151,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[100 - Same Tree](Tree/Classes.cs#L341)**
 * **[572 - Subtree of Another Tree](Tree/Classes.cs#L364)**
 * **[235 - Lowest Common Ancestor of a Binary Search Tree](Tree/Classes.cs#L400)**
+* **[701 - Insert into a Binary Search Tree](Tree/Classes.cs#L434)**
 
 
 

@@ -425,5 +425,33 @@
                 return PreOrder(root,p,q);
             }
         }
+
+        // Leetcode : 701 - Insert into a Binary Search Tree
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(h)
+        // Type: Medium
+        public class InsertIntoBinarySearchTreeLC701 {
+            public TreeNode InsertIntoBST(TreeNode root, int val) {
+                // Return new node if the root is null
+                if(root == null)
+                    return new TreeNode(val);
+                else
+                {
+                    // If val is greater than root, then insert in the right subtree
+                    if(val > root.val)
+                    {
+                        root.right = InsertIntoBST(root.right,val);
+                    }
+                    // If val is smaller than root, then insert in the left subtree
+                    else
+                    {
+                        root.left = InsertIntoBST(root.left,val);
+                    }
+                }
+                // Return root
+                return root;
+            }
+        }
     }
 }
