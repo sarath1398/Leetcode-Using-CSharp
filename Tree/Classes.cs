@@ -543,5 +543,56 @@
                 return sum;
             }
         }
+
+        // Leetcode : 102 - Binary Tree Level Order Traversal
+        // Approach : BFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class BinaryTreeLevelOrderTraversalLC102 {
+            public IList<IList<int>> LevelOrder(TreeNode root) {
+                // Queue for BFS
+                Queue<TreeNode> queue = new();
+                // Result list
+                List<IList<int>> result = new();
+                // Return empty list if the root is null
+                if(root == null)
+                {
+                    return result;
+                }
+                // Enqueue the root
+                queue.Enqueue(root);
+                // While the queue is not empty
+                while(queue.Count > 0)
+                {
+                    // Create a list for the current level
+                    List<int> level = new();
+                    // Get the size of the current level
+                    int size = queue.Count;
+                    // For each node in the current level
+                    for(int i = 0; i < size; i++)
+                    {
+                        // Dequeue the node
+                        TreeNode node = queue.Dequeue();
+                        // Add the node value to the current level list
+                        level.Add(node.val);
+                        // Enqueue the left child if it exists
+                        if(node.left != null)
+                        {
+                            queue.Enqueue(node.left);
+                        }
+                        // Enqueue the right child if it exists
+                        if(node.right != null)
+                        {
+                            queue.Enqueue(node.right);
+                        }
+                    }
+                    // Add the current level list to the result
+                    result.Add(level);
+                }
+                // Return the result
+                return result;
+            }
+        }
     }
 }
