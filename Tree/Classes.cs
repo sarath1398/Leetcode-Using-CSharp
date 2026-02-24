@@ -594,5 +594,56 @@
                 return result;
             }
         }
+
+        // Leetcode : 199 - Binary Tree Right Side View
+        // Approach : BFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class BinaryTreeRightSideViewLC199 {
+            public IList<int> RightSideView(TreeNode root) {
+                // Queue for BFS
+                Queue<TreeNode> queue = new();
+                // Result list
+                List<int> result = new();
+                // Return empty list if the root is null
+                if(root == null)
+                {
+                    return result;
+                }
+                // Enqueue the root
+                queue.Enqueue(root);
+                // While the queue is not empty
+                while(queue.Count > 0)
+                {
+                    // Get the size of the current level
+                    int size = queue.Count;
+                    // For each node in the current level
+                    for(int i = 0; i < size; i++)
+                    {
+                        // Dequeue the node
+                        TreeNode node = queue.Dequeue();
+                        // If the current node is the last node in the current level
+                        if(i == size - 1)
+                        {
+                            // Add the node value to the result
+                            result.Add(node.val);
+                        }
+                        // Enqueue the left child if it exists
+                        if(node.left != null)
+                        {
+                            queue.Enqueue(node.left);
+                        }
+                        // Enqueue the right child if it exists
+                        if(node.right != null)
+                        {
+                            queue.Enqueue(node.right);
+                        }
+                    }
+                }
+                // Return the result
+                return result;
+            }
+        }
     }
 }
