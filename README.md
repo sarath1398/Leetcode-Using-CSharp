@@ -152,6 +152,8 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[572 - Subtree of Another Tree](Tree/Classes.cs#L364)**
 * **[235 - Lowest Common Ancestor of a Binary Search Tree](Tree/Classes.cs#L400)**
 * **[701 - Insert into a Binary Search Tree](Tree/Classes.cs#L434)**
+* **[450 - Delete Node in a BST](Tree/Classes.cs#L462)**
+* **[1022 - Sum of Root To Leaf Binary Numbers](Tree/Classes.cs#L512)**
 
 
 

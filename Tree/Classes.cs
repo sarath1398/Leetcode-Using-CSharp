@@ -453,5 +453,95 @@
                 return root;
             }
         }
+
+        // Leetcode : 450 - Delete Node in a BST
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(h)
+        // Type: Medium
+        public class DeleteNodeInABSTLC450 {
+            public TreeNode DeleteNode(TreeNode root, int key) {
+                // Return root if it is null
+                if(root == null)
+                {
+                    return root;
+                }
+                // If key is greater than root, then delete in the right subtree
+                if(key > root.val)
+                {
+                    root.right = DeleteNode(root.right,key);
+                }
+                // If key is smaller than root, then delete in the left subtree
+                else if(key < root.val)
+                {
+                    root.left = DeleteNode(root.left,key);
+                }
+                else
+                {
+                    // in case of no children or 1 child
+                    if(root.left == null)
+                    {
+                        return root.right;
+                    }
+                    if(root.right == null)
+                    {
+                        return root.left;
+                    }
+                    // in case of two children,
+                    // find the smallest value in the rightmost tree
+                    TreeNode ioSuccessor = root.right;
+                    while(ioSuccessor.left != null)
+                    {
+                        ioSuccessor = ioSuccessor.left;
+                    }
+                    // Update the root with the InOrderSuccessor value
+                    root.val = ioSuccessor.val;
+                    // Delete the original InOrderSuccessor node from the tree
+                    root.right = DeleteNode(root.right, root.val);
+                }
+                // Return root
+                return root;
+            }
+        }
+
+        // Leetcode : 1022 - Sum of Root To Leaf Binary Numbers
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(h)
+        // Type: Easy
+        public class SumOfRootToLeafBinaryNumbersLC1022 {
+            public int sum = 0;
+            public void PreOrder(TreeNode root, string binary)
+            {
+                // In case of empty node, return
+                if(root == null)
+                {
+                    return;
+                }
+                // Append the current node value to the binary string
+                string currentPath = binary + root.val.ToString();
+                // if we hit the child node then add it to our global sum
+                // based on the currentPath
+                if(root.left == null && root.right == null)
+                {
+                    sum += Convert.ToInt32(currentPath, 2);
+                    return;
+                }
+                // Call the recursive function for left and right subtrees
+                PreOrder(root.left,currentPath); 
+                PreOrder(root.right,currentPath);
+            }
+            public int SumRootToLeaf(TreeNode root) {
+                // Return 0 if the root is null
+                if(root == null)
+                {
+                    return 0;
+                }
+                // Call the recursive function
+                PreOrder(root,"");
+                // Return the sum
+                return sum;
+            }
+        }
     }
 }
