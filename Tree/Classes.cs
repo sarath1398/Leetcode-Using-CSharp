@@ -736,5 +736,60 @@
                 return DFS(grid,0,0,n,n);
             }
         }
+
+        // Leetcode : 98 - Validate Binary Search Tree
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(h)
+        // Type: Medium
+        public class ValidateBinarySearchTreeLC98 {
+            public bool DFS(TreeNode root, long min, long max)
+            {
+                // Base case: If the root is null, return true
+                if(root == null)
+                    return true;
+                // Range should be (min,root) for left subtree 
+                // and (root,max) for right subtree
+                if(!(root.val > min && root.val < max))
+                {
+                    return false;
+                }
+                // Recursively check the left and right subtrees
+                return DFS(root.left,min,root.val) && DFS(root.right,root.val,max);
+            }
+            public bool IsValidBST(TreeNode root) {
+                // Call the DFS function to validate the binary search tree
+                return DFS(root,long.MinValue,long.MaxValue);
+            }
+        }
+
+        // Leetcode : 1448 - Count Good Nodes in Binary Tree
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class CountGoodNodesLC1448 {
+            // Global variable to store the count of good nodes
+            public int count = 0;
+            public void DFS(TreeNode root, int max)
+            {
+                // Base case: If the root is null, return
+                if(root == null)
+                    return;
+                // If the current node's value is greater than or equal to the maximum value
+                // encountered so far, increment the count
+                if (root.val >= max)
+                    count += 1;
+                // Recursively call the DFS function for the left and right subtrees
+                DFS(root.left,Math.Max(max,root.val));
+                DFS(root.right,Math.Max(max,root.val));
+            }
+            public int GoodNodes(TreeNode root) {
+                // Call the DFS function to count the good nodes
+                DFS(root,int.MinValue);
+                // Return the count of good nodes
+                return count;
+            }
+        }
     }
 }

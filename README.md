@@ -157,6 +157,8 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[102 - Binary Tree Level Order Traversal](Tree/Classes.cs#L552)**
 * **[199 - Binary Tree Right Side View](Tree/Classes.cs#L603)**
 * **[427 - Construct Quad Tree](Tree/Classes.cs#L654)**
+* **[98 - Validate Binary Search Tree](Tree/Classes.cs#L745)**
+* **[1448 - Count Good Nodes in Binary Tree](Tree/Classes.cs#L771)**
 
 
 
