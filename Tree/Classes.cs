@@ -598,7 +598,7 @@
         // Leetcode : 199 - Binary Tree Right Side View
         // Approach : BFS
         // Time Complexity : O(n)
-        // Space Complexity : O(n)
+        // Space Complexity : O(h)
         // Type: Medium
         public class BinaryTreeRightSideViewLC199 {
             public IList<int> RightSideView(TreeNode root) {
@@ -643,6 +643,97 @@
                 }
                 // Return the result
                 return result;
+            }
+        }
+
+        // Leetcode : 427 - Construct Quad Tree
+        // Approach : DFS
+        // Time Complexity : O(n^2)
+        // Space Complexity : O(h)
+        // Type: Medium
+        public class ConstructQuadTreeLC427 {
+            // Definition for a Quad Tree Node.
+            public class Node
+            {
+                public bool val;
+                public bool isLeaf;
+                public Node topLeft;
+                public Node topRight;
+                public Node bottomLeft;
+                public Node bottomRight;
+
+                public Node()
+                {
+                    val = false;
+                    isLeaf = false;
+                    topLeft = null;
+                    topRight = null;
+                    bottomLeft = null;
+                    bottomRight = null;
+                }
+                
+                public Node(bool _val, bool _isLeaf)
+                {
+                    val = _val;
+                    isLeaf = _isLeaf;
+                    topLeft = null;
+                    topRight = null;
+                    bottomLeft = null;
+                    bottomRight = null;
+                }
+                
+                public Node(bool _val,bool _isLeaf,Node _topLeft,Node _topRight,Node _bottomLeft,Node _bottomRight)
+                {
+                    val = _val;
+                    isLeaf = _isLeaf;
+                    topLeft = _topLeft;
+                    topRight = _topRight;
+                    bottomLeft = _bottomLeft;
+                    bottomRight = _bottomRight;
+                }
+            }
+
+            public Node DFS(int[][] grid, int rStart, int cStart, int rEnd, int cEnd)
+            {
+                // Check if all elements in the matrix is same or not
+                int firstVal = grid[rStart][cStart];
+                bool isLeaf = true;
+                for (int i = rStart; i < rEnd; i++)
+                {
+                    for (int j = cStart; j < cEnd; j++)
+                    {
+                        if (grid[i][j] != firstVal)
+                        {
+                            isLeaf = false;
+                            break;
+                        }
+                    }
+                    if (!isLeaf)
+                        break;
+                }
+                // If all elements are same, return a leaf node
+                if (isLeaf)
+                {
+                    return new Node(firstVal == 1, true);
+                }
+
+                // Find the middle of row and column for quadrant calculation
+                int rMid = (rStart + rEnd) / 2;
+                int cMid = (cStart + cEnd) / 2;
+
+                // set val as true since the current matrix is a mix of 1's and 0's
+                return new Node(true, false,
+                    DFS(grid, rStart, cStart, rMid, cMid),     // Top Left
+                    DFS(grid, rStart, cMid, rMid, cEnd),       // Top Right
+                    DFS(grid, rMid, cStart, rEnd, cMid),       // Bottom Left
+                    DFS(grid, rMid, cMid, rEnd, cEnd)          // Bottom Right
+                );
+            }
+            public Node Construct(int[][] grid) {
+                // Get the size of the matrix
+                int n = grid.Length;
+                // Call the DFS function to construct the quad tree
+                return DFS(grid,0,0,n,n);
             }
         }
     }

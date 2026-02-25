@@ -156,6 +156,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1022 - Sum of Root To Leaf Binary Numbers](Tree/Classes.cs#L512)**
 * **[102 - Binary Tree Level Order Traversal](Tree/Classes.cs#L552)**
 * **[199 - Binary Tree Right Side View](Tree/Classes.cs#L603)**
+* **[427 - Construct Quad Tree](Tree/Classes.cs#L654)**
 
 
 
