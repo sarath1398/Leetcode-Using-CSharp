@@ -791,5 +791,33 @@
                 return count;
             }
         }
+
+        // Leetcode : 230 - Kth smallest element in a BST
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class KthSmallestElementInBSTLC230 {
+            public int KthSmallest(TreeNode root, int k) {
+                Stack<TreeNode> stack = new();
+                int count = 0;
+                if(root == null)
+                    return -1;
+                while(stack.Count > 0 || root != null)
+                {
+                    while(root != null)
+                    {
+                        stack.Push(root);
+                        root = root.left;
+                    }
+                    root = stack.Pop();
+                    count += 1;
+                    if(count == k)
+                        return root.val;
+                    root = root.right;
+                }
+                return -1;
+            }
+        }    
     }
 }
