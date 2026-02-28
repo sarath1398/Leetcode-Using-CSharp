@@ -163,6 +163,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[105 - Construct Binary Tree from Preorder and Inorder Traversal](Tree/Classes.cs#L828)**
 * **[337 - House Robber III](Tree/Classes.cs#L867)**
 * **[1325 - Delete Leaves With a Given Value](Tree/Classes.cs#L925)**
+* **[124 - Binary Tree Maximum Path Sum](Tree/Classes.cs#L947)**
 
 
 

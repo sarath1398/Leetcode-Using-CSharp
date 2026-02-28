@@ -938,5 +938,39 @@
                 return root;
             }
         }
+    
+        // Leetcode : 124 - Binary Tree Maximum Path Sum
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Hard
+        public class BinaryTreeMaximumPathSumLC124 {
+            // Global variable to store the maximum path sum
+            int gMax = int.MinValue;
+            public int DFS(TreeNode root)
+            {
+                // Base case: If the root is null, return 0
+                if(root == null)
+                {
+                    return 0;
+                }
+                // Recursively call the DFS function for the left and right subtrees
+                int lMax = Math.Max(0,DFS(root.left));
+                int rMax = Math.Max(0,DFS(root.right));
+                // Calculate the maximum path sum that includes the current node
+                int sum = root.val + lMax + rMax;
+                // Update the global maximum path sum
+                gMax = Math.Max(sum,gMax);
+                // Return the maximum path sum that includes the current node and one of its children
+                // doing this ensures a linear path
+                return root.val + Math.Max(lMax,rMax);
+            }
+            public int MaxPathSum(TreeNode root) {
+                // Call the DFS function to get the maximum path sum
+                DFS(root);
+                // Return the global maximum path sum
+                return gMax;
+            }
+        }
     }
 }
