@@ -858,5 +858,85 @@
                 return ConstructTree(preorder,cache,0,inorder.Length - 1);
             }
         }
+        
+        // Leetcode : 337 - House Robber III
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class HouseRobberIII_LC337 {
+            // DP - Memoization approach
+
+            //Dictionary<TreeNode,int> cache = new();
+            // public int Rob(TreeNode root) {
+            //     if(root == null)
+            //     {
+            //         return 0;
+            //     }
+            //     if(cache.ContainsKey(root))
+            //     {
+            //         return cache[root];
+            //     }
+            //     int curr_money = root.val;
+            //     if(root.left != null)
+            //     {
+            //         curr_money += Rob(root.left.left) + Rob(root.left.right);
+            //     }
+            //     if(root.right != null)
+            //     {
+            //         curr_money += Rob(root.right.left) + Rob(root.right.right);
+            //     }
+            //     int max = Math.Max(curr_money,Rob(root.left) + Rob(root.right));
+            //     cache[root] = max;
+            //     return max;
+            // }
+            
+            // DP - Bottom up optimized space complexity
+            
+            public (int withRoot, int withoutRoot) DFS(TreeNode root)
+            {
+                // Base case: If the root is null, return 0
+                if(root == null)
+                    return (0,0);
+                // Recursively call the DFS function for the left and right subtrees
+                (int lw1,int lw2) = DFS(root.left);
+                (int rw1, int rw2) = DFS(root.right);
+                // If we include the current node, we cannot include the left and right children
+                int max_with = root.val + lw2 + rw2;
+                // If we exclude the current node, we can include the left and right children
+                int max_without = Math.Max(lw1,lw2) + Math.Max(rw1,rw2);
+                // Return the maximum of the two cases
+                return (max_with,max_without);
+            }
+            public int Rob(TreeNode root)
+            {
+                // Call the DFS function to get the maximum amount of money that can be robbed
+                (int withRoot, int withoutRoot) = DFS(root);
+                // Return the maximum of the two cases
+                return Math.Max(withRoot,withoutRoot);
+            }
+        }
+
+        // Leetcode : 1325 - Delete Leaves With a Given Value
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class DeleteLeavesWithAGivenValueLC1325 {
+            public TreeNode RemoveLeafNodes(TreeNode root, int target) {
+                // Base case: If the root is null, return null
+                if(root == null)
+                    return null;
+                // Recursively call the RemoveLeafNodes function for the left and right subtrees
+                root.left = RemoveLeafNodes(root.left,target);
+                root.right = RemoveLeafNodes(root.right,target);
+                // If the left and right children are null and the current node's value is equal to the target
+                if(root.left == null && root.right == null && root.val == target)
+                {
+                    return null;
+                }
+                return root;
+            }
+        }
     }
 }
