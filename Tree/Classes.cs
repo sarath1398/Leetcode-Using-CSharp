@@ -2,11 +2,7 @@
 {
     internal class Classes
     {
-        // Leetcode : 94 - Binary Tree Inorder Traversal
-        // Approach : Recursive
-        // Time Complexity : O(n)
-        // Space Complexity : O(n)
-        // Type: Easy
+        // Common implementation of TreeNode
         public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
         {
             public int val = val;
@@ -14,6 +10,11 @@
             public TreeNode right = right;
         }
 
+        // Leetcode : 94 - Binary Tree Inorder Traversal
+        // Approach : Recursive
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type: Easy
         public class InorderClass {
             List<int> result = new();
             // Recursive
