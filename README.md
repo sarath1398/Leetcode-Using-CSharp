@@ -160,6 +160,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[98 - Validate Binary Search Tree](Tree/Classes.cs#L745)**
 * **[1448 - Count Good Nodes in Binary Tree](Tree/Classes.cs#L771)**
 * **[230 - Kth smallest element in a BST](Tree/Classes.cs#L800)**
+* **[105 - Construct Binary Tree from Preorder and Inorder Traversal](Tree/Classes.cs#L828)**
 
 
 

@@ -819,5 +819,43 @@
                 return -1;
             }
         }    
+
+        // Leetcode : 105 - Construct Binary Tree from Preorder and Inorder Traversal
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class ConstructBinaryTreeFromPreorderAndInorderTraversalLC105 {
+            // Global variable to store the index of the current node in the preorder array
+            public int counter = 0;
+            public TreeNode ConstructTree(int[] pre,Dictionary<int,int> cache, int l, int r)
+            {
+                // Base case: If the left index is greater than the right index, return null
+                if(l > r)
+                {
+                    return null;
+                }
+                // Get the value of the current node from the preorder array
+                int value = pre[counter++];
+                // Get the index of the current node in the inorder array
+                int split = cache[value];
+                // Create a new node with the current value
+                TreeNode root = new TreeNode(value);
+                // Recursively construct the left and right subtrees
+                root.left = ConstructTree(pre,cache,l,split-1);
+                root.right = ConstructTree(pre,cache,split+1,r);
+                return root;
+            }
+            public TreeNode BuildTree(int[] preorder, int[] inorder) {
+                // Create a cache to store the index of each value in the inorder array
+                Dictionary<int,int> cache = new();
+                for(int i=0;i<inorder.Length;i++)
+                {
+                    cache.Add(inorder[i],i);
+                }
+                // Call the ConstructTree function to construct the binary tree
+                return ConstructTree(preorder,cache,0,inorder.Length - 1);
+            }
+        }
     }
 }
