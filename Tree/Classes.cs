@@ -972,5 +972,54 @@
                 return gMax;
             }
         }
+
+        // Leetcode : 297 - Serialize and Deserialize Binary Tree
+        // Approach : DFS
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Hard
+        public class SerializeAndDeserializeBinaryTreeLC297 {
+            // Deserialize helper function
+            public TreeNode DFS(Queue<string> queue)
+            {
+                // Base case: If the queue is empty, return null
+                if(queue.Count == 0)
+                    return null;
+            
+                // Dequeue the current node
+                var node = queue.Dequeue();
+
+                // Base case: If the current node is null, return null
+                if(node == "N")
+                    return null;
+            
+                // Create the current node
+                TreeNode root = new(int.Parse(node));
+                // Recursively call the DFS function for the left and right subtrees
+                root.left = DFS(queue);
+                root.right = DFS(queue);
+                return root;
+            }
+
+            // Encodes a tree to a single string.
+            public string serialize(TreeNode root) {
+                // Base case: If the root is null, return "N,"
+                if (root == null) {
+                    return "N,";
+                }
+                // Recursively generate serialized string for left and right subtrees
+                return root.val.ToString() + "," + serialize(root.left) + serialize(root.right);
+            }
+
+            // Decodes your encoded data to tree.
+            public TreeNode deserialize(string data) {
+                // Split the string into an array of strings
+                string[] arr = data.Split(',',StringSplitOptions.RemoveEmptyEntries); 
+                // Create a queue of strings
+                Queue<string> queue = new(arr);
+                // Call the DFS function to deserialize the tree
+                return DFS(queue);
+            }
+        }
     }
 }
