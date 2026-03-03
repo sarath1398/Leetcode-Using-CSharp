@@ -165,3 +165,6 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1325 - Delete Leaves With a Given Value](Tree/Classes.cs#L925)**
 * **[124 - Binary Tree Maximum Path Sum](Tree/Classes.cs#L947)**
 * **[297 - Serialize and Deserialize Binary Tree](Tree/Classes.cs#L981)**
+
+### Trie
+* **[208 - Implement Trie (Prefix Tree)](Trie/Classes.cs#L10)**
