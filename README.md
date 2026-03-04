@@ -168,3 +168,4 @@ This repository contains my solutions to various LeetCode problems implemented i
 
 ### Trie
 * **[208 - Implement Trie (Prefix Tree)](Trie/Classes.cs#L10)**
+* **[211 - Design Add and Search Words Data Structure](Trie/Classes.cs#L114)**
