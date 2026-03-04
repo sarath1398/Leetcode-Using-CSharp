@@ -112,7 +112,7 @@
         // Space Complexity : O(n)
         // Type : Medium
         public class WordDictionary {
-
+            // Node class for the trie
             public class Node
             {
                 Node[] _links;
@@ -146,55 +146,71 @@
                 root = new Node();
             }
             
+            // Add a word to the trie
             public void AddWord(string word) {
                 Node curr = root;
                 foreach(char ch in word)
                 {
+                    // If the node does not contain the character, create a new node
                     if(!curr.ContainsKey(ch))
                     {
                         Node newNode = new();
                         curr.SetNode(newNode,ch);
                     }
+                    // Move to the next node
                     curr = curr.GetNode(ch);
                 }
+                // Mark the end of the word
                 curr.IsEnd = true;
             }
 
+            // Helper function to search for a word in the trie
             public bool SearchHelper(Node root, string word, int matchCount)
             {
+                // If the match count is equal to the length of the word, return the end of the word
                 if(matchCount == word.Length)
                 {
                     return root.IsEnd;
                 }
                 char curr_letter = word[matchCount];
+                // If the current letter is not a wildcard, check if the node contains the character
                 if(curr_letter != '.')
                 {
+                    // If the node contains the character, move to the next node
                     if(root.ContainsKey(curr_letter))
                         return SearchHelper(root.GetNode(curr_letter),word,matchCount + 1);
+                    // If the node does not contain the character, return false
                     return false;
                 }
                 else
                 {
+                    // If the current letter is a wildcard, check if the node contains any character
                     for(int i = 0; i < 26; i++)
                     {
                         char ch = (char)(i + 'a');
+                        // If the node contains the character, move to the next node
                         if(root.ContainsKey(ch))
                         {
+                            // If the match is found, return true
                             bool isMatch = SearchHelper(root.GetNode(ch),word,matchCount + 1);
                             if(isMatch)
                                 return true;
                         }
                     }
                 }
+                // If no match is found, return false
                 return false;
             }
             
+            // Search for a word in the trie
             public bool Search(string word) {
                 Node curr = root;
+                // If the root is null, return false
                 if(curr == null)
                 {
                     return false;
                 }
+                // Call the helper function to search for the word
                 return SearchHelper(curr,word,0);
             }
         }
