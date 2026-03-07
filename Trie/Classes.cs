@@ -214,5 +214,199 @@
                 return SearchHelper(curr,word,0);
             }
         }
+
+        // Leetcode : 2707 - Extra Characters in a String
+        // Approach : DFS + Memoization
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class ExtraCharactersInAString {
+            
+            Node root = new();
+            
+            // Memoization dictionary
+            public Dictionary<int,int> memo = new();
+
+            // Node class for the trie
+            public class Node
+            {
+                Node[] _links;
+                public bool IsEndOfWord {get; set;}
+
+                public Node()
+                {
+                    _links = new Node[26];
+                    IsEndOfWord = false;
+                }
+
+                public bool ContainsKey(char ch) => _links[ch - 'a'] != null;
+
+                public Node GetNode(char ch) => _links[ch - 'a'];
+
+                public void SetNode(Node node, char ch) => _links[ch - 'a'] = node;
+            }
+
+            public int WordBreak(string query, int startIndex)
+            {
+                // no word breaks since no string to break
+                if(startIndex >= query.Length)
+                {
+                    return 0;
+                }
+
+                // Check if the result is already memoized
+                if(memo.ContainsKey(startIndex + 1))
+                    return memo[startIndex + 1];
+                // omit the current letter
+                int min = 1 + WordBreak(query,startIndex + 1);
+                
+                // unwind the recursion stack and check for trie
+
+                // reset node to root
+                Node curr_node = root;
+
+                // search the subquery and check if it exists in trie
+                for(int i = startIndex; i < query.Length; i++)
+                {
+                    char curr_letter = query[i];
+                    // If the node does not contain the character, break
+                    if(!curr_node.ContainsKey(curr_letter))
+                    {
+                        break;
+                    }
+                    // Move to the next node
+                    curr_node = curr_node.GetNode(curr_letter);
+
+                    // If the node is the end of a word, update the minimum
+                    if(curr_node.IsEndOfWord == true)
+                    {
+                        min = Math.Min(min,WordBreak(query,i + 1));
+                    }
+                }
+                // Memoize the result
+                memo[startIndex + 1] = min;
+                return min;
+            }
+
+            public int MinExtraChar(string s, string[] dictionary) {
+                Node curr = new();
+                // Insert all the words in the dictionary into the trie
+                foreach(string word in dictionary)
+                {
+                    curr = root;
+                    foreach(char ch in word)
+                    {
+                        if(!curr.ContainsKey(ch))
+                        {
+                            Node newNode = new();
+                            curr.SetNode(newNode,ch);
+                        }
+                        curr = curr.GetNode(ch);
+                    }
+                    curr.IsEndOfWord = true;
+                }
+                return WordBreak(s,0);
+            }
+        }
+
+        // Leetcode : 212 - Word Search II
+        // Approach : DFS + Backtracking
+        // Time Complexity : O(n)
+        // Space Complexity : O(n)
+        // Type : Medium
+        public class WordSearchII {
+
+            Node root = new();
+            bool[,] visited;
+            HashSet<string> result = new();
+
+            // Define properties for the node
+            public class Node
+            {
+                Node[] _links = new Node[26];
+                public bool IsEndOfWord {get;set;} = false;
+                public bool IsVisited {get; set;} = false;
+
+                public void SetNode(char ch, Node newNode) => _links[ch - 'a'] = newNode;
+
+                public Node GetNode(char ch) => _links[ch - 'a'];
+
+                public bool ContainsKey(char ch) => _links[ch - 'a'] != null;
+            }
+
+            // The backtracking function
+            public void DFS(char[][] board, int r, int c, int rows, int cols,
+            Node curr_node, StringBuilder sb)
+            {
+                // Return if out of bounds or if the prefix tree does not contain the current letter 
+                // or if the cell is already visited
+
+                if(r >= rows || c >= cols || r < 0 || c < 0 ||
+                !curr_node.ContainsKey(board[r][c]) || visited[r,c] == true)
+                {
+                    return;
+                }
+
+                // (int x, int y) top = (r - 1, c);
+                // (int x, int y) down = (r + 1, c);
+                // (int x, int y) left = (r , c - 1);
+                // (int x, int y) right = (r , c + 1);
+
+                // Get the current letter and append it to the string builder
+                char curr_letter = board[r][c];
+                sb.Append(curr_letter);
+                // update the visited array
+                visited[r,c] = true;
+                // move to the next node
+                curr_node = curr_node.GetNode(curr_letter);
+                // if the current node is the end of a word, add it to the result
+                if(curr_node.IsEndOfWord == true)
+                {
+                    result.Add(sb.ToString());
+                }
+
+                // Recursively call the function for all the possible directions
+                DFS(board,r - 1, c, rows, cols, curr_node, sb);
+                DFS(board,r + 1, c, rows, cols, curr_node, sb);
+                DFS(board,r, c + 1, rows, cols, curr_node, sb);
+                DFS(board,r, c - 1, rows, cols, curr_node, sb);
+
+                // Backtrack
+                visited[r,c] = false;
+                sb.Length--;
+            }
+
+            public IList<string> FindWords(char[][] board, string[] words) { 
+                root = new();
+                int N = board.Length;
+                int M = board[0].Length;
+                visited = new bool[N,M];
+                // Insert all the words in the dictionary into the trie
+                foreach(string word in words)
+                {
+                    Node curr = root;
+                    foreach(char ch in word)
+                    {
+                        if(!curr.ContainsKey(ch))
+                        {
+                            curr.SetNode(ch,new Node());
+                        }
+                        curr = curr.GetNode(ch);
+                    }
+                    curr.IsEndOfWord = true;
+                }
+                // Iterate over the board and call the DFS function
+                for(int i = 0; i < N; i++)
+                {
+                    StringBuilder sb = new();
+                    for(int j = 0; j< M; j++)
+                    {
+                        DFS(board,i,j,N,M,root,sb);
+                    }
+                }
+                // Return the result
+                return result.ToList();
+            }
+        }
     }
 }
