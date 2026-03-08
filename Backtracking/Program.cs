@@ -50,7 +50,11 @@ class Program
         // {
         //     Console.WriteLine(string.Join(',',result));
         // }
-        var data = new TargetSum();
-        Console.WriteLine(data.FindTargetSumWays([1, 1, 1, 1, 1], 3));
+        // var data = new TargetSum();
+        // Console.WriteLine(data.FindTargetSumWays([1, 1, 1, 1, 1], 3));
+        var data = new XORSubsetSum();
+        Console.WriteLine(data.SubsetXORSum([1, 3]));
+        Console.WriteLine(data.SubsetXORSum([5, 1, 6]));
+        Console.WriteLine(data.SubsetXORSum([3, 4, 5, 6, 7, 8]));
     }
 }

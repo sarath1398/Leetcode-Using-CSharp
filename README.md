@@ -44,6 +44,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[2678 - Number of Senior Citizens](Arrays/NumberOfSeniorCitizens.cs)**
 
 ### Backtracking
+* **[1863 - XOR Sum of All Subsets](Backtracking/XORSubsetSum.cs)**
 * **[39 - Combination Sum](Backtracking/CombinationSumLC.cs)**
 * **[40 - Combination Sum II](Backtracking/CombinationSum2.cs)**
 * **[77 - Combinations](Backtracking/Combinations.cs)**

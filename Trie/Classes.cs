@@ -1,4 +1,6 @@
-﻿namespace Trie
+﻿using System.Text;
+
+namespace Trie
 {
     internal class Classes
     {
