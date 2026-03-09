@@ -53,6 +53,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[216 - Combination Sum III](Backtracking/CombinationSum3.cs)**
 * **[401 - Binary Watch](Backtracking/BinaryWatch.cs)**
 * **[494 - Target Sum](Backtracking/TargetSum.cs)**
+* **[46 - Permutations](Backtracking/Permutations.cs)**
 
 ### Dynamic Programming
 * **[70 - Climbing Stairs](Dynamic%20Programming/DynamicProgramming/ClimbingStairs.cs)**
