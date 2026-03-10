@@ -56,8 +56,14 @@ class Program
         //Console.WriteLine(data.SubsetXORSum([1, 3]));
         //Console.WriteLine(data.SubsetXORSum([5, 1, 6]));
         //Console.WriteLine(data.SubsetXORSum([3, 4, 5, 6, 7, 8]));
-        var data = new Permutations();
-        var results = data.Permute([1,2,3]);
+        // var data = new Permutations();
+        // var results = data.Permute([1,2,3]);
+        // foreach (var result in results)
+        // {
+        //     Console.WriteLine(string.Join(',',result));
+        // }
+        var data = new PermutationsII();
+        var results = data.PermuteUnique([1,1,2]);
         foreach (var result in results)
         {
             Console.WriteLine(string.Join(',',result));
