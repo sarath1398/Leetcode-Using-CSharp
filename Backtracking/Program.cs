@@ -74,7 +74,13 @@ class Program
         // {
         //     Console.WriteLine(string.Join(',',result));
         // }
-        var data = new WordSearch();
-        Console.WriteLine(data.Exist([['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], "ABCCED"));
+        // var data = new WordSearch();
+        // Console.WriteLine(data.Exist([['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], "ABCCED"));
+        var data = new LetterCombinationsOfAPhoneNumber();
+        var results = data.LetterCombinations("23");
+        foreach (var result in results)
+        {
+            Console.WriteLine(string.Join(',',result));
+        }
     }
 }

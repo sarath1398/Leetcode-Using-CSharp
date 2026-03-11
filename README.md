@@ -57,6 +57,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[47 - Permutations II](Backtracking/PermutationsII.cs)**
 * **[79 - Word Search](Backtracking/WordSearch.cs)**
 * **[131 - Palindrome Partitioning](Backtracking/PalindromePartitioning.cs)**
+* **[17 - Letter Combinations of a Phone Number](Backtracking/LetterCombinationsOfAPhoneNumber.cs)**
 
 ### Dynamic Programming
 * **[70 - Climbing Stairs](Dynamic%20Programming/DynamicProgramming/ClimbingStairs.cs)**
