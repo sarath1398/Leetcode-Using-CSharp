@@ -82,7 +82,9 @@ class Program
         // {
         //     Console.WriteLine(string.Join(',',result));
         // }
-        var data = new MatchsticksToSquares();
-        Console.WriteLine(data.Makesquare([1,1,2,2,2]));
+        // var data = new MatchsticksToSquares();
+        // Console.WriteLine(data.Makesquare([1,1,2,2,2]));
+        var data = new PartitionToKEqualSumSubsets();
+        Console.WriteLine(data.CanPartitionKSubsets([4, 3, 2, 3, 5, 2, 1], 4));
     }
 }
