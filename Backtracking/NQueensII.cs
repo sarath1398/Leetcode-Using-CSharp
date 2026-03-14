@@ -1,17 +1,19 @@
 ﻿namespace Backtracking
 {
-    // Leetcode : 51 - N-Queens
+    // Easiest variation of N-Queens problem imo
+    // Leetcode : 52 - N-Queens II
     // Approach : Backtracking
     // Time Complexity : O(n!)
-    // Space Complexity : O(n^2)
+    // Space Complexity : O(n)
     // Type: Hard
-    public class NQueens
+    public class NQueensII
     {
         // Using HashSet to keep track of occupied columns and diagonals
         HashSet<int> cols = [];
         HashSet<int> leftDiagonal = [];
         HashSet<int> rightDiagonal = [];
-        List<IList<string>> result = [];
+        // Total count of valid board configurations
+        int totalCount = 0;
         public bool IsUnderAttack(int r, int c)
         {
             // Column check - Each queen occupies a unique column
@@ -25,19 +27,7 @@
             // Base case: If we have successfully placed queens in all rows
             if (r == n)
             {
-                // Convert the board to a list of strings
-                List<string> strings = [];
-                for (int i = 0; i < n; i++)
-                {
-                    string s = "";
-                    for (int j = 0; j < n; j++)
-                    {
-                        s += board[i, j];
-                    }
-                    strings.Add(new String(s));
-                }
-                // Add the valid board configuration to the result list
-                result.Add(strings);
+                totalCount += 1;
                 return;
             }
             // iterate at column level
@@ -63,7 +53,7 @@
             }
             return;
         }
-        public IList<IList<string>> SolveNQueens(int n)
+        public int TotalNQueens(int n)
         {
             // Initialize the board with empty cells
             char[,] board = new char[n, n];
@@ -76,7 +66,7 @@
             }
             // Start the backtracking process from the first row
             dfs(board, 0, n);
-            return result;
+            return totalCount;
         }
     }
 }
