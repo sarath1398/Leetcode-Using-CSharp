@@ -60,6 +60,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[17 - Letter Combinations of a Phone Number](Backtracking/LetterCombinationsOfAPhoneNumber.cs)**
 * **[473 - Matchsticks to Square](Backtracking/MatchsticksToSquares.cs)**
 * **[698 - Partition to K Equal Sum Subsets](Backtracking/PartitionToKEqualSumSubsets.cs)**
+* **[51 - N-Queens](Backtracking/NQueens.cs)**
 
 ### Dynamic Programming
 * **[70 - Climbing Stairs](Dynamic%20Programming/DynamicProgramming/ClimbingStairs.cs)**

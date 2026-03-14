@@ -84,7 +84,17 @@ class Program
         // }
         // var data = new MatchsticksToSquares();
         // Console.WriteLine(data.Makesquare([1,1,2,2,2]));
-        var data = new PartitionToKEqualSumSubsets();
-        Console.WriteLine(data.CanPartitionKSubsets([4, 3, 2, 3, 5, 2, 1], 4));
+        // var data = new PartitionToKEqualSumSubsets();
+        // Console.WriteLine(data.CanPartitionKSubsets([4, 3, 2, 3, 5, 2, 1], 4));
+        var data = new NQueens();
+        var results = data.SolveNQueens(4);
+        foreach (var result in results)
+        {
+            foreach (var r in result)
+            {
+                Console.Write(r + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }
