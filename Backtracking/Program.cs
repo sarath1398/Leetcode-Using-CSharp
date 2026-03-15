@@ -96,7 +96,13 @@ class Program
         //     }
         //     Console.WriteLine();
         // }
-        var data = new NQueensII();
-        Console.WriteLine(data.TotalNQueens(4));
+        //var data = new NQueensII();
+        //Console.WriteLine(data.TotalNQueens(4));
+        var data = new WordBreakII();
+        var results = data.WordBreak("pineapplepenapple", ["apple", "pen", "applepen", "pine", "pineapple"]);
+        foreach (var result in results)
+        {
+            Console.WriteLine(result);
+        }
     }
 }

@@ -62,6 +62,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[698 - Partition to K Equal Sum Subsets](Backtracking/PartitionToKEqualSumSubsets.cs)**
 * **[51 - N-Queens](Backtracking/NQueens.cs)**
 * **[52 - N-Queens II](Backtracking/NQueensII.cs)**
+* **[140 - Word Break II](Backtracking/WordBreakII.cs)**
 
 ### Dynamic Programming
 * **[70 - Climbing Stairs](Dynamic%20Programming/DynamicProgramming/ClimbingStairs.cs)**
