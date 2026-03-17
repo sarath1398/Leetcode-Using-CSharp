@@ -182,3 +182,6 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[211 - Design Add and Search Words Data Structure](Trie/Classes.cs#L114)**
 * **[2707 - Extra Characters in a String](Trie/Classes.cs#L223)**
 * **[212 - Word Search II](Trie/Classes.cs#L317)**
+
+### Heap
+* **[703 - Kth Largest Element in a Stream](Heap/Classes.cs#L10)**
