@@ -188,4 +188,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1046 - Last Stone Weight](Heap/Classes.cs#L52)**
 * **[973 - K Closest Points to Origin](Heap/Classes.cs#L106)**
 * **[215 - Find the Kth Largest Element in an Array](Heap/Classes.cs#L136)**
+* **[621 - Task Scheduler](Heap/Classes.cs#L154)**
 

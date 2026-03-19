@@ -151,5 +151,49 @@
                 return val;
             }
         }
+
+        // Leetcode - 621 - Task Scheduler
+        // Approach : Max Heap
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class TaskSchedulerLC621 {
+            public int LeastInterval(char[] tasks, int n) {
+                int[] counter = new int[26];
+                foreach(var task in tasks)
+                {
+                    counter[task-'A']++;
+                }
+                PriorityQueue<int,int> pQueue = new();
+                for(int i=0; i<26;i++)
+                {
+                    int count = counter[i];
+                    if(count > 0)
+                    {
+                        pQueue.Enqueue(count,-count);
+                    }
+                }
+                Queue<(int count, int time)> queue = new();
+                int total = 0;
+                while(pQueue.Count > 0 || queue.Count > 0)
+                {
+                    if(queue.Count > 0 && total >= queue.Peek().time)
+                    {
+                        var (count , _) = queue.Dequeue();
+                        pQueue.Enqueue(count, -count);
+                    }
+                    if(pQueue.Count > 0)
+                    {
+                        int ele = pQueue.Dequeue() - 1;
+                        if(ele > 0)
+                        {
+                            queue.Enqueue((ele, total + n + 1));
+                        }
+                    }
+                    total++;
+                }
+                return total;
+            }
+        }
     }
 }

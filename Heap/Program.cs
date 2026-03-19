@@ -25,10 +25,10 @@ namespace Heap
             //     Console.WriteLine(point[0] + " " + point[1]);
             // }   
 
-            var findKthLargest = new FindKthLargestLC215();
-            int[] nums = [3,2,1,5,6,4];
-            int k = 2;
-            int result = findKthLargest.FindKthLargest(nums,k);
+            var taskScheduler = new TaskSchedulerLC621();
+            char[] tasks = ['A','A','A','B','B','B'];
+            int n = 2;
+            int result = taskScheduler.LeastInterval(tasks,n);
             Console.WriteLine(result);
         }
     }
