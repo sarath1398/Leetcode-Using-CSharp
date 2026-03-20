@@ -195,5 +195,104 @@
                 return total;
             }
         }
+
+        // Leetcode - 355 - Design Twitter
+        // Approach : Max Heap
+        // Time Complexity : O(U * k log k) where U is number of users and k = 10
+        // Space Complexity : O(U + T) where T is number of tweets
+        // Type: Medium
+        public class Twitter {
+
+            // global counter to keep track of time
+            int gblCount;
+            // map to store user and their followers
+            Dictionary<int,HashSet<int>> userMap;
+            // map to store user and their tweets
+            Dictionary<int,List<(int count, int tweet)>> tweetMap;
+            
+            public Twitter() {
+                gblCount = 0;
+                userMap = [];
+                tweetMap = [];
+            }
+            
+            // post tweet
+            public void PostTweet(int userId, int tweetId) {
+                // check if user exists and add if not
+                if(!tweetMap.ContainsKey(userId))
+                {
+                    tweetMap.Add(userId,new());
+                }
+                var userTweets = tweetMap[userId];
+                // add tweet with global counter
+                userTweets.Add((++gblCount,tweetId));
+            }
+            
+            // get news feed
+            public List<int> GetNewsFeed(int userId) {
+                PriorityQueue<int,int> pQueue = new();
+                // check if user exists and add if not
+                if(!userMap.ContainsKey(userId))
+                {
+                    userMap.Add(userId,new());
+                }
+                // add user to their own followers
+                if(!userMap[userId].Contains(userId))
+                {
+                    userMap[userId].Add(userId);
+                }
+                var followers = userMap[userId];
+                // iterate through all followers
+                foreach(var follower in followers)
+                {
+                    // check if follower has tweets
+                    if(tweetMap.ContainsKey(follower) && tweetMap[follower].Count > 0)
+                    {
+                        int tc = tweetMap[follower].Count;
+                        // add the 10 most recent tweets of each follower to the priority queue
+                        for(int i = 0; i < Math.Min(tc,10); i++)
+                        {
+                            // iterate from the end to get latest tweets
+                            (int cnt, int twt) = tweetMap[follower][tc - i - 1];
+                            pQueue.Enqueue(twt,cnt);
+                            // keep only top 10 tweets
+                            if(pQueue.Count > 10)
+                            {
+                                pQueue.Dequeue();
+                            }
+                        }
+                    }
+                }
+                List<int> result = new();
+                // dequeue the top 10 tweets
+                while(pQueue.Count > 0)
+                {
+                    // dequeue the tweet
+                    pQueue.TryDequeue(out int tweet, out int count);
+                    // insert at the beginning to maintain order
+                    result.Insert(0,tweet);
+                }
+                return result;
+            }
+            
+            // follow
+            public void Follow(int followerId, int followeeId) {
+                // check if user exists and add if not
+                if (!userMap.ContainsKey(followerId)) {
+                    userMap[followerId] = new HashSet<int>();
+                }
+                // add followee to followers
+                userMap[followerId].Add(followeeId);
+            }
+            
+            // unfollow
+            public void Unfollow(int followerId, int followeeId) {
+                // check if user exists and remove if not
+                if (userMap.ContainsKey(followerId)) {
+                    userMap[followerId].Remove(followeeId);
+                }
+            }
+        }
+
     }
 }

@@ -25,11 +25,29 @@ namespace Heap
             //     Console.WriteLine(point[0] + " " + point[1]);
             // }   
 
-            var taskScheduler = new TaskSchedulerLC621();
-            char[] tasks = ['A','A','A','B','B','B'];
-            int n = 2;
-            int result = taskScheduler.LeastInterval(tasks,n);
-            Console.WriteLine(result);
+            // var taskScheduler = new TaskSchedulerLC621();
+            // char[] tasks = ['A','A','A','B','B','B'];
+            // int n = 2;
+            // int result = taskScheduler.LeastInterval(tasks,n);
+            // Console.WriteLine(result);
+
+            var twitter = new Twitter();
+            twitter.PostTweet(1,5);
+            foreach(var tweet in twitter.GetNewsFeed(1))
+            {
+                Console.Write(tweet + " ");
+            }
+            twitter.Follow(1,2);
+            twitter.PostTweet(2,6);
+            foreach(var tweet in twitter.GetNewsFeed(1))
+            {
+                Console.Write(tweet + " ");
+            }
+            twitter.Unfollow(1,2);
+            foreach(var tweet in twitter.GetNewsFeed(1))
+            {
+                Console.Write(tweet + " ");
+            }
         }
     }
 }
