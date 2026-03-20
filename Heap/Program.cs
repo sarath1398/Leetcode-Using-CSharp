@@ -31,23 +31,30 @@ namespace Heap
             // int result = taskScheduler.LeastInterval(tasks,n);
             // Console.WriteLine(result);
 
-            var twitter = new Twitter();
-            twitter.PostTweet(1,5);
-            foreach(var tweet in twitter.GetNewsFeed(1))
-            {
-                Console.Write(tweet + " ");
-            }
-            twitter.Follow(1,2);
-            twitter.PostTweet(2,6);
-            foreach(var tweet in twitter.GetNewsFeed(1))
-            {
-                Console.Write(tweet + " ");
-            }
-            twitter.Unfollow(1,2);
-            foreach(var tweet in twitter.GetNewsFeed(1))
-            {
-                Console.Write(tweet + " ");
-            }
+            // var twitter = new Twitter();
+            // twitter.PostTweet(1,5);
+            // foreach(var tweet in twitter.GetNewsFeed(1))
+            // {
+            //     Console.Write(tweet + " ");
+            // }
+            // twitter.Follow(1,2);
+            // twitter.PostTweet(2,6);
+            // foreach(var tweet in twitter.GetNewsFeed(1))
+            // {
+            //     Console.Write(tweet + " ");
+            // }
+            // twitter.Unfollow(1,2);
+            // foreach(var tweet in twitter.GetNewsFeed(1))
+            // {
+            //     Console.Write(tweet + " ");
+            // }
+
+            var reorganizeString = new ReorganizeStringLC767();
+            string s = "aab";
+            Console.WriteLine(reorganizeString.ReorganizeString(s));
+
+            s = "aaab";
+            Console.WriteLine(reorganizeString.ReorganizeString(s));
         }
     }
 }

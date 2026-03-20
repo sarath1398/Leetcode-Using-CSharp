@@ -1,4 +1,6 @@
-﻿namespace Heap
+﻿using System.Text;
+
+namespace Heap
 {
     internal class Classes
     {
@@ -294,5 +296,44 @@
             }
         }
 
+        // Leetcode - 767 - Reorganize String
+        // Approach : Max Heap
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class ReorganizeStringLC767 {
+            public string ReorganizeString(string s) {
+                int[] counter = new int[26];
+                foreach(char c in s)
+                {
+                    counter[c - 'a']++;
+                }
+                PriorityQueue<char,int> pq = new();
+                StringBuilder sb = new();
+                for(int i = 0; i< 26; i++)
+                {
+                    int count = counter[i];
+                    if(count > 0)
+                    {
+                        pq.Enqueue((char)('a' + i),-count);
+                    }
+                }
+                char prevChar = '#';
+                int prevCount = 0;
+                while(pq.Count > 0)
+                {
+                    pq.TryDequeue(out char task, out int count);
+                    sb.Append(task);
+                    count++;
+                    if(prevCount > 0)
+                    {
+                        pq.Enqueue(prevChar, -prevCount);
+                    }
+                    prevChar = task;
+                    prevCount = -count;
+                }
+                return sb.Length == s.Length ? sb.ToString() : "";
+            }
+        }
     }
 }

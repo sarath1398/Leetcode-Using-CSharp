@@ -190,4 +190,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[215 - Find the Kth Largest Element in an Array](Heap/Classes.cs#L136)**
 * **[621 - Task Scheduler](Heap/Classes.cs#L160)**
 * **[355 - Design Twitter](Heap/Classes.cs#L204)**
+* **[767 - Reorganize String](Heap/Classes.cs#L304)**
 
