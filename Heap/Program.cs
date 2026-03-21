@@ -49,12 +49,16 @@ namespace Heap
             //     Console.Write(tweet + " ");
             // }
 
-            var reorganizeString = new ReorganizeStringLC767();
-            string s = "aab";
-            Console.WriteLine(reorganizeString.ReorganizeString(s));
+            // var reorganizeString = new ReorganizeStringLC767();
+            // string s = "aab";
+            // Console.WriteLine(reorganizeString.ReorganizeString(s));
 
-            s = "aaab";
-            Console.WriteLine(reorganizeString.ReorganizeString(s));
+            // s = "aaab";
+            // Console.WriteLine(reorganizeString.ReorganizeString(s));
+
+            var longestHappyString = new LongestHappyStringLC1405();
+            Console.WriteLine(longestHappyString.LongestDiverseString(1,1,7));
+            Console.WriteLine(longestHappyString.LongestDiverseString(7,1,0));
         }
     }
 }

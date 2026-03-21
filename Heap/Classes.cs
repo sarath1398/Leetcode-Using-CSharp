@@ -335,5 +335,71 @@ namespace Heap
                 return sb.Length == s.Length ? sb.ToString() : "";
             }
         }
+
+        // Leetcode - 1405 - Longest Happy String
+        // Approach : Max Heap
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Medium
+        public class LongestHappyStringLC1405 {
+            public string LongestDiverseString(int a, int b, int c) {
+                PriorityQueue<char,int> pQueue = new();
+                // add all the characters to the priority queue
+                if(a > 0)
+                    pQueue.Enqueue('a',-a);
+                if(b > 0)
+                    pQueue.Enqueue('b',-b);
+                if(c > 0)
+                    pQueue.Enqueue('c',-c);
+
+                StringBuilder sb = new();
+                // iterate through the priority queue
+                while(pQueue.Count > 0)
+                {
+                    // dequeue the most frequent character
+                    pQueue.TryDequeue(out char fLetter, out int fCount);
+                    int sLength = sb.Length;
+                    // check if the last two characters are the same as the current character
+                    if(sLength >= 2 && sb[^1] == sb[^2] && sb[^1] == fLetter)
+                    {
+                        // check whether second most frequent character is available to dequeue
+                        if(pQueue.Count == 0)
+                        {
+                            break;
+                        }
+                        // if the last two characters are the same as the current character, dequeue the second most frequent character
+                        else
+                        {
+                            // dequeue the second most frequent character
+                            pQueue.TryDequeue(out char sLetter, out int sCount);
+                            sb.Append(sLetter);
+                            sCount++;
+                            // enqueue the second most frequent character back if count exists
+                            if(sCount < 0)
+                            {
+                                // enqueue the second most frequent character back
+                                pQueue.Enqueue(sLetter,sCount);
+                            }
+                            // enqueue the most frequent character back
+                            pQueue.Enqueue(fLetter,fCount);
+                        }
+                    }
+                    // if the last two characters are not the same as the current character, dequeue the most frequent character
+                    else
+                    {
+                        // append the most frequent character
+                        sb.Append(fLetter);
+                        fCount++;
+                        // enqueue the most frequent character back if count exists
+                        if(fCount < 0)
+                        {
+                            pQueue.Enqueue(fLetter,fCount);
+                        }
+                    }
+                }
+                // return the result
+                return sb.ToString();
+            }
+        }
     }
 }
