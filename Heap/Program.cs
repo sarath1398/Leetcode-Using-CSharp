@@ -60,21 +60,29 @@ namespace Heap
             // Console.WriteLine(longestHappyString.LongestDiverseString(1,1,7));
             // Console.WriteLine(longestHappyString.LongestDiverseString(7,1,0));
 
-            var singleThreadedCPU = new SingleThreadedCPULC1834();
-            int[][] tasks = [[1,2],[2,4],[3,2],[4,1]];
-            int[] result = singleThreadedCPU.GetOrder(tasks);
-            foreach(int task in result)
-            {
-                Console.Write(task + " ");
-            }
-            Console.WriteLine();
-            tasks = [[7,10],[7,12],[7,5],[7,4],[7,2]];
-            result = singleThreadedCPU.GetOrder(tasks);
-            foreach(int task in result)
-            {
-                Console.Write(task + " ");
-            }
-            Console.WriteLine();
+            // var singleThreadedCPU = new SingleThreadedCPULC1834();
+            // int[][] tasks = [[1,2],[2,4],[3,2],[4,1]];
+            // int[] result = singleThreadedCPU.GetOrder(tasks);
+            // foreach(int task in result)
+            // {
+            //     Console.Write(task + " ");
+            // }
+            // Console.WriteLine();
+            // tasks = [[7,10],[7,12],[7,5],[7,4],[7,2]];
+            // result = singleThreadedCPU.GetOrder(tasks);
+            // foreach(int task in result)
+            // {
+            //     Console.Write(task + " ");
+            // }
+            // Console.WriteLine();
+
+            var carPooling = new CarPoolingLC1094();
+            int[][] trips = [[2,1,5],[3,3,7]];
+            int capacity = 4;
+            Console.WriteLine(carPooling.CarPooling(trips,capacity));
+            trips = [[2,1,5],[3,3,7]];
+            capacity = 5;
+            Console.WriteLine(carPooling.CarPooling(trips,capacity));
         }
     }
 }

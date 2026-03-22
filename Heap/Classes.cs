@@ -452,5 +452,47 @@ namespace Heap
                 return result;
             }
         }
+
+        // Leetcode - 1094 - Car Pooling
+        // Approach : Min Heap
+        // Time Complexity : O(n log n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class CarPoolingLC1094 {
+            public bool CarPooling(int[][] trips, int capacity) {
+                // sort tasks based on start time
+                Array.Sort(trips,(a,b) => a[1].CompareTo(b[1]));
+
+                // create a min heap to store tasks based on end time
+                PriorityQueue<(int to, int capacity), int> pq = new();
+                // initialize total capacity to 0
+                int total = 0;
+
+                // iterate through the trips
+                foreach(var trip in trips)
+                {
+                    // get the capacity, start time, and end time
+                    int cap = trip[0];
+                    int start = trip[1];
+                    int end = trip[2];
+                    // remove all the trips that end before the current trip starts
+                    while(pq.Count > 0 && pq.Peek().to <= start)
+                    {
+                        total -= pq.Dequeue().capacity;
+                    }
+                    // add the current trip's capacity to the total
+                    total += cap;
+                    // if the total capacity exceeds the total capacity, return false
+                    if(total > capacity)
+                    {
+                        return false;
+                    }
+                    // enqueue the current trip's end time and capacity
+                    pq.Enqueue((end,cap),end);
+                }
+                // return true if all the trips are processed successfully
+                return true;
+            }
+        }
     }
 }
