@@ -192,4 +192,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[355 - Design Twitter](Heap/Classes.cs#L204)**
 * **[767 - Reorganize String](Heap/Classes.cs#L304)**
 * **[1405 - Longest Happy String](Heap/Classes.cs#L344)**
+* **[1834 - Single-Threaded CPU](Heap/Classes.cs#L410)**
 

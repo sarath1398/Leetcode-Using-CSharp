@@ -56,9 +56,25 @@ namespace Heap
             // s = "aaab";
             // Console.WriteLine(reorganizeString.ReorganizeString(s));
 
-            var longestHappyString = new LongestHappyStringLC1405();
-            Console.WriteLine(longestHappyString.LongestDiverseString(1,1,7));
-            Console.WriteLine(longestHappyString.LongestDiverseString(7,1,0));
+            // var longestHappyString = new LongestHappyStringLC1405();
+            // Console.WriteLine(longestHappyString.LongestDiverseString(1,1,7));
+            // Console.WriteLine(longestHappyString.LongestDiverseString(7,1,0));
+
+            var singleThreadedCPU = new SingleThreadedCPULC1834();
+            int[][] tasks = [[1,2],[2,4],[3,2],[4,1]];
+            int[] result = singleThreadedCPU.GetOrder(tasks);
+            foreach(int task in result)
+            {
+                Console.Write(task + " ");
+            }
+            Console.WriteLine();
+            tasks = [[7,10],[7,12],[7,5],[7,4],[7,2]];
+            result = singleThreadedCPU.GetOrder(tasks);
+            foreach(int task in result)
+            {
+                Console.Write(task + " ");
+            }
+            Console.WriteLine();
         }
     }
 }

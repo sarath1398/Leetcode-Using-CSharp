@@ -401,5 +401,56 @@ namespace Heap
                 return sb.ToString();
             }
         }
+
+        // Leetcode - 1834 - Single-Threaded CPU
+        // Approach : Min Heap
+        // Time Complexity : O(n log n)
+        // Space Complexity : O(n)
+        // Type: Medium
+        public class SingleThreadedCPULC1834 {
+            public int[] GetOrder(int[][] tasks) {
+                int n = tasks.Length;
+                int i = 0;
+                // add index to each task
+                for(; i < tasks.Length; i++)
+                {
+                    tasks[i] = new int[3] { tasks[i][0], tasks[i][1], i };
+                }
+                // sort tasks based on enqueue time
+                Array.Sort(tasks,(a,b) => a[0].CompareTo(b[0]));
+                // create a min heap to store tasks based on processing time
+                PriorityQueue<(int pTime, int idx),(int pTime,int idx)> pq = new();
+                // initialize time to the first task's enqueue time
+                int time = tasks[0][0];
+                int[] result = new int[n];
+                int idx = 0;
+                i = 0;
+                // iterate through the priority queue
+                while(pq.Count > 0 || i < n)
+                {
+                    // add all the tasks that can be processed at the current time
+                    while(i < n && tasks[i][0] <= time)
+                    {
+                        pq.Enqueue((tasks[i][1],tasks[i][2]),(tasks[i][1],tasks[i][2]));
+                        i++;
+                    }
+                    // if the priority queue is empty, update the time to the next task's enqueue time
+                    // and continue
+                    if(pq.Count == 0)
+                    {
+                        time = tasks[i][0];
+                    }
+                    // if the priority queue is not empty, dequeue the task with the smallest processing time
+                    else
+                    {
+                        (int pTime, int indx) = pq.Dequeue();
+                        result[idx++] = indx;
+                        time+=pTime;
+                    }
+                }
+                // return the result
+                return result;
+            }
+        }
     }
 }
