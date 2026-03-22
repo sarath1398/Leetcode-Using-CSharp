@@ -76,13 +76,25 @@ namespace Heap
             // }
             // Console.WriteLine();
 
-            var carPooling = new CarPoolingLC1094();
-            int[][] trips = [[2,1,5],[3,3,7]];
-            int capacity = 4;
-            Console.WriteLine(carPooling.CarPooling(trips,capacity));
-            trips = [[2,1,5],[3,3,7]];
-            capacity = 5;
-            Console.WriteLine(carPooling.CarPooling(trips,capacity));
+            // var carPooling = new CarPoolingLC1094();
+            // int[][] trips = [[2,1,5],[3,3,7]];
+            // int capacity = 4;
+            // Console.WriteLine(carPooling.CarPooling(trips,capacity));
+            // trips = [[2,1,5],[3,3,7]];
+            // capacity = 5;
+            // Console.WriteLine(carPooling.CarPooling(trips,capacity));
+
+            var ipo = new IPOLC502();
+            int k = 2;
+            int w = 0;
+            int[] profits = [1,2,3];
+            int[] capital = [0,1,1];
+            Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
+            k = 3;
+            w = 0;
+            profits = [1,2,3];
+            capital = [0,1,2];
+            Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
         }
     }
 }

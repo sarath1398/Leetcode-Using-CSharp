@@ -494,5 +494,49 @@ namespace Heap
                 return true;
             }
         }
+
+        // Leetcode - 502 - IPO
+        // Approach : Min Heap
+        // Time Complexity : O(n log n)
+        // Space Complexity : O(n)
+        // Type: Hard
+        public class IPOLC502 {
+            public int FindMaximizedCapital(int k, int w, int[] profits, int[] capital) {
+                // create an array of indices
+                int n = capital.Length;
+                int[] indices = new int[n];
+                // fill the indices array with 0 to n-1
+                for(int i=0;i<n;i++)
+                {
+                    indices[i] = i;
+                }
+                // sort the indices based on the capital
+                Array.Sort(indices,(a,b) => capital[a].CompareTo(capital[b]));
+
+                // create a max heap to store the profits
+                PriorityQueue<int,int> heap = new();
+                int idx = 0;
+
+                // iterate through the capital array
+                for(int i = 0; i < k; i++)
+                {
+                    // add all the projects that can be started with the current capital
+                    while(idx < n && capital[indices[idx]] <= w)
+                    {
+                        heap.Enqueue(-profits[indices[idx]],-profits[indices[idx]]);
+                        idx++;
+                    }
+                    // if the heap is empty, break
+                    if(heap.Count == 0)
+                    {
+                        break;
+                    }
+                    // add the maximum profit to the current capital
+                    w += -heap.Dequeue();
+                }
+                // return the maximized capital
+                return w;
+            }
+        }
     }
 }

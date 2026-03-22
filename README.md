@@ -194,4 +194,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1405 - Longest Happy String](Heap/Classes.cs#L344)**
 * **[1834 - Single-Threaded CPU](Heap/Classes.cs#L410)**
 * **[1094 - Car Pooling](Heap/Classes.cs#L461)**
+* **[502 - IPO](Heap/Classes.cs#L503)**
 
