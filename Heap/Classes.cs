@@ -538,5 +538,68 @@ namespace Heap
                 return w;
             }
         }
+
+        // Leetcode - 295 - Find Median from Data Stream
+        // Approach : Min Heap
+        // Time Complexity : O(n log n)
+        // Space Complexity : O(n)
+        // Type: Hard
+        public class MedianFinderLC295 {
+            // Have two heaps, one max heap and one min heap
+            // Max heap stores the smaller half of the numbers
+            // Min heap stores the larger half of the numbers
+            // The size of the two heaps should be equal or the max heap should have one more element than the min heap
+            PriorityQueue<int,int> maxHeap;
+            PriorityQueue<int,int> minHeap;
+
+            // Constructor
+            public MedianFinderLC295() {
+                maxHeap = new(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+                minHeap = new();
+            }
+                
+            // Add number to the heap
+            public void AddNum(int num) {
+                // If the number is greater than the top of the min heap, add it to the min heap
+                if(minHeap.Count != 0 && num > minHeap.Peek())
+                {
+                    minHeap.Enqueue(num,num);
+                }
+                // Otherwise, add it to the max heap
+                else
+                {
+                    maxHeap.Enqueue(num,num);
+                }
+            
+                // Balance the heaps
+                // If the min heap has more than one element than the max heap, move the top of the min heap to the max heap
+                if (minHeap.Count > maxHeap.Count + 1)
+                {
+                    minHeap.TryDequeue(out int n, out int p);
+                    maxHeap.Enqueue(n,p);
+                }
+                // If the max heap has more than one element than the min heap, move the top of the max heap to the min heap
+                else if (maxHeap.Count > minHeap.Count + 1)
+                {
+                    maxHeap.TryDequeue(out int n, out int p);
+                    minHeap.Enqueue(n,p);
+                }
+            }
+            
+            public double FindMedian() {
+                // If the max heap has more elements than the min heap, return the top of the max heap
+                if(maxHeap.Count > minHeap.Count)
+                {
+                    return (double)maxHeap.Peek();
+                }
+                // If the min heap has more elements than the max heap, return the top of the min heap
+                else if(maxHeap.Count < minHeap.Count)
+                {
+                    return (double)minHeap.Peek();
+                }
+                // If the two heaps have equal number of elements, return the average of the top of the max heap and the top of the min heap
+                return (double) (minHeap.Peek() + maxHeap.Peek()) / 2;
+            }
+        }
     }
 }

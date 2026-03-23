@@ -195,4 +195,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1834 - Single-Threaded CPU](Heap/Classes.cs#L410)**
 * **[1094 - Car Pooling](Heap/Classes.cs#L461)**
 * **[502 - IPO](Heap/Classes.cs#L503)**
+* **[295 - Find Median from Data Stream](Heap/Classes.cs#L547)**
 

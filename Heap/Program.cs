@@ -84,17 +84,25 @@ namespace Heap
             // capacity = 5;
             // Console.WriteLine(carPooling.CarPooling(trips,capacity));
 
-            var ipo = new IPOLC502();
-            int k = 2;
-            int w = 0;
-            int[] profits = [1,2,3];
-            int[] capital = [0,1,1];
-            Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
-            k = 3;
-            w = 0;
-            profits = [1,2,3];
-            capital = [0,1,2];
-            Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
+            // var ipo = new IPOLC502();
+            // int k = 2;
+            // int w = 0;
+            // int[] profits = [1,2,3];
+            // int[] capital = [0,1,1];
+            // Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
+            // k = 3;
+            // w = 0;
+            // profits = [1,2,3];
+            // capital = [0,1,2];
+            // Console.WriteLine(ipo.FindMaximizedCapital(k,w,profits,capital));
+
+            var medianFinder = new MedianFinderLC295();
+            medianFinder.AddNum(1);
+            Console.WriteLine(medianFinder.FindMedian());
+            medianFinder.AddNum(2);
+            Console.WriteLine(medianFinder.FindMedian());
+            medianFinder.AddNum(3);
+            Console.WriteLine(medianFinder.FindMedian());
         }
     }
 }
