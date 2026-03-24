@@ -12,6 +12,11 @@ This repository contains my solutions to various LeetCode problems implemented i
 * [Binary Search](#binary-search)
 * [Strings](#strings)
 * [Two Pointers](#two-pointers)
+* [Linked List](#linked-list)
+* [Tree](#tree)
+* [Trie](#trie)
+* [Heap](#heap)
+* [Graphs](#graphs)
 
 ### Arrays
 * **[1 - Two Sum](Arrays/TwoSum.cs)**
