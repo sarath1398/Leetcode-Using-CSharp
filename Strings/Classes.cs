@@ -214,26 +214,36 @@ namespace Strings
         public class VerifyingAnAlienDictionary
         {
             public bool IsAlienSorted(string[] words, string order) {
+                // Create a dictionary to store the order of characters
                 Dictionary<char,int> orderMap = new();
+                // Add the order of characters to the dictionary
                 for (int i = 0; i < order.Length; i++) {
                     orderMap[order[i]] = i;
                 }
 
+                // Compare adjacent words
                 for(int i = 0; i < words.Length - 1; i++)
                 {
                     string word1 = words[i];
                     string word2 = words[i+1];
                     
+                    // Compare characters of adjacent words
                     for(int j = 0; j < word1.Length; j++)
                     {
+                        // If the second word is a prefix of the first word, return false
                         if (j == word2.Length) {
                             return false;
                         }
 
+                        // If the characters are different, check the order
                         if(word1[j] != word2[j])
                         {
+                            // If the first word's character's order is greater than the 
+                            // second word's character's order, return false
                             if(orderMap[word1[j]] > orderMap[word2[j]])
                                 return false;
+                            // Word already in lexicographical order
+                            // Move to the next word
                             break;
                         }
                         

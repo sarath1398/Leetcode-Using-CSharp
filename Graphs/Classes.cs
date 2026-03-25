@@ -54,4 +54,42 @@ internal class Classes
             return 0;
         }
     }
+
+    // Leetcode - 997 - Find the Town Judge
+    // Approach : Array
+    // Time Complexity : O(n)
+    // Space Complexity : O(n)
+    // Type: Easy
+    public class FindTheTownJudgeLC997
+    {
+        public int FindJudge(int n, int[][] trust) {
+            // int[] incoming = new int[n + 1];
+            // int[] outgoing = new int[n + 1];
+
+            // Trust Factor = incoming - outgoing
+            int[] trustFactor = new int[n + 1];
+            int len = trust.Length;
+            for(int i = 0; i < len; i++)
+            {
+                // from -> to
+                int from = trust[i][0];
+                int to = trust[i][1];
+
+                // incoming[to]++;
+                // outgoing[from]--;
+                // Increase trust factor for the person who is trusted
+                trustFactor[to]++;
+                // Decrease trust factor for the person who trusts
+                trustFactor[from]--;
+            }
+            for(int i = 1; i < n + 1; i++)
+            {
+                // If trust factor is n - 1, then the person is the judge
+                if(trustFactor[i] == n - 1)
+                    return i;
+            }
+            // If no judge is found, return -1
+            return -1;
+        }
+    }
 }

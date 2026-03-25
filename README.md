@@ -205,5 +205,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 
 ### Graphs
 * **[463 - Island Perimeter](Graphs/Classes.cs#L10)**
+* **[997 - Find the Town Judge](Graphs/Classes.cs#L64)**
+
 
 
