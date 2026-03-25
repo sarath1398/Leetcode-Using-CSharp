@@ -205,5 +205,42 @@ namespace Strings
                 return [.. set];
             }
         }
+
+        // Leetcode : 953 - Verifying an Alien Dictionary
+        // Approach : Dictionary
+        // Time Complexity : O(n)
+        // Space Complexity : O(1)
+        // Type: Easy
+        public class VerifyingAnAlienDictionary
+        {
+            public bool IsAlienSorted(string[] words, string order) {
+                Dictionary<char,int> orderMap = new();
+                for (int i = 0; i < order.Length; i++) {
+                    orderMap[order[i]] = i;
+                }
+
+                for(int i = 0; i < words.Length - 1; i++)
+                {
+                    string word1 = words[i];
+                    string word2 = words[i+1];
+                    
+                    for(int j = 0; j < word1.Length; j++)
+                    {
+                        if (j == word2.Length) {
+                            return false;
+                        }
+
+                        if(word1[j] != word2[j])
+                        {
+                            if(orderMap[word1[j]] > orderMap[word2[j]])
+                                return false;
+                            break;
+                        }
+                        
+                    }
+                }
+                return true;
+            }
+        }
     }
 }

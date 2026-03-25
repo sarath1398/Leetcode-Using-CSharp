@@ -29,9 +29,15 @@ namespace Strings
             //Console.WriteLine(LongestCommonPrefix.LongestCommonPrefixFn(["dog", "racecar", "car"]));
 
             // String Matching in an Array
-            Console.WriteLine(String.Join(',',StringMatchingInAnArray.StringMatching(["mass", "as", "hero", "superhero"])));
-            Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["leetcode", "et", "code"])));
-            Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["blue", "green", "bu"])));
+            //Console.WriteLine(String.Join(',',StringMatchingInAnArray.StringMatching(["mass", "as", "hero", "superhero"])));
+            //Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["leetcode", "et", "code"])));
+            //Console.WriteLine(String.Join(',', StringMatchingInAnArray.StringMatching(["blue", "green", "bu"])));
+
+            // Verifying an Alien Dictionary
+            var verifyingAnAlienDictionary = new VerifyingAnAlienDictionary();
+            Console.WriteLine(verifyingAnAlienDictionary.IsAlienSorted(["hello","leetcode"],"hlabcdefgijkmnopqrstuvwxyz"));
+            Console.WriteLine(verifyingAnAlienDictionary.IsAlienSorted(["word","world","row"],"worldabcefghijkmnpqstuvxyz"));
+            Console.WriteLine(verifyingAnAlienDictionary.IsAlienSorted(["apple","app"],"abcdefghijklmnopqrstuvwxyz"));
         }
     }
 }

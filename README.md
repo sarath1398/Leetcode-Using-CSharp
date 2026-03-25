@@ -125,6 +125,7 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[1408 - String Matching in an Array](Strings/Classes.cs#L135)**
 * **[2486 - Append Characters to String to Make Subsequence](Strings/Classes.cs#L48)**
 * **[3110 - Score of a String](Strings/Classes.cs#L5)**
+* **[953 - Verifying an Alien Dictionary](Strings/Classes.cs#L214)**
 
 ### Two Pointers
 * **[11 - Container With Most Water](TwoPointers/Classes.cs#L376)**
