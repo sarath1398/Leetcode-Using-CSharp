@@ -92,4 +92,250 @@ internal class Classes
             return -1;
         }
     }
+    
+    // Leetcode - 200 - Number of Islands
+    // Approach : BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class NumberOfIslandsLC200
+    {
+        public int NumIslands(char[][] grid) {
+            // HashSet<(int,int)> set = new();
+            // Queue for BFS
+            Queue<(int,int)> queue = new();
+
+            // Get the dimensions of the grid
+            int n = grid.Length;
+            int m = grid[0].Length;
+            int count = 0;
+
+            // Helper function to check if a cell is valid
+            bool IsValid(int i, int j)
+            {
+                if(i < 0 || i >= n || j < 0 || j >= m || grid[i][j] == '0')
+                // || set.Contains((i,j))) 
+                    return false;
+                return true;
+            }
+
+            void BFS()
+            {
+                // While there are cells in the queue
+                while(queue.Count > 0)
+                {
+                    // Dequeue the cell
+                    (int r, int c) = queue.Dequeue();
+                    // Check the four neighbors
+                    if(IsValid(r - 1, c))
+                    {
+                        queue.Enqueue((r-1,c));
+                        // Mark as visited
+                        grid[r-1][c] = '0';
+                    }
+                    if(IsValid(r + 1, c))
+                    {
+                        queue.Enqueue((r + 1,c));
+                        // Mark as visited
+                        grid[r+1][c] = '0';
+                    }
+                    if(IsValid(r, c - 1))
+                    {
+                        queue.Enqueue((r,c - 1));
+                        // Mark as visited
+                        grid[r][c-1] = '0';
+                    }
+                    if(IsValid(r, c + 1))
+                    {
+                        queue.Enqueue((r,c + 1));
+                        // Mark as visited
+                        grid[r][c + 1] = '0';
+                    }
+                }
+            }
+
+            // Iterate through the grid
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < m; j++)
+                {
+                    // If the cell is land, start BFS
+                    if(IsValid(i,j))
+                    {
+                        queue.Enqueue((i,j));
+                        // Mark as visited
+                        grid[i][j] = '0';
+                        // Start BFS
+                        BFS();
+                        // Increment the count
+                        count++;
+                    }   
+                }
+            }
+
+            return count;
+        }
+    }
+
+    // Leetcode - 695 - Max Area of Island
+    // Approach : BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class MaxAreaOfIslandLC695
+    {
+        public int MaxAreaOfIsland(int[][] grid) {
+            // Queue for BFS
+            Queue<(int,int)> queue = new();
+
+            // Get the dimensions of the grid
+            int n = grid.Length;
+            int m = grid[0].Length;
+            int count = 0;
+
+            // Helper function to check if a cell is valid
+            bool IsValid(int i, int j)
+            {
+                if(i < 0 || i >= n || j < 0 || j >= m || grid[i][j] == 0)
+                    return false;
+                return true;
+            }
+
+            // Helper function to perform BFS
+            int BFS()
+            {
+                int count = 0;
+                // While there are cells in the queue
+                while(queue.Count > 0)
+                {
+                    // Dequeue the cell
+                    (int r, int c) = queue.Dequeue();
+                    // Check the four neighbors
+                    if(IsValid(r - 1, c))
+                    {
+                        // Enqueue the neighbor
+                        queue.Enqueue((r-1,c));
+                        // Mark as visited
+                        grid[r-1][c] = 0;
+                        // Increment the count
+                        count++;
+                    }
+                    if(IsValid(r + 1, c))
+                    {
+                        // Enqueue the neighbor
+                        queue.Enqueue((r + 1,c));
+                        // Mark as visited
+                        grid[r+1][c] = 0;
+                        // Increment the count
+                        count++;
+                    }
+                    if(IsValid(r, c - 1))
+                    {
+                        // Enqueue the neighbor
+                        queue.Enqueue((r,c - 1));
+                        // Mark as visited
+                        grid[r][c-1] = 0;
+                        // Increment the count
+                        count++;
+                    }
+                    if(IsValid(r, c + 1))
+                    {
+                        // Enqueue the neighbor
+                        queue.Enqueue((r,c + 1));
+                        // Mark as visited
+                        grid[r][c + 1] = 0;
+                        // Increment the count
+                        count++;
+                    }
+                }
+                return count;
+            }
+
+            // Iterate through the grid
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < m; j++)
+                {
+                    // If the cell is land, start BFS
+                    if(IsValid(i,j))
+                    {
+                        // Enqueue the cell
+                        queue.Enqueue((i,j));
+                        // Mark as visited
+                        grid[i][j] = 0;
+                        // Update the maximum area - Include the current cell in grid also
+                        count = Math.Max(count,1 + BFS());
+                    }   
+                }
+            }
+
+            // Return the maximum area
+            return count;
+        }
+    }
+    
+    
+    public class Node {
+        public int val;
+        public IList<Node> neighbors;
+
+        public Node() {
+            val = 0;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val) {
+            val = _val;
+            neighbors = new List<Node>();
+        }
+
+        public Node(int _val, List<Node> _neighbors) {
+            val = _val;
+            neighbors = _neighbors;
+        }
+    }
+
+    // Leetcode - 133 - Clone Graph
+    // Approach : DFS
+    // Time Complexity : O(V+E)
+    // Space Complexity : O(V)
+    // Type: Medium
+    public class CloneGraphLC133
+    {
+        // Helper function to perform DFS
+        public Node DFS(Node curr,Dictionary<int,Node> map)
+        {
+            // Return null if the current node is null
+            if(curr == null)
+                return null;
+
+            // Get the value of the current node
+            int val = curr.val;
+
+            // If the node is already visited, return the cloned node
+            if(map.ContainsKey(val))
+            {
+                return map[val];
+            }
+
+            // Create a new node
+            Node newNode = new Node(val);
+            // Add the new node to the map
+            map.Add(val,newNode);
+            // Iterate through the neighbors of the current node
+            foreach(Node neighbour in curr.neighbors)
+            {
+                // Recursively call DFS for each neighbor
+                newNode.neighbors.Add(DFS(neighbour,map));
+            }
+            // Return the cloned node
+            return newNode;
+        }
+        public Node CloneGraph(Node node) {
+            // Create a map to store the cloned nodes
+            Dictionary<int,Node> map = new();
+            // Call the DFS function to clone the graph
+            return DFS(node,map);
+        }
+    }
 }

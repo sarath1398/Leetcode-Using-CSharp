@@ -206,6 +206,9 @@ This repository contains my solutions to various LeetCode problems implemented i
 ### Graphs
 * **[463 - Island Perimeter](Graphs/Classes.cs#L10)**
 * **[997 - Find the Town Judge](Graphs/Classes.cs#L64)**
+* **[200 - Number of Islands](Graphs/Classes.cs#L101)**
+* **[695 - Max Area of Island](Graphs/Classes.cs#L185)**
+* **[133 - Clone Graph](Graphs/Classes.cs#278)**
 
 
 
