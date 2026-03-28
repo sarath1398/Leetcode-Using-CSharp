@@ -209,3 +209,4 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[200 - Number of Islands](Graphs/Classes.cs#L101)**
 * **[695 - Max Area of Island](Graphs/Classes.cs#L185)**
 * **[133 - Clone Graph](Graphs/Classes.cs#278)**
+* **[286 - Walls and Gates (Premium)](Graphs/Classes.cs#347)**

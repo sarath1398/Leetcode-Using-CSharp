@@ -338,4 +338,70 @@ internal class Classes
             return DFS(node,map);
         }
     }
+
+    // Leetcode 286 - Walls and Gates
+    // Approach : Multi-Source BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class WallsAndGatesLC286
+    {
+        public void WallsAndGates(int[][] grid) {
+            // Get the dimensions of the grid
+            int n = grid.Length;
+            int m = grid[0].Length;
+            // Create a queue for BFS
+            Queue<(int r, int c)> queue = new();
+
+            // Helper function to check if a cell is valid
+            bool IsValid(int i,int j)
+            {
+                if(i < 0 || i >= n || j < 0 || j>= m)
+                    return false;
+                return true;
+            }
+            // Add all the gates to the queue
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < m; j++)
+                {
+                    if(grid[i][j] == 0)
+                    {
+                        queue.Enqueue((i,j));
+                    }
+                }
+            }
+            // Directions for moving in the grid
+            int[][] directions = [ 
+                    [1,0],
+                    [0,1],
+                    [-1,0],
+                    [0,-1]
+                ];
+            // Perform BFS
+            while(queue.Count > 0)
+            {
+                // Dequeue the cell
+                (int r, int c) = queue.Dequeue();
+                // Check the four neighbors
+                foreach(var direction in directions)
+                {
+                    int i = r + direction[0];
+                    int j = c + direction[1];
+
+                    // Check if the neighbor is valid
+                    if(!IsValid(i,j))
+                        continue;
+                    // Check if the neighbor is a gate
+                    if(grid[i][j] != int.MaxValue)
+                        continue;
+                    // Enqueue the neighbor
+                    queue.Enqueue((i,j));
+                    // Update the distance
+                    grid[i][j] = 1 + grid[r][c]; 
+                }
+            }
+        }
+    }
+
 }
