@@ -31,16 +31,24 @@ internal class Program
         // grid = [['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']];
         // Console.WriteLine(numberOfIslands.NumIslands(grid));
 
-        var wallsAndGates = new WallsAndGatesLC286();
-        int[][] grid = [[2147483647,-1,0,2147483647],[2147483647,2147483647,2147483647,-1],[2147483647,-1,2147483647,2147483647],[0,-1,2147483647,2147483647]];
-        wallsAndGates.WallsAndGates(grid);
-        foreach(var row in grid)
-        {
-            foreach(var cell in row)
-            {
-                Console.Write(cell + " ");
-            }
-            Console.WriteLine();
-        }
+        // var wallsAndGates = new WallsAndGatesLC286();
+        // int[][] grid = [[2147483647,-1,0,2147483647],[2147483647,2147483647,2147483647,-1],[2147483647,-1,2147483647,2147483647],[0,-1,2147483647,2147483647]];
+        // wallsAndGates.WallsAndGates(grid);
+        // foreach(var row in grid)
+        // {
+        //     foreach(var cell in row)
+        //     {
+        //         Console.Write(cell + " ");
+        //     }
+        //     Console.WriteLine();
+        // }
+
+        var orangesRotting = new OrangesRottingLC994();
+        int[][] grid = [[2,1,1],[1,1,0],[0,1,1]];
+        Console.WriteLine(orangesRotting.OrangesRotting(grid));
+        grid = [[2,1,1],[0,1,1],[1,0,1]];
+        Console.WriteLine(orangesRotting.OrangesRotting(grid));
+        grid = [[0,2]];
+        Console.WriteLine(orangesRotting.OrangesRotting(grid));
     }
 }

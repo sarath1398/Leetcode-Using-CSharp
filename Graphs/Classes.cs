@@ -404,4 +404,82 @@ internal class Classes
         }
     }
 
+    // Leetcode 994 - Rotting Oranges
+    // Approach : Multi-Source BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class OrangesRottingLC994
+    {
+        public int OrangesRotting(int[][] grid) {
+            // Create a queue for BFS
+            Queue<(int r,int c)> queue = new();
+            // Get the dimensions of the grid
+            int n = grid.Length;
+            int m = grid[0].Length;
+            // Count of fresh oranges
+            int count = 0;
+
+            // Add all the rotten oranges to the queue and count the fresh oranges
+            for(int i = 0; i < n;i++)
+            {
+                for(int j = 0; j < m;j++)
+                {
+                    if(grid[i][j] == 2)
+                    {
+                        queue.Enqueue((i,j));
+                    }
+                    else if(grid[i][j] == 1)
+                    {
+                        count++;
+                    }
+                }
+            }
+            // Time in minutes
+            int minutes = 0;
+            // Directions for moving in the grid
+            int[][] directions = [[-1,0],[1,0],[0,1],[0,-1]];
+            // Perform BFS
+            while(queue.Count > 0)
+            {
+                // Get the size of the queue
+                int size = queue.Count;
+                // Process all the rotten oranges in the current level
+                for(int q = 0; q < size; q++)
+                {
+                    // Dequeue the rotten orange
+                    (int i, int j) = queue.Dequeue();
+                    // Check the four neighbors
+                    foreach(var direction in directions)
+                    {
+                        int ni = i + direction[0];
+                        int nj = j + direction[1];
+
+                        // Check if the neighbor is valid
+                        // Check if the neighbor is valid
+                        if(ni < 0 || ni >= n || nj < 0 || nj >= m || grid[ni][nj] != 1)
+                        {
+                            continue;
+                        }
+                        // If the neighbor is fresh, rot it
+                        else
+                        {
+                            // Mark the neighbor as rotten
+                            grid[ni][nj] = 2;
+                            // Enqueue the neighbor
+                            queue.Enqueue((ni,nj));
+                            // Decrement the count of fresh oranges
+                            count--;
+                        }
+                    }
+                }
+                // Increment the time if there are rotten oranges
+                if(queue.Count > 0)
+                    minutes++;
+            }
+            // Return the time if all oranges are rotten, otherwise return -1
+            return count > 0 ? -1 : minutes;
+        }
+    }
+
 }
