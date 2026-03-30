@@ -43,12 +43,24 @@ internal class Program
         //     Console.WriteLine();
         // }
 
-        var orangesRotting = new OrangesRottingLC994();
-        int[][] grid = [[2,1,1],[1,1,0],[0,1,1]];
-        Console.WriteLine(orangesRotting.OrangesRotting(grid));
-        grid = [[2,1,1],[0,1,1],[1,0,1]];
-        Console.WriteLine(orangesRotting.OrangesRotting(grid));
-        grid = [[0,2]];
-        Console.WriteLine(orangesRotting.OrangesRotting(grid));
+        // var orangesRotting = new OrangesRottingLC994();
+        // int[][] grid = [[2,1,1],[1,1,0],[0,1,1]];
+        // Console.WriteLine(orangesRotting.OrangesRotting(grid));
+        // grid = [[2,1,1],[0,1,1],[1,0,1]];
+        // Console.WriteLine(orangesRotting.OrangesRotting(grid));
+        // grid = [[0,2]];
+        // Console.WriteLine(orangesRotting.OrangesRotting(grid));
+
+        var pacificAtlantic = new PacificAtlanticLC417();
+        int[][] heights = [[1,2,2,3,5],[3,2,3,4,4],[6,7,1,4,5],[5,1,1,2,4],[3,3,5,8,8]];
+        var result = pacificAtlantic.PacificAtlantic(heights);
+        foreach(var row in result)
+        {
+            foreach(var cell in row)
+            {
+                Console.Write(cell + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }

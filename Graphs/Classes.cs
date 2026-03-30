@@ -482,4 +482,75 @@ internal class Classes
         }
     }
 
+    //  Leetcode 417 - Pacific Atlantic Water Flow
+    // Approach : Multi-Source BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class PacificAtlanticLC417
+    {
+        public List<IList<int>> PacificAtlantic(int[][] heights) {
+            int n = heights.Length; // rows
+            int m = heights[0].Length; // columns
+            // visited arrays for both oceans
+            bool[,] pac = new bool[n,m];
+            bool[,] atl = new bool[n,m];
+            // result list
+            List<IList<int>> result = new();
+            // directions for moving in the grid
+            int[][] directions = [[-1,0],[1,0],[0,-1],[0,1]];
+            // DFS function to find all the cells that can reach the ocean
+            void DFS(int i, int j,bool[,] visited)
+            {
+                // Mark the current cell as visited
+                visited[i,j] = true;
+                // Check the four neighbors
+                foreach(var direction in directions)
+                {
+                    // Get the new coordinates
+                    int r = i + direction[0];
+                    int c = j + direction[1];
+
+                    // Omit if the new coordinates are invalid
+                    if(r < 0 || r >= n || c < 0 || c >= m 
+                        || visited[r,c] == true || heights[r][c] < heights[i][j])
+                    {
+                        continue;
+                    }
+                    // Recursively call DFS for the new coordinates
+                    DFS(r,c,visited);
+                }
+                return;
+            }
+
+            for(int i = 0; i < n; i++)
+            {
+                // topmost border - pacific ocean
+                DFS(i,0,pac);
+                // rightmost border - atlantic ocean
+                DFS(i,m-1,atl);
+            }
+            for(int j = 0; j < m; j++)
+            {
+                // leftmost border - pacific ocean
+                DFS(0,j,pac);
+                // bottom most border - atlantic ocean
+                DFS(n-1,j,atl);
+            }
+
+            for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < m;j++)
+                {
+                    // If both visited arrays have true at the same cell, add it to the result
+                    if(pac[i,j] == true && atl[i,j] == true)
+                    {
+                        result.Add([i,j]);
+                    }
+                }
+            }
+            // Return the result
+            return result;
+        }
+    }
 }
