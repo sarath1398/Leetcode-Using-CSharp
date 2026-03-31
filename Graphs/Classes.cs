@@ -553,4 +553,64 @@ internal class Classes
             return result;
         }
     }
+
+    // Leetcode 130 - Surrounded Regions
+    // Approach : DFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class SurroundedRegionsLC130
+    {
+        public void Solve(char[][] board) {
+            // Get the dimensions of the board
+            int n = board.Length;
+            int m = board[0].Length;
+
+            // DFS function to find all the cells that can reach the ocean
+            void DFS(int i, int j)
+            {
+                // Omit if the new coordinates are invalid
+                if(i < 0 || i >=n || j<0 || j >= m || board[i][j] != 'O')
+                    return;
+                // Mark the current cell as safe
+                board[i][j] = 'M';
+                // Recursively call DFS for the four neighbors
+                DFS(i+1,j); // down
+                DFS(i-1,j); // up
+                DFS(i,j+1); // right
+                DFS(i,j-1); // left
+            }
+
+            // Iterate over the borders of the board
+            for(int i=0;i<n;i++)
+            {
+                // leftmost regions
+                DFS(i,0);
+                // rightmost regions
+                DFS(i,m-1);
+            }
+            // Iterate over the borders of the board
+            for(int j = 0;j<m;j++)
+            {
+                // topmost regions
+                DFS(0,j);
+                // bottom most regions
+                DFS(n-1,j);
+            }
+
+            // Iterate over the board
+            for(int i = 0; i < n;i++)
+            {
+                for(int j = 0; j< m;j++)
+                {
+                    // If the cell is marked as safe, change it to 'O'
+                    if(board[i][j] == 'M')
+                        board[i][j] = 'O';
+                    // Otherwise, change it to 'X'
+                    else
+                        board[i][j] = 'X';
+                }
+            }
+        }
+    }
 }

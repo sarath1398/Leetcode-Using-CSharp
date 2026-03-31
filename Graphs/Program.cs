@@ -51,10 +51,22 @@ internal class Program
         // grid = [[0,2]];
         // Console.WriteLine(orangesRotting.OrangesRotting(grid));
 
-        var pacificAtlantic = new PacificAtlanticLC417();
-        int[][] heights = [[1,2,2,3,5],[3,2,3,4,4],[6,7,1,4,5],[5,1,1,2,4],[3,3,5,8,8]];
-        var result = pacificAtlantic.PacificAtlantic(heights);
-        foreach(var row in result)
+        // var pacificAtlantic = new PacificAtlanticLC417();
+        // int[][] heights = [[1,2,2,3,5],[3,2,3,4,4],[6,7,1,4,5],[5,1,1,2,4],[3,3,5,8,8]];
+        // var result = pacificAtlantic.PacificAtlantic(heights);
+        // foreach(var row in result)
+        // {
+        //     foreach(var cell in row)
+        //     {
+        //         Console.Write(cell + " ");
+        //     }
+        //     Console.WriteLine();
+        // }
+
+        var surroundedRegions = new SurroundedRegionsLC130();
+        char[][] board = [['X','X','X','X'],['X','O','O','X'],['X','X','O','X'],['X','O','X','X']];
+        surroundedRegions.Solve(board);
+        foreach(var row in board)
         {
             foreach(var cell in row)
             {
