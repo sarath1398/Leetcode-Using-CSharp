@@ -1,4 +1,5 @@
 ﻿namespace Graphs;
+using System.Text;
 
 internal class Classes
 {
@@ -611,6 +612,84 @@ internal class Classes
                         board[i][j] = 'X';
                 }
             }
+        }
+    }
+
+    // Leetcode 752 - Open the Lock
+    // Approach : BFS
+    // Time Complexity : O(m*n)
+    // Space Complexity : O(m*n)
+    // Type: Medium
+    public class OpenTheLockLC752 {
+        public int OpenLock(string[] deadends, string target) {
+            // Queue to store the combinations to be visited
+            Queue<string> queue = new();
+            // Set to store the deadends
+            HashSet<string> denyList = new(deadends);
+            // Add the initial combination to the queue
+            queue.Enqueue("0000");
+            // If the initial combination is a deadend, return -1
+            if(denyList.Contains("0000"))
+                return -1;
+            // Variable to store the number of turns
+            int turn = 0;
+            // While the queue is not empty
+            while(queue.Count > 0)
+            {
+                // Get the size of the queue
+                int size = queue.Count;
+                // While the size is not zero
+                while(size > 0)
+                {
+                    // Dequeue the current combination
+                    string s = queue.Dequeue();
+                    // If the current combination is the target, return the number of turns
+                    if(target == s)
+                        return turn;
+                    // Create a StringBuilder to modify the current combination
+                    StringBuilder sb = new(s);
+                    // Iterate over the four wheels of the combination
+                    for(int i = 0; i < 4; i++)
+                    {
+                        // Get the current character
+                        char current_ch = sb[i];
+                        // Get the value of the current character
+                        int val = sb[i] - '0';
+                        // Increment the current character
+                        sb[i] = current_ch == '9' ? '0' : (char)(current_ch + 1);
+                        // Convert the StringBuilder to a string
+                        string updtstr = sb.ToString();
+                        // If the updated string is not in the deny list
+                        if(!denyList.Contains(updtstr))
+                        {
+                            // Add the updated string to the deny list
+                            denyList.Add(updtstr);
+                            // Enqueue the updated string
+                            queue.Enqueue(updtstr);
+                        }
+                        // Decrement the current character
+                        sb[i] = current_ch == '0' ? '9' : (char)(current_ch - 1);
+                        // Convert the StringBuilder to a string
+                        updtstr = sb.ToString();
+                        // If the updated string is not in the deny list
+                        if(!denyList.Contains(updtstr))
+                        {
+                            // Add the updated string to the deny list
+                            denyList.Add(updtstr);
+                            // Enqueue the updated string
+                            queue.Enqueue(updtstr);
+                        }
+                        // Reset the current character
+                        sb[i] = current_ch;
+                    }
+                    // Decrement the size
+                    size--;
+                }
+                // Increment the number of turns
+                turn++;
+            }
+            // If the target is not found, return -1
+            return -1;
         }
     }
 }
