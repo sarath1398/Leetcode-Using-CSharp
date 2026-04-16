@@ -692,4 +692,62 @@ internal class Classes
             return -1;
         }
     }
+
+    // Leetcode 207 - Course Schedule
+    // Approach : BFS
+    // Time Complexity : O(V+E)
+    // Space Complexity : O(V+E)
+    // Type: Medium
+    public class CourseScheduleLC207 {
+        public bool CanFinish(int numCourses, int[][] prerequisites) {
+            Dictionary<int,List<int>> map = new(); // adjacency list
+            // Initialize the adjacency list
+            for(int i=0 ; i<numCourses ; i++)
+            {
+                map[i] = new List<int>();
+            }
+            // Initialize the indegree array
+            int[] indegree = new int[numCourses];
+            // Iterate over the prerequisites
+            foreach(var pre in prerequisites)
+            {
+                // pre[0][1] -> predecessor, pre[0][0] -> current
+                (int p,int c) = (pre[1],pre[0]);
+                // Increment the indegree of the predecessor
+                indegree[p]++;
+                // Add the predecessor to the adjacency list
+                map[c].Add(p);
+            }
+            Queue<int> queue = new();
+            // Add all the courses with indegree 0 to the queue
+            for(int i = 0; i < numCourses; i++)
+            {
+                if(indegree[i] == 0)
+                    queue.Enqueue(i);
+            }
+            // Variable to store the number of turns
+            int turns = 0;
+            // While the queue is not empty
+            while(queue.Count > 0)
+            {
+                // Dequeue the current course
+                int course = queue.Dequeue();
+                // Get the neighbors of the current course
+                var neighbours = map[course];
+                // Iterate over the neighbors
+                foreach(var neighbour in neighbours)
+                {
+                    // Decrement the indegree of the neighbor
+                    indegree[neighbour]--;
+                    // If the indegree of the neighbor is 0, enqueue it
+                    if(indegree[neighbour] == 0)
+                        queue.Enqueue(neighbour);
+                }
+                // Increment the number of turns
+                turns++;
+            }
+            // If the number of turns is equal to the number of courses, return true
+            return turns == numCourses;
+        }
+    }
 }

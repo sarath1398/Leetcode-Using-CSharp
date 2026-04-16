@@ -75,15 +75,23 @@ internal class Program
         //     Console.WriteLine();
         // }
 
-        var openTheLock = new OpenTheLockLC752();
-        string[] deadends = ["0201","0101","0102","1212","2002"];
-        string target = "0202";
-        Console.WriteLine(openTheLock.OpenLock(deadends, target));
-        deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"];
-        target = "0009";
-        Console.WriteLine(openTheLock.OpenLock(deadends, target));
-        deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"];
-        target = "8888";
-        Console.WriteLine(openTheLock.OpenLock(deadends, target));
+        // var openTheLock = new OpenTheLockLC752();
+        // string[] deadends = ["0201","0101","0102","1212","2002"];
+        // string target = "0202";
+        // Console.WriteLine(openTheLock.OpenLock(deadends, target));
+        // deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"];
+        // target = "0009";
+        // Console.WriteLine(openTheLock.OpenLock(deadends, target));
+        // deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"];
+        // target = "8888";
+        // Console.WriteLine(openTheLock.OpenLock(deadends, target));
+
+        var courseSchedule = new CourseScheduleLC207();
+        int numCourses = 2;
+        int[][] prerequisites = [[1,0]];
+        Console.WriteLine(courseSchedule.CanFinish(numCourses, prerequisites));
+        numCourses = 2;
+        prerequisites = [[1,0],[0,1]];
+        Console.WriteLine(courseSchedule.CanFinish(numCourses, prerequisites));
     }
 }

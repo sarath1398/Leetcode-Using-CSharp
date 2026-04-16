@@ -213,3 +213,5 @@ This repository contains my solutions to various LeetCode problems implemented i
 * **[994 - Rotting Oranges](Graphs/Classes.cs#412)**
 * **[417 - Pacific Atlantic Water Flow](Graphs/Classes.cs#490)**
 * **[130 - Surrounded Regions](Graphs/Classes.cs#562)**
+* **[752 - Open the Lock](Graphs/Classes.cs#618)**
+* **[207 - Course Schedule](Graphs/Classes.cs#696)**
